@@ -88,6 +88,27 @@
     </div>
 </section>
 
+<section class="pd-main" style="padding-top:60px;padding-bottom:60px;">
+    <div class="tf-container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <span class="sub-title-heading text-main font-yes fs-28-46">Part of</span>
+                <h2 class="title-heading mb-18">Bandung Driver Tour</h2>
+                <p class="des mb-20" style="font-size:15px;line-height:1.8;">Joga Driver Tour is proudly part of <strong>Bandung Driver Tour</strong>, a trusted travel and tour platform established in Bandung, West Java. With years of experience in the travel industry, Bandung Driver Tour has expanded its services to Yogyakarta through Joga Driver Tour, bringing the same commitment to quality, safety, and unforgettable travel experiences. Together, we aim to showcase the beauty of Indonesia — from the cultural richness of Yogyakarta to the scenic landscapes of Bandung.</p>
+                <a href="https://bandungdrivertour.com" target="_blank" rel="noopener noreferrer" class="btn-main" style="display:inline-flex;align-items:center;gap:8px;">
+                    <p class="btn-main-text">Visit Bandung Driver Tour</p>
+                    <p class="iconer"><i class="icon-arrow-right"></i></p>
+                </a>
+            </div>
+            <div class="col-md-4 text-center" style="padding:20px 0;">
+                <a href="https://bandungdrivertour.com" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('template/assets/images/bandung-driver-tour.webp') }}" alt="Bandung Driver Tour" style="max-width:220px;width:100%;height:auto;">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="widget-video-about">
     <div class="tf-container">
         <div class="row">
