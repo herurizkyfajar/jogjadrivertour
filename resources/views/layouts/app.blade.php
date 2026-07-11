@@ -165,8 +165,56 @@
     <script src="{{ asset('template/app/js/wow.min.js') }}"></script>
     <script src="{{ asset('template/app/js/shortcodes.js') }}"></script>
     <script src="{{ asset('template/app/js/main.js') }}"></script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
     <script>
+        function doGoogleTranslate(lang) {
+            var ct = document.getElementById('google_translate_element');
+            if (!ct) return;
+            var iframe = ct.querySelector('iframe');
+            if (iframe && iframe.contentWindow) {
+                iframe.contentWindow.postMessage('translate-' + lang, '*');
+            }
+        }
+        function setLanguage(lang) {
+            if (!lang) {
+                deleteCookie('googtrans');
+                localStorage.removeItem('joga_lang');
+            } else {
+                setCookie('googtrans', '/en/' + lang);
+                localStorage.setItem('joga_lang', lang);
+            }
+            location.reload();
+        }
+        function setCookie(name, value) {
+            var host = window.location.hostname;
+            var domains = [host, '.' + host];
+            var parentDomain = host.split('.').slice(-2).join('.');
+            if (parentDomain !== host) domains.push(parentDomain);
+            domains.forEach(function(d) {
+                document.cookie = name + '=' + value + '; path=/; domain=' + d + '; max-age=31536000';
+            });
+            document.cookie = name + '=' + value + '; path=/; max-age=31536000';
+        }
+        function deleteCookie(name) {
+            var host = window.location.hostname;
+            var domains = [host, '.' + host];
+            var parentDomain = host.split('.').slice(-2).join('.');
+            if (parentDomain !== host) domains.push(parentDomain);
+            domains.forEach(function(d) {
+                document.cookie = name + '=; path=/; domain=' + d + '; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            });
+            document.cookie = name + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+        }
+        function getCookie(name) {
+            var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            return match ? decodeURIComponent(match[2]) : null;
+        }
+        function getCurrentLang() {
+            var c = getCookie('googtrans');
+            if (c && c.indexOf('/id') > -1) return 'id';
+            var ls = localStorage.getItem('joga_lang');
+            if (ls === 'id') return 'id';
+            return 'en';
+        }
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
@@ -175,34 +223,18 @@
                 autoDisplay: false
             }, 'google_translate_element');
         }
-        function setLanguage(lang) {
-            var host = window.location.hostname;
-            if (!lang) {
-                document.cookie = "googtrans=; path=/; domain=" + host + "; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                document.cookie = "googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-                document.cookie = "googtrans=; path=/; domain=." + host + "; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-            } else {
-                document.cookie = "googtrans=/en/" + lang + "; path=/; domain=" + host;
-                document.cookie = "googtrans=/en/" + lang + "; path=/";
-                document.cookie = "googtrans=/en/" + lang + "; path=/; domain=." + host;
-            }
-            setTimeout(function() { location.reload(); }, 100);
-        }
         new WOW().init();
         $(document).ready(function() {
             $('select').niceSelect();
-            var googtrans = document.cookie.match('(^|;)\\s*googtrans\\s*=\\s*([^;]+)');
-            if (googtrans) {
-                var val = googtrans.pop().split('=').pop();
-                if (val.indexOf('/id') > -1) {
-                    $('#lang-current').text('Indonesia');
-                    $('.language .nice-select .list .option').removeClass('selected');
-                    $('.language .nice-select .list .option[data-value="id"]').addClass('selected');
-                } else {
-                    $('#lang-current').text('English');
-                    $('.language .nice-select .list .option').removeClass('selected');
-                    $('.language .nice-select .list .option[data-value=""]').addClass('selected');
-                }
+            var currentLang = getCurrentLang();
+            if (currentLang === 'id') {
+                $('#lang-current').text('Indonesia');
+                $('.language .nice-select .list .option').removeClass('selected');
+                $('.language .nice-select .list .option[data-value="id"]').addClass('selected');
+            } else {
+                $('#lang-current').text('English');
+                $('.language .nice-select .list .option').removeClass('selected');
+                $('.language .nice-select .list .option[data-value=""]').addClass('selected');
             }
             $(document).on('click', '.language .nice-select .option', function(e) {
                 e.preventDefault();
@@ -217,6 +249,7 @@
             });
         });
     </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
     @stack('scripts')
 </body>
