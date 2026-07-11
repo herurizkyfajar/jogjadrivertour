@@ -176,14 +176,17 @@
             }, 'google_translate_element');
         }
         function setLanguage(lang) {
+            var host = window.location.hostname;
             if (!lang) {
-                document.cookie = "googtrans=; path=/; domain=" + window.location.hostname + "; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                document.cookie = "googtrans=; path=/; domain=" + host + "; expires=Thu, 01 Jan 1970 00:00:00 UTC";
                 document.cookie = "googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+                document.cookie = "googtrans=; path=/; domain=." + host + "; expires=Thu, 01 Jan 1970 00:00:00 UTC";
             } else {
-                document.cookie = "googtrans=/en/" + lang + "; path=/; domain=" + window.location.hostname;
+                document.cookie = "googtrans=/en/" + lang + "; path=/; domain=" + host;
                 document.cookie = "googtrans=/en/" + lang + "; path=/";
+                document.cookie = "googtrans=/en/" + lang + "; path=/; domain=." + host;
             }
-            location.reload();
+            setTimeout(function() { location.reload(); }, 100);
         }
         new WOW().init();
         $(document).ready(function() {
