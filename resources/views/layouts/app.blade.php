@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 
 <head>
     <meta charset="utf-8">
-    <title>@yield('title', 'Joga Driver Tour - Travel & Tour Booking')</title>
+    <title>@yield('title', 'Yogyakarta Driver Tour - Travel & Tour Booking')</title>
     <meta name="author" content="themesflat.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">

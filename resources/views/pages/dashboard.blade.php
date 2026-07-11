@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
+﻿@extends('layouts.dashboard')
 
-@section('title', 'Dashboard - Joga Driver Tour')
+@section('title', 'Dashboard - Yogyakarta Driver Tour')
 
 @section('content')
 <section class="profile-dashboard">

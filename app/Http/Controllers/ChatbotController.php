@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Http\Controllers;
 
@@ -22,7 +22,7 @@ class ChatbotController extends Controller
         if (empty($message) && $step === 'greeting') {
             return response()->json([
                 'replies' => [
-                    'Hello! Welcome to Joga Driver Tour 👋',
+                    'Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹',
                     'Before we start, may I know your name?'
                 ],
                 'next_step' => 'ask_name',
@@ -36,7 +36,7 @@ class ChatbotController extends Controller
 
                 $chatHistory[] = ['type' => 'user', 'text' => $message];
                 $replies = [
-                    'Nice to meet you, ' . htmlspecialchars($message) . '! 😊',
+                    'Nice to meet you, ' . htmlspecialchars($message) . '! ðŸ˜Š',
                     'What is your email or phone number? So we can reach you if needed.'
                 ];
                 foreach ($replies as $reply) {
@@ -63,7 +63,7 @@ class ChatbotController extends Controller
                 $chatHistory[] = ['type' => 'user', 'text' => $message];
                 $name = htmlspecialchars($sessionData['name'] ?? 'there');
                 $replies = [
-                    'Thank you, ' . $name . '! 😊',
+                    'Thank you, ' . $name . '! ðŸ˜Š',
                     'How can I help you today? You can ask about our tours, destinations, booking, payment, or anything else!'
                 ];
                 foreach ($replies as $reply) {
@@ -95,20 +95,20 @@ class ChatbotController extends Controller
                 }
                 $sessionData['rating'] = $rating;
 
-                $chatHistory[] = ['type' => 'user', 'text' => str_repeat('⭐', $rating) . ' (' . $rating . '/5)'];
-                $stars = str_repeat('⭐', $rating);
+                $chatHistory[] = ['type' => 'user', 'text' => str_repeat('â­', $rating) . ' (' . $rating . '/5)'];
+                $stars = str_repeat('â­', $rating);
                 $name = htmlspecialchars($sessionData['name'] ?? 'there');
 
                 $replies = ['Thank you, ' . $name . '! ' . $stars];
                 if ($rating >= 4) {
-                    $replies[] = 'We\'re so glad you loved it! 😊';
-                    $replies[] = 'Feel free to come back anytime. Have a wonderful day! 🌴';
+                    $replies[] = 'We\'re so glad you loved it! ðŸ˜Š';
+                    $replies[] = 'Feel free to come back anytime. Have a wonderful day! ðŸŒ´';
                 } elseif ($rating === 3) {
-                    $replies[] = 'Thanks for your feedback! We\'ll keep improving. 💪';
-                    $replies[] = 'Hope to see you again soon! 🌴';
+                    $replies[] = 'Thanks for your feedback! We\'ll keep improving. ðŸ’ª';
+                    $replies[] = 'Hope to see you again soon! ðŸŒ´';
                 } else {
-                    $replies[] = 'We\'re sorry to hear that. Your feedback helps us improve. 🙏';
-                    $replies[] = 'We\'ll do better next time. Have a great day! 🌴';
+                    $replies[] = 'We\'re sorry to hear that. Your feedback helps us improve. ðŸ™';
+                    $replies[] = 'We\'ll do better next time. Have a great day! ðŸŒ´';
                 }
                 foreach ($replies as $reply) {
                     $chatHistory[] = ['type' => 'bot', 'text' => $reply];
@@ -139,7 +139,7 @@ class ChatbotController extends Controller
                 foreach ($greetings as $greeting) {
                     if (str_contains($message, $greeting)) {
                         $name = htmlspecialchars($sessionData['name'] ?? 'there');
-                        $replies = ['Hello ' . $name . '! 😊'];
+                        $replies = ['Hello ' . $name . '! ðŸ˜Š'];
                         if (str_contains($message, 'pagi')) {
                             $replies[] = 'Good morning! What can I help you with today?';
                         } elseif (str_contains($message, 'siang')) {
@@ -161,9 +161,9 @@ class ChatbotController extends Controller
                 if (str_contains($message, 'terima kasih') || str_contains($message, 'thank')) {
                     $name = htmlspecialchars($sessionData['name'] ?? 'there');
                     $replies = [
-                        'You\'re welcome, ' . $name . '! 😊',
+                        'You\'re welcome, ' . $name . '! ðŸ˜Š',
                         'Before you go, how would you rate your experience with us?',
-                        'Please rate from 1 to 5 stars ⭐'
+                        'Please rate from 1 to 5 stars â­'
                     ];
                     $this->saveChatHistory($sessionId, $chatHistory, $replies);
                     return response()->json([
@@ -179,9 +179,9 @@ class ChatbotController extends Controller
                     if (str_contains($message, strtolower(trim($goodbye)))) {
                         $name = htmlspecialchars($sessionData['name'] ?? 'there');
                         $replies = [
-                            'Thank you for chatting with us, ' . $name . '! 👋',
+                            'Thank you for chatting with us, ' . $name . '! ðŸ‘‹',
                             'Before you leave, how would you rate your experience?',
-                            'Please rate from 1 to 5 stars ⭐'
+                            'Please rate from 1 to 5 stars â­'
                         ];
                         $this->saveChatHistory($sessionId, $chatHistory, $replies);
                         return response()->json([
@@ -216,7 +216,7 @@ class ChatbotController extends Controller
                 }
 
                 $replies = [
-                    "I'm sorry, I don't quite understand that. 🤔",
+                    "I'm sorry, I don't quite understand that. ðŸ¤”",
                     "Could you rephrase your question? You can ask about our tours, destinations, booking, payment, or contact us at info@jogadrivertour.com"
                 ];
                 $this->saveChatHistory($sessionId, $chatHistory, $replies);
@@ -262,14 +262,14 @@ class ChatbotController extends Controller
         if (!empty($tourMatches)) {
             usort($tourMatches, fn($a, $b) => $b['score'] <=> $a['score']);
             $best = $tourMatches[0]['tour'];
-            $replies = ['🎯 I found a tour that might match your question:'];
-            $replies[] = '📍 ' . $best->name;
-            $replies[] = '• Location: ' . $best->location;
-            $replies[] = '• Price: Rp ' . number_format($best->price, 0, ',', '.');
-            if ($best->duration_days) $replies[] = '• Duration: ' . $best->duration_days . 'D' . ($best->duration_nights ? $best->duration_nights . 'N' : '');
+            $replies = ['ðŸŽ¯ I found a tour that might match your question:'];
+            $replies[] = 'ðŸ“ ' . $best->name;
+            $replies[] = 'â€¢ Location: ' . $best->location;
+            $replies[] = 'â€¢ Price: Rp ' . number_format($best->price, 0, ',', '.');
+            if ($best->duration_days) $replies[] = 'â€¢ Duration: ' . $best->duration_days . 'D' . ($best->duration_nights ? $best->duration_nights . 'N' : '');
             if ($best->description) {
                 $desc = strip_tags($best->description);
-                $replies[] = '• ' . substr($desc, 0, 150) . (strlen($desc) > 150 ? '...' : '');
+                $replies[] = 'â€¢ ' . substr($desc, 0, 150) . (strlen($desc) > 150 ? '...' : '');
             }
             $replies[] = 'View more: ' . route('tours.show', $best->slug);
             return $replies;
@@ -290,12 +290,12 @@ class ChatbotController extends Controller
         if (!empty($destMatches)) {
             usort($destMatches, fn($a, $b) => $b['score'] <=> $a['score']);
             $best = $destMatches[0]['dest'];
-            $replies = ['📍 I found a destination that might interest you:'];
-            $replies[] = '🏷️ ' . $best->name;
-            if ($best->city) $replies[] = '• City: ' . $best->city;
+            $replies = ['ðŸ“ I found a destination that might interest you:'];
+            $replies[] = 'ðŸ·ï¸ ' . $best->name;
+            if ($best->city) $replies[] = 'â€¢ City: ' . $best->city;
             if ($best->short_description) {
                 $desc = strip_tags($best->short_description);
-                $replies[] = '• ' . substr($desc, 0, 150) . (strlen($desc) > 150 ? '...' : '');
+                $replies[] = 'â€¢ ' . substr($desc, 0, 150) . (strlen($desc) > 150 ? '...' : '');
             }
             $replies[] = 'View more: ' . route('destinations.show', $best->slug);
             return $replies;
@@ -316,11 +316,11 @@ class ChatbotController extends Controller
         if (!empty($blogMatches)) {
             usort($blogMatches, fn($a, $b) => $b['score'] <=> $a['score']);
             $best = $blogMatches[0]['blog'];
-            $replies = ['📝 Here\'s a blog post that might help:'];
-            $replies[] = '📰 ' . $best->title;
+            $replies = ['ðŸ“ Here\'s a blog post that might help:'];
+            $replies[] = 'ðŸ“° ' . $best->title;
             if ($best->excerpt) {
                 $desc = strip_tags($best->excerpt);
-                $replies[] = '• ' . substr($desc, 0, 150) . (strlen($desc) > 150 ? '...' : '');
+                $replies[] = 'â€¢ ' . substr($desc, 0, 150) . (strlen($desc) > 150 ? '...' : '');
             }
             $replies[] = 'Read more: ' . route('blog.show', $best->slug);
             return $replies;
@@ -331,7 +331,7 @@ class ChatbotController extends Controller
             if ($tours->count()) {
                 $replies = ['We have some amazing tours! Here are some of our popular ones:'];
                 foreach ($tours as $tour) {
-                    $replies[] = '• ' . $tour->name . ' - Rp ' . number_format($tour->price, 0, ',', '.') . ' (' . $tour->location . ')';
+                    $replies[] = 'â€¢ ' . $tour->name . ' - Rp ' . number_format($tour->price, 0, ',', '.') . ' (' . $tour->location . ')';
                 }
                 $replies[] = 'View all tours: ' . route('tours.index');
                 return $replies;
@@ -343,7 +343,7 @@ class ChatbotController extends Controller
             if ($dests->count()) {
                 $replies = ['Here are some popular destinations:'];
                 foreach ($dests as $dest) {
-                    $replies[] = '• ' . $dest->name;
+                    $replies[] = 'â€¢ ' . $dest->name;
                 }
                 $replies[] = 'View all destinations: ' . route('destinations.index');
                 return $replies;
@@ -355,7 +355,7 @@ class ChatbotController extends Controller
             if ($blogs->count()) {
                 $replies = ['Here are our latest blog posts:'];
                 foreach ($blogs as $blog) {
-                    $replies[] = '• ' . $blog->title;
+                    $replies[] = 'â€¢ ' . $blog->title;
                 }
                 $replies[] = 'View all posts: ' . route('blog.index');
                 return $replies;
@@ -365,10 +365,10 @@ class ChatbotController extends Controller
         if (str_contains($message, 'kontak') || str_contains($message, 'contact') || str_contains($message, 'hubungi') || str_contains($message, 'telepon') || str_contains($message, 'phone') || str_contains($message, 'wa') || str_contains($message, 'whatsapp') || str_contains($message, 'email')) {
             return [
                 'Here\'s how to reach us:',
-                '📧 Email: info@jogadrivertour.com',
-                '📱 WhatsApp: +62 812 3456 7890',
-                '🌐 Website: ' . url('/'),
-                '📍 We are based in Yogyakarta, Indonesia',
+                'ðŸ“§ Email: info@jogadrivertour.com',
+                'ðŸ“± WhatsApp: +62 812 3456 7890',
+                'ðŸŒ Website: ' . url('/'),
+                'ðŸ“ We are based in Yogyakarta, Indonesia',
                 'Feel free to contact us anytime!'
             ];
         }
@@ -378,7 +378,7 @@ class ChatbotController extends Controller
             if ($tours->count()) {
                 $replies = ['Here are our tour prices (starting from):'];
                 foreach ($tours as $tour) {
-                    $replies[] = '• ' . $tour->name . ': Rp ' . number_format($tour->price, 0, ',', '.');
+                    $replies[] = 'â€¢ ' . $tour->name . ': Rp ' . number_format($tour->price, 0, ',', '.');
                 }
                 $replies[] = 'Payment methods: Bank Transfer, Cash, E-Wallet';
                 $replies[] = 'View all tours: ' . route('tours.index');
@@ -389,9 +389,9 @@ class ChatbotController extends Controller
         if (str_contains($message, 'jadwal') || str_contains($message, 'schedule') || str_contains($message, 'kapan') || str_contains($message, 'when') || str_contains($message, 'time') || str_contains($message, 'waktu')) {
             return [
                 'Our tours are available daily!',
-                '• Morning tours: 08:00 AM',
-                '• Full day tours: 08:00 AM - 05:00 PM',
-                '• Custom schedules available upon request',
+                'â€¢ Morning tours: 08:00 AM',
+                'â€¢ Full day tours: 08:00 AM - 05:00 PM',
+                'â€¢ Custom schedules available upon request',
                 'Book now: ' . route('tours.index'),
                 'For specific schedules, please contact us via WhatsApp!'
             ];
@@ -399,11 +399,11 @@ class ChatbotController extends Controller
 
         if (str_contains($message, 'about') || str_contains($message, 'tentang') || str_contains($message, 'profil') || str_contains($message, 'profile') || str_contains($message, 'siapa')) {
             return [
-                'We are Joga Driver Tour, a trusted tour operator in Yogyakarta! 🌴',
-                '• Experienced local guides',
-                '• Custom tour packages',
-                '• Best price guarantee',
-                '• 24/7 customer support',
+                'We are Yogyakarta Driver Tour, a trusted tour operator in Yogyakarta! ðŸŒ´',
+                'â€¢ Experienced local guides',
+                'â€¢ Custom tour packages',
+                'â€¢ Best price guarantee',
+                'â€¢ 24/7 customer support',
                 'Learn more: ' . route('about'),
                 'Ready to book? Contact us now!'
             ];

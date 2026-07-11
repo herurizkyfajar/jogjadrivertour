@@ -1,8 +1,8 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @push('styles')
 <style>
-    /* ── Description content typography spacing ── */
+    /* â”€â”€ Description content typography spacing â”€â”€ */
     .des-content p {
         margin-bottom: 12px;
         line-height: 1.75;
@@ -40,7 +40,7 @@
 </style>
 @endpush
 
-@section('title', $destination->name . ' - Joga Driver Tour')
+@section('title', $destination->name . ' - Yogyakarta Driver Tour')
 
 @section('content')
 <section>

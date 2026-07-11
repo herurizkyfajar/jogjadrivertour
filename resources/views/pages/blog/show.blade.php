@@ -1,6 +1,6 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
-@section('title', $blog->title . ' - Joga Driver Tour')
+@section('title', $blog->title . ' - Yogyakarta Driver Tour')
 
 @section('content')
 <section class="breadcumb-section">
@@ -242,7 +242,7 @@
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to adventure and enjoy natural</h2>
-                    <p class="des">Book your next tour with Joga Driver Tour</p>
+                    <p class="des">Book your next tour with Yogyakarta Driver Tour</p>
                 </div>
             </div>
             <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
-@section('title', 'Blog - Joga Driver Tour')
+@section('title', 'Blog - Yogyakarta Driver Tour')
 
 @section('content')
 <section class="breadcumb-section">

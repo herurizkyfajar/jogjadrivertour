@@ -1,4 +1,4 @@
-<footer class="footer footer-style1">
+﻿<footer class="footer footer-style1">
     <div class="tf-container">
         <div class="footer-main">
             <div class="footer-logo">
@@ -7,7 +7,7 @@
                         <img src="{{ asset('template/assets/images/logo.webp') }}" alt="">
                     </a>
                 </div>
-                <p class="des-footer">Joga Driver Tour is a trusted tour & travel platform to explore the beauty of Yogyakarta and its surroundings.</p>
+                <p class="des-footer">Yogyakarta Driver Tour is a trusted tour & travel platform to explore the beauty of Yogyakarta and its surroundings.</p>
                 <ul class="footer-info">
                     <li class="flex-three">
                         <i class="icon-noun-mail-5780740-1"></i>
@@ -64,7 +64,7 @@
         </div>
         <div class="row footer-bottom">
             <div class="col-md-6">
-                <p class="copy-right" style="white-space: nowrap; font-size: 13px;">Copyright &copy; {{ date('Y') }} by <a href="{{ route('home') }}" class="text-main">Joga Driver Tour.</a> All Rights Reserved | Powered by <a href="https://bandungdrivertour.com" target="_blank" rel="noopener noreferrer" class="text-main">Bandung Driver Tour</a></p>
+                <p class="copy-right" style="white-space: nowrap; font-size: 13px;">Copyright &copy; {{ date('Y') }} by <a href="{{ route('home') }}" class="text-main">Yogyakarta Driver Tour.</a> All Rights Reserved | Powered by <a href="https://bandungdrivertour.com" target="_blank" rel="noopener noreferrer" class="text-main">Bandung Driver Tour</a></p>
             </div>
             <div class="col-md-6">
                 <ul class="social flex-six">
@@ -88,7 +88,7 @@
         <div class="logo-canvas">
             <img src="{{ asset('template/assets/images/logo.webp') }}" alt="image">
         </div>
-        <p class="des">Joga Driver Tour is a trusted tour & travel platform to explore the beauty of Yogyakarta.</p>
+        <p class="des">Yogyakarta Driver Tour is a trusted tour & travel platform to explore the beauty of Yogyakarta.</p>
         <ul class="canvas-info">
             <li class="flex-three">
                 <i class="icon-noun-mail-5780740-1"></i>

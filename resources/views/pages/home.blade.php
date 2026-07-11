@@ -1,6 +1,6 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
-@section('title', 'Joga Driver Tour - Explore Yogyakarta')
+@section('title', 'Yogyakarta Driver Tour - Explore Yogyakarta')
 
 @section('content')
 <!-- Widget Slider -->
@@ -183,9 +183,9 @@
             </div>
             <div class="col-lg-6">
                 <div class="inner-content-about">
-                    <span class="sub-title-heading text-main mb-15 fadeInUp wow">About Joga Driver Tour</span>
+                    <span class="sub-title-heading text-main mb-15 fadeInUp wow">About Yogyakarta Driver Tour</span>
                     <h2 class="title-heading mb-18 fadeInUp wow">Great opportunity for <span class="text-gray font-yes">adventure</span> & travels</h2>
-                     <p class="des-heading fadeInUp wow">Joga Driver Tour is a trusted tour & travel platform offering a wide range of exciting tour packages across Yogyakarta and its surroundings. We are committed to delivering the best travel experience at affordable prices.</p>
+                     <p class="des-heading fadeInUp wow">Yogyakarta Driver Tour is a trusted tour & travel platform offering a wide range of exciting tour packages across Yogyakarta and its surroundings. We are committed to delivering the best travel experience at affordable prices.</p>
                     <div class="row mt-27 fadeInUp wow">
                         <div class="col-sm-6">
                             <div class="icon-box-style3">
@@ -427,7 +427,7 @@
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to adventure and enjoy natural</h2>
-                     <p class="des">Joga Driver Tour is ready to help you enjoy the beauty of Yogyakarta</p>
+                     <p class="des">Yogyakarta Driver Tour is ready to help you enjoy the beauty of Yogyakarta</p>
                 </div>
             </div>
             <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">

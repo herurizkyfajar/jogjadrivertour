@@ -1,6 +1,6 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
-@section('title', 'Register - Joga Driver Tour')
+@section('title', 'Register - Yogyakarta Driver Tour')
 
 @section('content')
 <section class="page-banner">

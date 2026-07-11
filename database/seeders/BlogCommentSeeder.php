@@ -28,7 +28,7 @@ class BlogCommentSeeder extends Seeder
             [
                 'author_name' => 'Siti Aminah',
                 'author_email' => 'siti.aminah@gmail.com',
-                'content' => 'Gudeg Yu Djum memang paling legendaris! Saya selalu mampir ke sana setiap kali liburan ke Jogja. Terima kasih rekomendasinya.',
+                'content' => 'Gudeg Yu Djum memang paling legendaris! Saya selalu mampir ke sana setiap kali liburan ke Yogyakarta. Terima kasih rekomendasinya.',
                 'status' => 'approved',
                 'author_ip' => '192.168.1.2',
                 'created_at' => now()->subDays(2),

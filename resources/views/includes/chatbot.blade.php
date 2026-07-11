@@ -1,4 +1,4 @@
-<style>
+﻿<style>
 .chatbot-widget {
     position: fixed;
     bottom: 90px;
@@ -371,7 +371,7 @@
                 <h4>Qeila</h4>
                 <p>Ask me anything about our tours</p>
             </div>
-            <button class="chatbot-close" onclick="toggleChatbot()">✕</button>
+            <button class="chatbot-close" onclick="toggleChatbot()">âœ•</button>
         </div>
         <div class="chatbot-messages" id="chatbot-messages"></div>
         <div class="chatbot-suggestions" id="chatbot-suggestions"></div>
@@ -461,25 +461,25 @@
                         var data = JSON.parse(xhr.responseText);
                         chatStep = data.next_step || 'ask_name';
                         sessionData = data.session_data || {};
-                        var replies = data.replies || ['Hello! Welcome to Joga Driver Tour 👋', 'Before we start, may I know your name?'];
+                        var replies = data.replies || ['Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹', 'Before we start, may I know your name?'];
                         showBotReplies(replies, false, false);
                     } catch(e) {
-                        addBotMsg('Hello! Welcome to Joga Driver Tour 👋<br><br>Before we start, may I know your name?');
+                        addBotMsg('Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹<br><br>Before we start, may I know your name?');
                         chatStep = 'ask_name';
                     }
                 } else {
-                    addBotMsg('Hello! Welcome to Joga Driver Tour 👋<br><br>Before we start, may I know your name?');
+                    addBotMsg('Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹<br><br>Before we start, may I know your name?');
                     chatStep = 'ask_name';
                 }
             };
             xhr.onerror = function() {
                 hideTyping();
-                addBotMsg('Hello! Welcome to Joga Driver Tour 👋<br><br>Before we start, may I know your name?');
+                addBotMsg('Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹<br><br>Before we start, may I know your name?');
                 chatStep = 'ask_name';
             };
             xhr.ontimeout = function() {
                 hideTyping();
-                addBotMsg('Hello! Welcome to Joga Driver Tour 👋<br><br>Before we start, may I know your name?');
+                addBotMsg('Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹<br><br>Before we start, may I know your name?');
                 chatStep = 'ask_name';
             };
             xhr.send(JSON.stringify({ message: '', step: 'greeting', session_data: {} }));
@@ -528,7 +528,7 @@
         var suggestionsDiv = document.getElementById('chatbot-suggestions');
         suggestionsDiv.innerHTML = '';
         for (var i = 1; i <= 5; i++) {
-            suggestionsDiv.innerHTML += '<div class="chatbot-suggestion" onclick="sendRating(' + i + ')">' + i + ' ⭐</div>';
+            suggestionsDiv.innerHTML += '<div class="chatbot-suggestion" onclick="sendRating(' + i + ')">' + i + ' â­</div>';
         }
         suggestionsDiv.innerHTML += '<div class="chatbot-suggestion" onclick="skipRating()">Skip</div>';
         suggestionsDiv.style.display = 'flex';
@@ -552,8 +552,8 @@
 
     function showCloseChat() {
         var suggestionsDiv = document.getElementById('chatbot-suggestions');
-        suggestionsDiv.innerHTML = '<div class="chatbot-suggestion" onclick="closeChatbot()" style="background:#4DA528;color:#fff;border-color:#4DA528;">✕ Close Chat</div>' +
-            '<div class="chatbot-suggestion" onclick="restartChat()">💬 Start New Chat</div>';
+        suggestionsDiv.innerHTML = '<div class="chatbot-suggestion" onclick="closeChatbot()" style="background:#4DA528;color:#fff;border-color:#4DA528;">âœ• Close Chat</div>' +
+            '<div class="chatbot-suggestion" onclick="restartChat()">ðŸ’¬ Start New Chat</div>';
         suggestionsDiv.style.display = 'flex';
     }
 
