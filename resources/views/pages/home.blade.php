@@ -178,7 +178,7 @@
                          alt="Prambanan Temple"
                          class="mask-video tf-anime-rorate" 
                          style="width:180px;height:240px;object-fit:cover;border-radius:12px;border:6px solid #fff;box-shadow:0 10px 25px rgba(0,0,0,0.15);position:absolute;bottom:-40px;right:-20px;">
-                    <img src="{{ asset('template/assets/images/page/enjoy.png') }}" alt="Image" class="mask-enjoy" style="position:absolute;top:-20px;right:-10px;width:80px;">
+                    <img src="{{ asset('template/assets/images/page/enjoy.png') }}" alt="Image" class="mask-enjoy">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -516,6 +516,7 @@
         .about-us .travel-video .mask-video { width: 100px !important; height: 130px !important; }
         .about-us { padding-bottom: 80px !important; }
         .about-us .inner-content-about { padding-top: 20px; }
+        .about-us .travel-video .mask-enjoy { display: none; }
     }
 </style>
 @endpush
