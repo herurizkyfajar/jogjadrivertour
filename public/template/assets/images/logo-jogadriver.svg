@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4DA528"/>
+      <stop offset="100%" style="stop-color:#3a8a1e"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="120" rx="16" fill="url(#bg)"/>
+  <text x="30" y="55" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="white">Joga Driver</text>
+  <text x="30" y="95" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#fff3e0">Tour</text>
+  <circle cx="360" cy="60" r="30" fill="none" stroke="white" stroke-width="3" opacity="0.5"/>
+  <path d="M348 60 L360 48 L372 60 M355 60 L355 75 L365 75 L365 60" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+</svg>
