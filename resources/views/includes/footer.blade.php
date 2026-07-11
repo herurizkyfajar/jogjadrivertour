@@ -1,4 +1,4 @@
-﻿<footer class="footer footer-style1">
+<footer class="footer footer-style1">
     <div class="tf-container">
         <div class="footer-main">
             <div class="footer-logo">

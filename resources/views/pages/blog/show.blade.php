@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', $blog->title . ' - Yogyakarta Driver Tour')
 

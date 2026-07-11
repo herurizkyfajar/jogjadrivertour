@@ -1,4 +1,4 @@
-﻿<style>
+<style>
 .chatbot-widget {
     position: fixed;
     bottom: 90px;
