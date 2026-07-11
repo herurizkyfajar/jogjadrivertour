@@ -164,7 +164,7 @@
 
         <div class="row pt-60">
             <div class="col-lg-6">
-                <div class="travel-video relative">
+                <div class="travel-video relative" style="overflow:visible;">
                     <img src="{{ asset('template/assets/images/destination/1.jpg') }}" 
                          alt="Borobudur Temple" 
                          class="image-video" 
@@ -177,8 +177,8 @@
                     <img src="{{ asset('template/assets/images/destination/2.jpg') }}" 
                          alt="Prambanan Temple"
                          class="mask-video tf-anime-rorate" 
-                         style="width:180px;height:240px;object-fit:cover;border-radius:12px;border:6px solid #fff;box-shadow:0 10px 25px rgba(0,0,0,0.15);">
-                    <img src="{{ asset('template/assets/images/page/enjoy.png') }}" alt="Image" class="mask-enjoy">
+                         style="width:180px;height:240px;object-fit:cover;border-radius:12px;border:6px solid #fff;box-shadow:0 10px 25px rgba(0,0,0,0.15);position:absolute;bottom:-40px;right:-20px;">
+                    <img src="{{ asset('template/assets/images/page/enjoy.png') }}" alt="Image" class="mask-enjoy" style="position:absolute;top:-20px;right:-10px;width:80px;">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -505,10 +505,17 @@
     .tour-package .tab-content .tour-listing-content .review i { font-size: 12px; }
     @media (max-width: 991px) {
         .tour-package .tab-content .col-sm-6.col-lg-3 { flex: 0 0 50%; max-width: 50%; }
+        .about-us .travel-video { margin-bottom: 40px; }
+        .about-us .travel-video .mask-video { width: 120px !important; height: 160px !important; }
+        .about-us .travel-video .mask-enjoy { display: none; }
     }
     @media (max-width: 575px) {
         .tour-package .tab-content .col-sm-6.col-lg-3 { flex: 0 0 100%; max-width: 100%; }
         .tour-package .tab-content .tour-listing-image { height: 200px; }
+        .about-us .travel-video .image-video { height: 280px !important; }
+        .about-us .travel-video .mask-video { width: 100px !important; height: 130px !important; }
+        .about-us { padding-bottom: 80px !important; }
+        .about-us .inner-content-about { padding-top: 20px; }
     }
 </style>
 @endpush
