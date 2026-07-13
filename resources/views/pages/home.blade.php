@@ -345,8 +345,11 @@
     <img src="{{ asset('template/assets/images/page/mask-print-2.png') }}" alt="image" class="mask-bottom">
     <div class="tf-container">
         <div class="row z-index3 relative">
-            <div class="col-lg-12 mb-60">
-                <div class="clip-text">Rent Car</div>
+            <div class="col-lg-12">
+                <div class="center m0-auto w-text-heading" style="margin-bottom:40px;">
+                    <span class="sub-title-heading text-main mb-15 wow fadeInUp animated">Comfortable Travel</span>
+                    <h2 class="title-heading mb-0 wow fadeInUp animated">Choose Your Perfect <span class="text-gray font-yes">Ride</span> For The Trip</h2>
+                </div>
             </div>
             <div class="col-lg-12">
                 <ul class="nav nav-tabs-activities justify-content-center" id="fleetTab" role="tablist">
@@ -375,7 +378,7 @@
                                 </div>
                                 <div class="activities-content relative">
                                     <div class="flex-three mb-20" style="gap:12px;align-items:center;">
-                                        <span class="sub-title text-white">Choose Your Ride</span>
+                                        <span class="sub-title text-white">Comfortable Travel</span>
                                         <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.5px;">
                                             @if($car->type === 'Premium Car')
                                                 &#9733; {{ $car->type }}
@@ -410,7 +413,7 @@
                                         <a href="{{ route('contact') }}" class="icon-activitis flex-five">
                                             <i class="icon-Vector-21"></i>
                                         </a>
-                                        <a href="{{ route('contact') }}" class="text-white get-start">Rent Now</a>
+                                        <a href="{{ route('contact') }}" class="text-white get-start">Book Your Trip Now</a>
                                     </div>
                                     <img src="{{ asset('template/assets/images/page/mask-tap.png') }}" alt="image" class="mask-tab">
                                 </div>
