@@ -339,6 +339,81 @@
 </section>
 
 
+<!-- Widget Our Fleet -->
+<section class="relative tf-widget-activities pd-main overflow-hidden">
+    <img src="{{ asset('template/assets/images/page/mask-activiti.png') }}" alt="image" class="mask-top">
+    <img src="{{ asset('template/assets/images/page/mask-print-2.png') }}" alt="image" class="mask-bottom">
+    <div class="tf-container">
+        <div class="row z-index3 relative">
+            <div class="col-lg-12 mb-60">
+                <div class="clip-text">Fleet</div>
+            </div>
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs-activities justify-content-center" id="fleetTab" role="tablist">
+                    @php
+                        $fleet = [
+                            ['name' => 'Avanza TSS', 'passengers' => '7', 'luggage' => '3', 'desc' => 'Compact & fuel-efficient MPV, perfect for small families and city tours around Yogyakarta.'],
+                            ['name' => 'Hiace Premium', 'passengers' => '16', 'luggage' => '8', 'desc' => 'Spacious minibus ideal for group travel with ample luggage space and premium comfort.'],
+                            ['name' => 'New Terios', 'passengers' => '7', 'luggage' => '4', 'desc' => 'Stylish SUV with higher clearance, great for adventurous routes like Lava Tour Merapi.'],
+                            ['name' => 'Innova Reborn', 'passengers' => '7', 'luggage' => '4', 'desc' => 'Premium MPV with spacious cabin and smooth ride, the most popular choice for touring.'],
+                            ['name' => 'Alphard', 'passengers' => '7', 'luggage' => '4', 'desc' => 'Luxury MPV with first-class comfort, perfect for VIP transfers and special occasions.'],
+                        ];
+                    @endphp
+                    @foreach($fleet as $index => $car)
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link {{ $index === 0 ? 'active' : '' }}" id="fleet-{{ Str::slug($car['name']) }}-tab" data-bs-toggle="tab" data-bs-target="#fleet-{{ Str::slug($car['name']) }}-pane" type="button" role="tab">
+                                <span class="icon flex-five">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                                <span>{{ $car['name'] }}</span>
+                            </button>
+                        </li>
+                    @endforeach
+                </ul>
+                <div class="tab-content mt-44" id="fleetTabContent">
+                    @foreach($fleet as $index => $car)
+                        <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}" id="fleet-{{ Str::slug($car['name']) }}-pane" role="tabpanel">
+                            <div class="tabs-activities-content flex">
+                                <div class="activities-image">
+                                    <img src="{{ asset('template/assets/images/page/travelling.jpg') }}" alt="{{ $car['name'] }}">
+                                </div>
+                                <div class="activities-content relative">
+                                    <span class="sub-title text-white">Our Fleet</span>
+                                    <h3 class="title-activitis text-white mb-60">{{ $car['name'] }}</h3>
+                                    <div class="flex-three mb-30">
+                                        <div class="flex-three text-white icon-list-wrap">
+                                            <div class="icon">
+                                                <i class="icon-user"></i>
+                                            </div>
+                                            <span class="icon-lists">{{ $car['passengers'] }} Passengers</span>
+                                        </div>
+                                        <div class="flex-three text-white icon-list-wrap">
+                                            <div class="icon">
+                                                <i class="icon-Group-8"></i>
+                                            </div>
+                                            <span class="icon-lists">{{ $car['luggage'] }} Luggage</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-white mb-30" style="font-size:15px;line-height:1.8;">{{ $car['desc'] }}</p>
+                                    <div class="flex-three btn-wrap-activitis">
+                                        <a href="{{ route('contact') }}" class="icon-activitis flex-five">
+                                            <i class="icon-Vector-21"></i>
+                                        </a>
+                                        <a href="{{ route('contact') }}" class="text-white get-start">Book This Vehicle</a>
+                                    </div>
+                                    <img src="{{ asset('template/assets/images/page/mask-tap.png') }}" alt="image" class="mask-tab">
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Widget Banner Contact -->
 <section class="widget-banner-contact relative" style="overflow:hidden;">
     <div class="tf-container">
