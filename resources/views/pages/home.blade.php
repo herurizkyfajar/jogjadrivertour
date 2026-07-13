@@ -352,11 +352,11 @@
                 <ul class="nav nav-tabs-activities justify-content-center" id="fleetTab" role="tablist">
                     @php
                         $fleet = [
-                            ['name' => 'Avanza TSS', 'passengers' => '7', 'luggage' => '3', 'desc' => 'Compact & fuel-efficient MPV, perfect for small families and city tours around Yogyakarta.'],
-                            ['name' => 'Hiace Premium', 'passengers' => '16', 'luggage' => '8', 'desc' => 'Spacious minibus ideal for group travel with ample luggage space and premium comfort.'],
-                            ['name' => 'New Terios', 'passengers' => '7', 'luggage' => '4', 'desc' => 'Stylish SUV with higher clearance, great for adventurous routes like Lava Tour Merapi.'],
-                            ['name' => 'Innova Reborn', 'passengers' => '7', 'luggage' => '4', 'desc' => 'Premium MPV with spacious cabin and smooth ride, the most popular choice for touring.'],
-                            ['name' => 'Alphard', 'passengers' => '7', 'luggage' => '4', 'desc' => 'Luxury MPV with first-class comfort, perfect for VIP transfers and special occasions.'],
+                            ['name' => 'Avanza TSS', 'image' => 'avanza.webp', 'passengers' => '7', 'luggage' => '3', 'type' => 'Regular Car', 'desc' => 'Compact & fuel-efficient MPV, perfect for small families and city tours around Yogyakarta.'],
+                            ['name' => 'Hiace Premium', 'image' => 'hiace.webp', 'passengers' => '16', 'luggage' => '8', 'type' => 'Regular Car', 'desc' => 'Spacious minibus ideal for group travel with ample luggage space and premium comfort.'],
+                            ['name' => 'New Terios', 'image' => 'terios.webp', 'passengers' => '7', 'luggage' => '4', 'type' => 'Regular Car', 'desc' => 'Stylish SUV with higher clearance, great for adventurous routes like Lava Tour Merapi.'],
+                            ['name' => 'Innova Reborn', 'image' => 'innova.webp', 'passengers' => '7', 'luggage' => '4', 'type' => 'Premium Car', 'desc' => 'Premium MPV with spacious cabin and smooth ride, the most popular choice for touring.'],
+                            ['name' => 'Alphard', 'image' => 'alphard.webp', 'passengers' => '7', 'luggage' => '4', 'type' => 'Premium Car', 'desc' => 'Luxury MPV with first-class comfort, perfect for VIP transfers and special occasions.'],
                         ];
                     @endphp
                     @foreach($fleet as $index => $car)
@@ -376,27 +376,40 @@
                     @foreach($fleet as $index => $car)
                         <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}" id="fleet-{{ Str::slug($car['name']) }}-pane" role="tabpanel">
                             <div class="tabs-activities-content flex">
-                                <div class="activities-image">
-                                    <img src="{{ asset('template/assets/images/page/travelling.jpg') }}" alt="{{ $car['name'] }}">
+                                <div class="activities-image" style="border-radius:16px;overflow:hidden;background:#f5f5f5;">
+                                    <img src="{{ asset('template/assets/images/cars/'.$car['image']) }}" alt="{{ $car['name'] }}" style="width:100%;height:100%;object-fit:cover;">
                                 </div>
                                 <div class="activities-content relative">
-                                    <span class="sub-title text-white">Our Fleet</span>
-                                    <h3 class="title-activitis text-white mb-60">{{ $car['name'] }}</h3>
-                                    <div class="flex-three mb-30">
+                                    <div class="flex-three mb-20" style="gap:12px;align-items:center;">
+                                        <span class="sub-title text-white">Our Fleet</span>
+                                        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.5px;">
+                                            @if($car['type'] === 'Premium Car')
+                                                &#9733; {{ $car['type'] }}
+                                            @else
+                                                {{ $car['type'] }}
+                                            @endif
+                                        </span>
+                                    </div>
+                                    <h3 class="title-activitis text-white mb-40">{{ $car['name'] }}</h3>
+                                    <div class="flex-three mb-20" style="flex-wrap:wrap;gap:20px;">
                                         <div class="flex-three text-white icon-list-wrap">
                                             <div class="icon">
-                                                <i class="icon-user"></i>
+                                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                             </div>
                                             <span class="icon-lists">{{ $car['passengers'] }} Passengers</span>
                                         </div>
                                         <div class="flex-three text-white icon-list-wrap">
                                             <div class="icon">
-                                                <i class="icon-Group-8"></i>
+                                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg>
                                             </div>
                                             <span class="icon-lists">{{ $car['luggage'] }} Luggage</span>
                                         </div>
                                     </div>
-                                    <p class="text-white mb-30" style="font-size:15px;line-height:1.8;">{{ $car['desc'] }}</p>
+                                    <p class="text-white mb-20" style="font-size:15px;line-height:1.8;">{{ $car['desc'] }}</p>
+                                    <div class="flex-three mb-30" style="gap:8px;align-items:center;">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#fff;"><path d="M20 6L9 17l-5-5"/></svg>
+                                        <span class="text-white" style="font-size:14px;font-weight:600;">Include Driver</span>
+                                    </div>
                                     <div class="flex-three btn-wrap-activitis">
                                         <a href="{{ route('contact') }}" class="icon-activitis flex-five">
                                             <i class="icon-Vector-21"></i>
