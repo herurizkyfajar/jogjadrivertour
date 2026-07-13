@@ -1,0 +1,52 @@
+# Yogyakarta Driver Tour
+
+> Yogyakarta Driver Tour is a private car rental and professional tour guide service in Yogyakarta, Indonesia. We provide comfortable vehicles with experienced English-speaking drivers for temple tours, city tours, nature adventures, and custom itineraries throughout Yogyakarta and its surroundings.
+
+Yogyakarta Driver Tour is part of Bandung Driver Tour, a trusted travel company established since 2000. We specialize in private transportation and guided tours across Java, with over 25,000 satisfied customers from 15+ nationalities. Our fleet includes Toyota Avanza, Innova Reborn, Hiace Premium, Toyota Terios, and Alphard — all with professional drivers.
+
+Key destinations include Borobudur Temple, Prambanan Temple, Jomblang Cave, Parangtritis Beach, Taman Sari Water Castle, and the famous Malioboro Street. We also offer adventure activities like cave tubing, jeep tours, and hiking.
+
+## Main Pages
+
+- [Home](https://jogja.bandungdrivertour.com/): Homepage with featured destinations, rent car options, and tour packages
+- [About Us](https://jogja.bandungdrivertour.com/about): Company profile, story, and team information
+- [Contact](https://jogja.bandungdrivertour.com/contact): Get in touch for bookings and inquiries
+
+## Tour Packages
+
+- [Tour Packages](https://jogja.bandungdrivertour.com/tours/packages): Browse all available tour packages with prices and durations
+- [Archive Tour](https://jogja.bandungdrivertour.com/tours): Client travel history gallery from around the world
+
+## Destinations
+
+- [All Destinations](https://jogja.bandungdrivertour.com/destinations): Explore popular tourist destinations in Yogyakarta
+- [Borobudur Temple](https://jogja.bandungdrivertour.com/destinations/borobudur-temple): UNESCO World Heritage site and the world's largest Buddhist temple
+- [Prambanan Temple](https://jogja.bandungdrivertour.com/destinations/prambanan-temple): Magnificent Hindu temple complex and UNESCO site
+- [Jomblang Cave](https://jogja.bandungdrivertour.com/destinations/jomblang-cave): Famous vertical cave with heavenly light beams
+- [Parangtritis Beach](https://jogja.bandungdrivertour.com/destinations/parangtritis-beach): Exotic black sand beach with stunning sunset views
+- [Taman Sari Water Castle](https://jogja.bandungdrivertour.com/destinations/taman-sari-water-castle): Historic royal garden of the Yogyakarta Sultanate
+- [Malioboro Street](https://jogja.bandungdrivertour.com/destinations/malioboro-street): Iconic main street and shopping hub of Yogyakarta
+
+## Blog
+
+- [Blog](https://jogja.bandungdrivertour.com/blog): Travel guides, tips, and articles about Yogyakarta
+
+## Services
+
+- Private car rental with professional English-speaking driver
+- Custom tour itineraries based on your preferences
+- Airport transfer and hotel pickup
+- Multi-day tour packages (1-3+ days)
+- Adventure tours: cave tubing, jeep tours, hiking
+- Cultural tours: temple visits, royal heritage sites
+
+## Contact Information
+
+- Email: info@jogadrivertour.com
+- Phone: +62 812 3456 7890
+- Address: Jl. Malioboro No. 123, Yogyakarta, Indonesia
+- Website: [bandungdrivertour.com](https://bandungdrivertour.com) (parent company)
+
+## Optional
+
+- [Sitemap](https://jogja.bandungdrivertour.com/sitemap.xml): Full list of all pages for search engines

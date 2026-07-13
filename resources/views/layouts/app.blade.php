@@ -14,6 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="alternate" type="text/plain" href="{{ url('llms.txt') }}" title="LLMs">
 
     <link rel="stylesheet" href="{{ asset('template/app/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">
