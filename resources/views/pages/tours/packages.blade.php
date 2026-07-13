@@ -61,6 +61,35 @@
     </div>
 </section>
 
+<section style="padding:60px 0;">
+    <div class="tf-container">
+        <div style="background:linear-gradient(135deg,rgba(0,0,0,0.55),rgba(0,0,0,0.45)),url('{{ asset('template/assets/images/destination/1.webp') }}') center/cover no-repeat;border-radius:20px;padding:50px 40px 40px;position:relative;overflow:hidden;">
+            <div style="position:relative;z-index:1;">
+                <span style="display:inline-block;border:1px solid rgba(255,255,255,0.5);color:#fff;padding:6px 18px;border-radius:30px;font-size:13px;font-weight:500;margin-bottom:16px;">Why Choose Us</span>
+                <h2 style="color:#fff;font-size:38px;font-weight:800;line-height:1.2;margin:0 0 40px;max-width:500px;">Built around your comfort and trust</h2>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+                    <div style="background:#fff;border-radius:16px;padding:28px 22px;">
+                        <h4 style="font-size:16px;font-weight:700;color:#081E2A;margin:0 0 10px;">Top Destinations</h4>
+                        <p style="font-size:13px;color:#666;margin:0;line-height:1.6;">Curated stops across Yogyakarta — from Borobudur sunrise to Parangtritis beach.</p>
+                    </div>
+                    <div style="background:#fff;border-radius:16px;padding:28px 22px;">
+                        <h4 style="font-size:16px;font-weight:700;color:#081E2A;margin:0 0 10px;">Flexible Packages</h4>
+                        <p style="font-size:13px;color:#666;margin:0;line-height:1.6;">Build your own itinerary or pick a ready-made plan that suits your schedule.</p>
+                    </div>
+                    <div style="background:#fff;border-radius:16px;padding:28px 22px;">
+                        <h4 style="font-size:16px;font-weight:700;color:#081E2A;margin:0 0 10px;">Expert Local Drivers</h4>
+                        <p style="font-size:13px;color:#666;margin:0;line-height:1.6;">Friendly local drivers who know Yogyakarta inside out — no tourist traps.</p>
+                    </div>
+                    <div style="background:#fff;border-radius:16px;padding:28px 22px;">
+                        <h4 style="font-size:16px;font-weight:700;color:#081E2A;margin:0 0 10px;">Transparent Pricing</h4>
+                        <p style="font-size:13px;color:#666;margin:0;line-height:1.6;">No hidden fees. Includes driver, fuel and parking — what you see is what you pay.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection
 
 @push('styles')
