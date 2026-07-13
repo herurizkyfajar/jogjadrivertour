@@ -499,6 +499,21 @@
     </div>
 </section>
 
+<!-- World Map Section -->
+<section style="padding:80px 0 60px;">
+    <div class="tf-container">
+        <div class="text-center" style="margin-bottom:30px;">
+            <h2 style="font-size:36px;font-weight:800;color:#081E2A;margin:0 0 12px;">Trusted by International Travelers Worldwide</h2>
+            <p style="font-size:15px;color:#666;max-width:600px;margin:0 auto;">Delivering exceptional Yogyakarta private driver services trusted by customers from diverse countries.</p>
+        </div>
+        <div id="world-map" style="width:100%;height:450px;"></div>
+        <div class="map-legend">
+            <div class="map-legend-item"><div class="map-legend-dot visited"></div> Countries We Have Served</div>
+            <div class="map-legend-item"><div class="map-legend-dot unvisited"></div> Other Countries</div>
+        </div>
+    </div>
+</section>
+
 <!-- CTA Section -->
 <section class="mb--93">
     <div class="tf-container">
@@ -586,6 +601,16 @@
     .tour-package .tab-content .tour-listing-content .review { font-size: 12px; margin-top: auto; }
     .tour-package .tab-content .tour-listing-content .review i { font-size: 12px; }
 
+    .world-map-section { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
+    .jvectormap-container { width: 100%; height: 100%; }
+    .country-tooltip { background: #081E2A; color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .country-tooltip::before { content: '📍 '; }
+    .map-legend { display: flex; gap: 30px; justify-content: center; margin-top: 20px; }
+    .map-legend-item { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #555; }
+    .map-legend-dot { width: 14px; height: 14px; border-radius: 50%; }
+    .map-legend-dot.visited { background: #4DA528; }
+    .map-legend-dot.unvisited { background: #d4d4d4; }
+
     /* Fleet Section Overrides */
     .tf-widget-activities .tabs-activities-content {
         padding: 0;
@@ -671,4 +696,107 @@
         .about-us .travel-video .mask-enjoy { display: none; }
     }
 </style>
+@endpush
+
+@push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/jquery-jvectormap.min.css" />
+@endpush
+
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/jquery-jvectormap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/maps/world-merc.js"></script>
+<script>
+function initWorldMap() {
+    if (typeof $ === 'undefined' || typeof $.fn.vectorMap === 'undefined') {
+        setTimeout(initWorldMap, 150);
+        return;
+    }
+    var visited = @json($visitedCountries);
+
+    var countryToCode = {
+        'Afghanistan':'AF','Albania':'AL','Algeria':'DZ','Andorra':'AD','Angola':'AO',
+        'Argentina':'AR','Armenia':'AM','Australia':'AU','Austria':'AT','Azerbaijan':'AZ',
+        'Bahamas':'BS','Bahrain':'BH','Bangladesh':'BD','Barbados':'BB','Belarus':'BY',
+        'Belgium':'BE','Belize':'BZ','Benin':'BJ','Bhutan':'BT','Bolivia':'BO',
+        'Bosnia and Herzegovina':'BA','Botswana':'BW','Brazil':'BR','Brunei':'BN','Bulgaria':'BG',
+        'Burkina Faso':'BF','Burundi':'BI','Cambodia':'KH','Cameroon':'CM','Canada':'CA',
+        'Central African Republic':'CF','Chad':'TD','Chile':'CL','China':'CN','Colombia':'CO',
+        'Comoros':'KM','Congo':'CG','Costa Rica':'CR','Croatia':'HR','Cuba':'CU',
+        'Cyprus':'CY','Czech Republic':'CZ','Denmark':'DK','Djibouti':'DJ','Dominican Republic':'DO',
+        'Ecuador':'EC','Egypt':'EG','El Salvador':'SV','Estonia':'EE','Ethiopia':'ET',
+        'Fiji':'FJ','Finland':'FI','France':'FR','Gabon':'GA','Gambia':'GM',
+        'Georgia':'GE','Germany':'DE','Ghana':'GH','Greece':'GR','Guatemala':'GT',
+        'Guinea':'GN','Guinea-Bissau':'GW','Guyana':'GY','Haiti':'HT','Honduras':'HN',
+        'Hungary':'HU','Iceland':'IS','India':'IN','Indonesia':'ID','Iran':'IR',
+        'Iraq':'IQ','Ireland':'IE','Israel':'IL','Italy':'IT','Jamaica':'JM',
+        'Japan':'JP','Jordan':'JO','Kazakhstan':'KZ','Kenya':'KE','Kuwait':'KW',
+        'Kyrgyzstan':'KG','Laos':'LA','Latvia':'LV','Lebanon':'LB','Lesotho':'LS',
+        'Liberia':'LR','Libya':'LY','Lithuania':'LT','Luxembourg':'LU','Madagascar':'MG',
+        'Malawi':'MW','Malaysia':'MY','Maldives':'MV','Mali':'ML','Malta':'MT',
+        'Mauritania':'MR','Mauritius':'MU','Mexico':'MX','Moldova':'MD','Monaco':'MC',
+        'Mongolia':'MN','Montenegro':'ME','Morocco':'MA','Mozambique':'MZ','Myanmar':'MM',
+        'Namibia':'NA','Nepal':'NP','Netherlands':'NL','New Zealand':'NZ','Nicaragua':'NI',
+        'Niger':'NE','Nigeria':'NG','North Korea':'KP','North Macedonia':'MK','Norway':'NO',
+        'Oman':'OM','Pakistan':'PK','Panama':'PA','Papua New Guinea':'PG','Paraguay':'PY',
+        'Peru':'PE','Philippines':'PH','Poland':'PL','Portugal':'PT','Qatar':'QA',
+        'Romania':'RO','Russia':'RU','Rwanda':'RW','Saudi Arabia':'SA','Senegal':'SN',
+        'Serbia':'RS','Sierra Leone':'SL','Singapore':'SG','Slovakia':'SK','Slovenia':'SI',
+        'Somalia':'SO','South Africa':'ZA','South Korea':'KR','Spain':'ES','Sri Lanka':'LK',
+        'Sudan':'SD','Suriname':'SR','Sweden':'SE','Switzerland':'CH','Syria':'SY',
+        'Taiwan':'TW','Tajikistan':'TJ','Tanzania':'TZ','Thailand':'TH','Togo':'TG',
+        'Trinidad and Tobago':'TT','Tunisia':'TN','Turkey':'TR','Turkmenistan':'TM','Uganda':'UG',
+        'Ukraine':'UA','United Arab Emirates':'AE','United Kingdom':'GB','United States':'US','Uruguay':'UY',
+        'Uzbekistan':'UZ','Venezuela':'VE','Vietnam':'VN','Yemen':'YE','Zambia':'ZM','Zimbabwe':'ZW'
+    };
+
+    var codes = [];
+    visited.forEach(function(country) {
+        if (countryToCode[country]) {
+            codes.push(countryToCode[country]);
+        }
+    });
+
+    if (codes.length === 0) {
+        codes.push('ID');
+    }
+
+    var visitedStyle = '#4DA528';
+    var defaultStyle = '#d4d4d4';
+    var hoverStyle = '#3a8a1c';
+
+    var values = {};
+    codes.forEach(function(code) { values[code] = 1; });
+
+    var mapValues = {};
+    codes.forEach(function(code) { mapValues[code] = 1; });
+
+    $('#world-map').vectorMap({
+        map: 'world_merc',
+        backgroundColor: 'transparent',
+        zoomOnScroll: false,
+        zoomButtons: false,
+        panOnDrag: false,
+        series: {
+            regions: [{
+                values: mapValues,
+                scale: [defaultStyle, visitedStyle],
+                normalizeFunction: 'polynomial',
+                attribute: 'fill'
+            }]
+        },
+        regionStyle: {
+            initial: { fill: defaultStyle, 'fill-opacity': 0.7, stroke: '#fff', 'stroke-width': 0.8 },
+            hover: { 'fill-opacity': 0.9 }
+        },
+        onRegionTipShow: function(e, el, code) {
+            var found = false;
+            codes.forEach(function(c) { if (c === code) found = true; });
+            if (found) {
+                el.html(el.html() + ' <span style="color:#7fff7f">✓ Served</span>');
+            }
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', initWorldMap);
+</script>
 @endpush

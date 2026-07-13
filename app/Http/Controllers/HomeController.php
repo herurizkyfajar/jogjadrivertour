@@ -6,6 +6,7 @@ use App\Models\Tour;
 use App\Models\Destination;
 use App\Models\Blog;
 use App\Models\Testimonial;
+use App\Models\MyTour;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -38,6 +39,8 @@ class HomeController extends Controller
 
         $cities = \App\Models\City::where('is_active', true)->orderBy('name')->pluck('name');
 
+        $visitedCountries = MyTour::distinct()->pluck('negara_asal')->filter()->values();
+
         $featuredDestinationsAll = Destination::where('is_featured', true)
             ->where('is_active', true)
             ->get();
@@ -49,7 +52,8 @@ class HomeController extends Controller
             'testimonials',
             'tourCategories',
             'cities',
-            'featuredDestinationsAll'
+            'featuredDestinationsAll',
+            'visitedCountries'
         ));
     }
 }
