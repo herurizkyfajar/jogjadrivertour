@@ -85,16 +85,16 @@
                         <div class="row mb-40 image-gallery-single">
                             <div class="col-12 col-sm-6">
                                 @if(str_starts_with($tour->image, 'tours/'))
-                                    <img src="{{ asset('storage/'.$tour->image) }}" alt="image" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
+                                    <img src="{{ asset('storage/'.$tour->image) }}" alt="image" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
                                 @else
-                                    <img src="{{ asset($tour->image) }}" alt="image" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
+                                    <img src="{{ asset($tour->image) }}" alt="image" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
                                 @endif
                             </div>
                             <div class="col-6 col-sm-3">
-                                <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="image" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
+                                <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="image" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
                             </div>
                             <div class="col-6 col-sm-3">
-                                <img src="{{ asset('template/assets/images/destination/2.jpg') }}" alt="image" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
+                                <img src="{{ asset('template/assets/images/destination/2.jpg') }}" alt="image" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
                             </div>
                         </div>
                         <div class="row">
@@ -436,19 +436,19 @@
                                 <div class="row">
                                     <div class="col-6 col-md-3 mb-20">
                                         @if(str_starts_with($tour->image, 'tours/'))
-                                            <img src="{{ asset('storage/'.$tour->image) }}" alt="gallery" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                            <img src="{{ asset('storage/'.$tour->image) }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
                                         @else
-                                            <img src="{{ asset($tour->image) }}" alt="gallery" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                            <img src="{{ asset($tour->image) }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
                                         @endif
                                     </div>
                                     <div class="col-6 col-md-3 mb-20">
-                                        <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="gallery" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                        <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
                                     </div>
                                     <div class="col-6 col-md-3 mb-20">
-                                        <img src="{{ asset('template/assets/images/destination/2.jpg') }}" alt="gallery" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                        <img src="{{ asset('template/assets/images/destination/2.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
                                     </div>
                                     <div class="col-6 col-md-3 mb-20">
-                                        <img src="{{ asset('template/assets/images/destination/3.jpg') }}" alt="gallery" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                        <img src="{{ asset('template/assets/images/destination/3.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
                                     </div>
                                 </div>
                             </div>

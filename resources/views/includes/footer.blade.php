@@ -40,7 +40,7 @@
                     <div class="gallery-img" style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;">
                         @foreach($galleryTours as $tour)
                             <a href="{{ asset('storage/' . $tour->image) }}" data-fancybox="gallery" style="display:block;aspect-ratio:1;overflow:hidden;border-radius:4px;">
-                                <img src="{{ asset('storage/' . $tour->image) }}" alt="{{ $tour->negara_asal }}" style="width:100%;height:100%;object-fit:cover;">
+                                <img src="{{ asset('storage/' . $tour->image) }}" alt="{{ $tour->negara_asal }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
                             </a>
                         @endforeach
                     </div>
@@ -68,10 +68,10 @@
             </div>
             <div class="col-md-6">
                 <ul class="social flex-six">
-                    <li><a href="#"><i class="icon-icon-2"></i></a></li>
-                    <li><a href="#"><i class="icon-x"></i></a></li>
-                    <li><a href="#"><i class="icon-icon_03"></i></a></li>
-                    <li><a href="#"><i class="icon-2"></i></a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-icon-2"></i></a></li>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="icon-x"></i></a></li>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="icon-icon_03"></i></a></li>
+                    <li><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="icon-2"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -104,10 +104,10 @@
             </li>
         </ul>
         <ul class="social flex-three">
-            <li><a href="#"><i class="icon-icon-2"></i></a></li>
-            <li><a href="#"><i class="icon-icon-1"></i></a></li>
-            <li><a href="#"><i class="icon-8"></i></a></li>
-            <li><a href="#"><i class="icon-6"></i></a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-icon-2"></i></a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="icon-icon-1"></i></a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="icon-8"></i></a></li>
+            <li><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="icon-6"></i></a></li>
         </ul>
     </div>
 </div>

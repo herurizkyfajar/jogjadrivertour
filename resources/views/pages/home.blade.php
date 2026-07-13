@@ -168,6 +168,7 @@
                     <img src="{{ asset('template/assets/images/destination/1.jpg') }}" 
                          alt="Borobudur Temple" 
                          class="image-video" 
+                         loading="lazy"
                          style="width:100%;height:420px;object-fit:cover;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1);">
                     <div class="video-wrap">
                         <a href="https://www.youtube.com/watch?v=bka65YgaD0A" class="widget-icon-video widget-videos flex-five z-index3">
@@ -177,6 +178,7 @@
                     <img src="{{ asset('template/assets/images/destination/2.jpg') }}" 
                          alt="Prambanan Temple"
                          class="mask-video tf-anime-rorate" 
+                         loading="lazy"
                          style="width:180px;height:240px;object-fit:cover;border-radius:12px;border:6px solid #fff;box-shadow:0 10px 25px rgba(0,0,0,0.15);position:absolute;bottom:-40px;right:-20px;">
                     <img src="{{ asset('template/assets/images/page/enjoy.png') }}" alt="Image" class="mask-enjoy">
                 </div>
@@ -332,8 +334,8 @@
 
 <!-- Widget Rent Car -->
 <section class="relative tf-widget-activities pd-main overflow-hidden">
-    <img src="{{ asset('template/assets/images/page/mask-activiti.png') }}" alt="image" class="mask-top">
-    <img src="{{ asset('template/assets/images/page/mask-print-2.png') }}" alt="image" class="mask-bottom">
+    <img src="{{ asset('template/assets/images/page/mask-activiti.png') }}" alt="image" class="mask-top" loading="lazy">
+    <img src="{{ asset('template/assets/images/page/mask-print-2.png') }}" alt="image" class="mask-bottom" loading="lazy">
     <div class="tf-container">
         <div class="row z-index3 relative">
             <div class="col-lg-12">
@@ -365,7 +367,7 @@
                         <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}" id="fleet-{{ Str::slug($car->name) }}-pane" role="tabpanel">
                             <div class="tabs-activities-content flex">
                                 <div class="activities-image" style="border-radius:16px;overflow:hidden;background:#f5f5f5;display:flex;align-items:center;justify-content:center;">
-                                    <img src="{{ $car->image_url }}" alt="{{ $car->name }}" style="width:100%;height:100%;object-fit:contain;">
+                                    <img src="{{ $car->image_url }}" alt="{{ $car->name }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;">
                                 </div>
                                 <div class="activities-content relative">
                                     <div class="flex-three mb-20" style="gap:12px;align-items:center;">
@@ -436,11 +438,11 @@
                         Contact us at <a href="mailto:info@jogadrivertour.com">info@jogadrivertour.com</a><br>
                     </address>
                 </div>
-                <img src="{{ asset('template/assets/images/page/vector2.png') }}" alt="image" class="mask-icon-banner">
+                <img src="{{ asset('template/assets/images/page/vector2.png') }}" alt="image" class="mask-icon-banner" loading="lazy">
             </div>
             <div class="col-lg-5" style="margin:-60px -30px -60px 0;padding:0;">
                 <div class="image-banner-contact" style="height:100%;">
-                    <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="Yogyakarta" style="object-fit:cover;width:100%;height:100%;border-radius:0;">
+                    <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="Yogyakarta" loading="lazy" style="object-fit:cover;width:100%;height:100%;border-radius:0;">
                 </div>
             </div>
         </div>
@@ -463,7 +465,7 @@
                 <div class="col-md-4 wow fadeInUp animated" data-wow-delay="0.{{ $loop->index + 1 }}s">
                     <div class="tf-widget-blog blog-style">
                         <a href="{{ route('blog.show', $blog->slug) }}" class="blog-image">
-                            <img src="{{ asset($blog->image) }}" alt="">
+                            <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" loading="lazy">
                             <div class="category-blog">
                                 <i class="icon-Group-8"></i>
                                 <span>{{ $blog->category }}</span>

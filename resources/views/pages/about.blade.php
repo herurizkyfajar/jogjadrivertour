@@ -24,13 +24,13 @@
             <div class="col-md-6">
                 <div class="image-about-h4-wrap relative">
                     <div class="image-about-item relative about-wrap-left">
-                        <img src="{{ asset('template/assets/images/about-us/about-h41.jpg') }}" alt="image">
-                        <img src="{{ asset('template/assets/images/page/shape5.1.png') }}" alt="image" class="shape-about-h4">
+                        <img src="{{ asset('template/assets/images/about-us/about-h41.jpg') }}" alt="image" loading="lazy">
+                        <img src="{{ asset('template/assets/images/page/shape5.1.png') }}" alt="image" class="shape-about-h4" loading="lazy">
                         <span class="quote">25,000 + Customer Worldwide</span>
                     </div>
                     <div class="image-about-item relative about-wrap-right">
-                        <img src="{{ asset('template/assets/images/about-us/about-h4.jpg') }}" alt="image">
-                        <img src="{{ asset('template/assets/images/page/shape5.1.png') }}" alt="image" class="shape-about-h4">
+                        <img src="{{ asset('template/assets/images/about-us/about-h4.jpg') }}" alt="image" loading="lazy">
+                        <img src="{{ asset('template/assets/images/page/shape5.1.png') }}" alt="image" class="shape-about-h4" loading="lazy">
                     </div>
                     <div class="box-year center">
                         <span class="number">25</span>
@@ -140,7 +140,7 @@
                                             <span class="media"><i class="icon-Group-1000002910"></i>{{ $tour->review_count }}</span>
                                             </div>
                                         </div>
-                                        <img src="{{ asset($tour->image) }}" alt="{{ $tour->name }}">
+                                        <img src="{{ asset($tour->image) }}" alt="{{ $tour->name }}" loading="lazy">
                                     </a>
                                     <div class="tour-listing-content">
                                         <span class="map"><i class="icon-Vector4"></i>Yogyakarta</span>

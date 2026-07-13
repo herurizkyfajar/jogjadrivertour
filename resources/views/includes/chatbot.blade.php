@@ -380,7 +380,7 @@
             <button class="chatbot-send-btn" onclick="sendMessage()" type="button" style="width:46px;height:46px;min-width:46px;max-width:46px;border-radius:50%;background:linear-gradient(135deg,#4DA528,#2d7a0f);color:#fff;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(77,165,40,0.4);padding:0;flex-shrink:0;overflow:hidden;font-size:20px;line-height:1;text-align:center;-webkit-appearance:none;-moz-appearance:none;appearance:none;float:none;margin:0;">&#10148;</button>
         </div>
     </div>
-    <button class="chatbot-toggle" onclick="toggleChatbot()" id="chatbot-toggle">
+    <button class="chatbot-toggle" onclick="toggleChatbot()" id="chatbot-toggle" aria-label="Open chat assistant">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
     </button>
 </div>

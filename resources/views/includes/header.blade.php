@@ -28,10 +28,10 @@
                     <div class="follow-social flex-two">
                         <span>Follow Us :</span>
                         <ul class="flex-two">
-                            <li><a href="#"><i class="icon-icon-2"></i></a></li>
-                            <li><a href="#"><i class="icon-icon_03"></i></a></li>
-                            <li><a href="#"><i class="icon-x"></i></a></li>
-                            <li><a href="#"><i class="icon-icon"></i></a></li>
+                            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-icon-2"></i></a></li>
+                            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="icon-icon_03"></i></a></li>
+                            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="icon-x"></i></a></li>
+                            <li><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="icon-icon"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             <div class="header-account flex align-center">
                                 <div class="search-mobie relative">
                                     <div class="dropdown">
-                                        <a type="button" class="show-search" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <a class="show-search" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Search">
                                             <i class="icon-Vector5"></i>
                                         </a>
                                         <ul class="dropdown-menu top-search">

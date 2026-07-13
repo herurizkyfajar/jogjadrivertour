@@ -3,9 +3,9 @@
         <div class="tf-widget-destination">
             <a href="{{ route('destinations.show', $destination->slug) }}" class="destination-imgae">
                 @if(str_starts_with($destination->image, 'destinations/'))
-                    <img src="{{ asset('storage/'.$destination->image) }}" alt="{{ $destination->name }}">
+                    <img src="{{ asset('storage/'.$destination->image) }}" alt="{{ $destination->name }}" loading="lazy">
                 @else
-                    <img src="{{ asset($destination->image) }}" alt="{{ $destination->name }}">
+                    <img src="{{ asset($destination->image) }}" alt="{{ $destination->name }}" loading="lazy">
                 @endif
             </a>
             <div class="destination-content">

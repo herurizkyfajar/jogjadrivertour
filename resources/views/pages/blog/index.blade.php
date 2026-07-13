@@ -30,9 +30,9 @@
                             </div>
                             <a class="post-thumbnail" href="{{ route('blog.show', $blog->slug) }}" style="display:block;overflow:hidden;border-radius:12px;">
                                 @if(str_starts_with($blog->image, 'blogs/'))
-                                    <img src="{{ asset('storage/'.$blog->image) }}" alt="{{ $blog->title }}" style="width:100%;height:auto;display:block;object-fit:cover;">
+                                    <img src="{{ asset('storage/'.$blog->image) }}" alt="{{ $blog->title }}" loading="lazy" style="width:100%;height:auto;display:block;object-fit:cover;">
                                 @else
-                                    <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" style="width:100%;height:auto;display:block;object-fit:cover;">
+                                    <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" loading="lazy" style="width:100%;height:auto;display:block;object-fit:cover;">
                                 @endif
                             </a>
                         </div>

@@ -16,10 +16,18 @@
     <link rel="canonical" href="{{ url()->current() }}">
 
     <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/nice-select.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/magnific-popup.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/jquery.fancybox.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/textanimation.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/app/css/nice-select.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('template/app/css/magnific-popup.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('template/app/css/jquery.fancybox.min.css') }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('template/app/css/textanimation.css') }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ asset('template/app/css/nice-select.css') }}"></noscript>
+    <noscript><link rel="stylesheet" href="{{ asset('template/app/css/magnific-popup.css') }}"></noscript>
+    <noscript><link rel="stylesheet" href="{{ asset('template/app/css/jquery.fancybox.min.css') }}"></noscript>
+    <noscript><link rel="stylesheet" href="{{ asset('template/app/css/textanimation.css') }}"></noscript>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
 
     <link rel="shortcut icon" href="{{ asset('template/assets/images/favico.webp') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('template/assets/images/favico.webp') }}">
