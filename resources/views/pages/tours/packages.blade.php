@@ -192,39 +192,4 @@
     </div>
 </section>
 
-@if($myTours->count() > 0)
-<section class="archieve-tour" style="margin-top:60px;">
-    <div class="tf-container">
-        <div class="row mb-40">
-            <div class="col-lg-12">
-                <h2 class="title" style="font-size:28px;font-weight:700;">My Tours</h2>
-                <p style="color:#666;">Riwayat perjalanan klien kami</p>
-            </div>
-        </div>
-        <div class="row">
-            @foreach($myTours as $myTour)
-                <div class="col-sm-6 col-xl-3 mb-32">
-                    <div class="tour-listing box-sd">
-                        <div class="tour-listing-image">
-                            @if(str_starts_with($myTour->image, 'my-tours/'))
-                                <img src="{{ asset('storage/'.$myTour->image) }}" alt="{{ $myTour->client_name }}">
-                            @else
-                                <img src="{{ asset($myTour->image) }}" alt="{{ $myTour->client_name }}">
-                            @endif
-                        </div>
-                        <div class="tour-listing-content">
-                            <span class="map"><i class="icon-Group-9"></i>{{ $myTour->negara_asal }}</span>
-                            <h3 class="title-tour-list">{{ $myTour->tour_name }}</h3>
-                            <p style="margin:8px 0;color:#666;font-size:14px;">Client: <strong>{{ $myTour->client_name }}</strong></p>
-                            @if($myTour->travel_date)
-                                <p style="margin:4px 0;color:#999;font-size:13px;"><i class="icon-time-left"></i> {{ $myTour->travel_date->format('d M Y') }}</p>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-@endif
 @endsection
