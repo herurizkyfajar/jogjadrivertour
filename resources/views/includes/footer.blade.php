@@ -7,7 +7,7 @@
                         <img src="{{ asset('template/assets/images/logo.webp') }}" alt="">
                     </a>
                 </div>
-                <p class="des-footer">Yogyakarta Driver Tour is a trusted tour & travel platform to explore the beauty of Yogyakarta and its surroundings.</p>
+                <p class="des-footer">Your trusted partner for private car rental and professional tour guide services in Yogyakarta and its surroundings.</p>
                 <ul class="footer-info">
                     <li class="flex-three">
                         <i class="icon-noun-mail-5780740-1"></i>
@@ -88,7 +88,7 @@
         <div class="logo-canvas">
             <img src="{{ asset('template/assets/images/logo.webp') }}" alt="image">
         </div>
-        <p class="des">Yogyakarta Driver Tour is a trusted tour & travel platform to explore the beauty of Yogyakarta.</p>
+        <p class="des">Your trusted partner for private car rental and professional tour guide in Yogyakarta.</p>
         <ul class="canvas-info">
             <li class="flex-three">
                 <i class="icon-noun-mail-5780740-1"></i>

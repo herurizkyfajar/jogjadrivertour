@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Yogyakarta Driver Tour - Explore Yogyakarta')
+@section('title', 'Yogyakarta Driver Tour - Private Car Rental & Tour Guide in Yogyakarta')
 
 @section('content')
 <!-- Widget Slider -->
@@ -184,8 +184,8 @@
             <div class="col-lg-6">
                 <div class="inner-content-about">
                     <span class="sub-title-heading text-main mb-15 fadeInUp wow">About Yogyakarta Driver Tour</span>
-                    <h2 class="title-heading mb-18 fadeInUp wow">Great opportunity for <span class="text-gray font-yes">adventure</span> & travels</h2>
-                     <p class="des-heading fadeInUp wow">Yogyakarta Driver Tour is a trusted tour & travel platform offering a wide range of exciting tour packages across Yogyakarta and its surroundings. We are committed to delivering the best travel experience at affordable prices.</p>
+                    <h2 class="title-heading mb-18 fadeInUp wow">Your trusted partner for <span class="text-gray font-yes">private car rental</span> & tour guide</h2>
+                     <p class="des-heading fadeInUp wow">Yogyakarta Driver Tour is your trusted partner for private car rental and professional tour guide services in Yogyakarta and its surroundings. We deliver safe, comfortable, and memorable travel experiences at competitive prices.</p>
                     <div class="row mt-27 fadeInUp wow">
                         <div class="col-sm-6">
                             <div class="icon-box-style3">
@@ -432,8 +432,8 @@
         <div class="row z-index3 relative">
             <div class="col-lg-7 content-banner-contact">
                 <div class="mb-32">
-                    <span class="sub-title-heading text-main mb-15 font-yes fs-28-46 wow fadeInUp animated">Discover Yogyakarta</span>
-                    <h2 class="title-heading text-white wow fadeInUp animated">Explore the heart of Java with breathtaking temples, pristine beaches, and rich cultural heritage</h2>
+                    <span class="sub-title-heading text-main mb-15 font-yes fs-28-46 wow fadeInUp animated">Explore Yogyakarta</span>
+                    <h2 class="title-heading text-white wow fadeInUp animated">Your trusted partner for private car rental and tour guide in Yogyakarta — discover ancient temples, volcanic landscapes, and rich Javanese culture</h2>
                 </div>
                 <div class="flex-three">
                     <div class="video-wrap wow fadeInUp animated">
@@ -513,13 +513,13 @@
                     <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
                 </div>
                 <div class="content">
-                    <h2 class="title-call">Ready to adventure and enjoy natural</h2>
-                     <p class="des">Yogyakarta Driver Tour is ready to help you enjoy the beauty of Yogyakarta</p>
+                    <h2 class="title-call">Ready to explore Yogyakarta?</h2>
+                     <p class="des">Yogyakarta Driver Tour is ready to make your Yogyakarta adventure unforgettable</p>
                 </div>
             </div>
             <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">
             <div class="callt-to-action-button">
-                <a href="{{ route('contact') }}" class="get-call">Let's get started</a>
+                <a href="{{ route('contact') }}" class="get-call">Book Your Trip Now</a>
             </div>
         </div>
     </div>

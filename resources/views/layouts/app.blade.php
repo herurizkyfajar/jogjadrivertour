@@ -3,10 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>@yield('title', 'Yogyakarta Driver Tour - Travel & Tour Booking')</title>
-    <meta name="author" content="themesflat.com">
+    <title>@yield('title', 'Yogyakarta Driver Tour - Private Car Rental & Tour Guide in Yogyakarta')</title>
+    <meta name="author" content="Yogyakarta Driver Tour">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="@yield('meta_description', 'Yogyakarta Driver Tour — your trusted partner for private car rental and professional tour guide in Yogyakarta and its surroundings. Book comfortable vehicles with experienced English-speaking drivers for temple tours, city tours, and custom itineraries.')">
+    <meta name="keywords" content="Yogyakarta car rental, private car Yogyakarta, tour guide Yogyakarta, Borobudur tour, Prambanan tour, Yogyakarta driver, rent car Jogja, private transport Yogyakarta">
+    <meta property="og:title" content="@yield('title', 'Yogyakarta Driver Tour - Private Car Rental & Tour Guide in Yogyakarta')">
+    <meta property="og:description" content="@yield('meta_description', 'Your trusted partner for private car rental and professional tour guide in Yogyakarta and its surroundings.')">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/nice-select.css') }}">

@@ -22,7 +22,7 @@ class ChatbotController extends Controller
         if (empty($message) && $step === 'greeting') {
             return response()->json([
                 'replies' => [
-                    'Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹',
+                    'Hello! Welcome to Yogyakarta Driver Tour — your trusted partner for private car rental and tour guide in Yogyakarta! ðŸ‘‹',
                     'Before we start, may I know your name?'
                 ],
                 'next_step' => 'ask_name',
@@ -399,10 +399,11 @@ class ChatbotController extends Controller
 
         if (str_contains($message, 'about') || str_contains($message, 'tentang') || str_contains($message, 'profil') || str_contains($message, 'profile') || str_contains($message, 'siapa')) {
             return [
-                'We are Yogyakarta Driver Tour, a trusted tour operator in Yogyakarta! ðŸŒ´',
-                'â€¢ Experienced local guides',
-                'â€¢ Custom tour packages',
-                'â€¢ Best price guarantee',
+                'We are Yogyakarta Driver Tour, your trusted partner for private car rental and professional tour guide in Yogyakarta! 🌴',
+                '• Experienced English-speaking local guides',
+                '• Wide range of well-maintained vehicles',
+                '• Customizable tour packages',
+                '• Best price guarantee',
                 'â€¢ 24/7 customer support',
                 'Learn more: ' . route('about'),
                 'Ready to book? Contact us now!'

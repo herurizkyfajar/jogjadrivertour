@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tour Package - Yogyakarta Driver Tour')
+@section('title', 'Tour Packages - Private Car Rental & Tour Guide in Yogyakarta')
 
 @section('content')
 <section class="breadcumb-section">

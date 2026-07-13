@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>@yield('title', 'Dashboard - Yogyakarta Driver Tour')</title>
-    <meta name="author" content="themesflat.com">
+    <meta name="author" content="Yogyakarta Driver Tour">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">

@@ -242,7 +242,7 @@
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to adventure and enjoy natural</h2>
-                    <p class="des">Book your next tour with Yogyakarta Driver Tour</p>
+                    <p class="des">Book your private car rental and tour guide with Yogyakarta Driver Tour</p>
                 </div>
             </div>
             <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">

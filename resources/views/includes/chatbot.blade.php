@@ -461,14 +461,14 @@
                         var data = JSON.parse(xhr.responseText);
                         chatStep = data.next_step || 'ask_name';
                         sessionData = data.session_data || {};
-                        var replies = data.replies || ['Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹', 'Before we start, may I know your name?'];
+                        var replies = data.replies || ['Hello! Welcome to Yogyakarta Driver Tour — your trusted partner for private car rental and tour guide in Yogyakarta! ðŸ‘‹', 'Before we start, may I know your name?'];
                         showBotReplies(replies, false, false);
                     } catch(e) {
-                        addBotMsg('Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹<br><br>Before we start, may I know your name?');
+                        addBotMsg('Hello! Welcome to Yogyakarta Driver Tour — your trusted partner for private car rental and tour guide in Yogyakarta! ðŸ‘‹<br><br>Before we start, may I know your name?');
                         chatStep = 'ask_name';
                     }
                 } else {
-                    addBotMsg('Hello! Welcome to Yogyakarta Driver Tour ðŸ‘‹<br><br>Before we start, may I know your name?');
+                    addBotMsg('Hello! Welcome to Yogyakarta Driver Tour — your trusted partner for private car rental and tour guide in Yogyakarta! ðŸ‘‹<br><br>Before we start, may I know your name?');
                     chatStep = 'ask_name';
                 }
             };

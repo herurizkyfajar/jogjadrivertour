@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us - Yogyakarta Driver Tour')
+@section('title', 'Contact Us - Private Car Rental & Tour Guide in Yogyakarta')
 
 @section('content')
 <section class="breadcumb-section">
@@ -62,7 +62,7 @@
                 <div class="contact-us-map">
                     <div class="inner-header mb-45">
                         <h2 class="title">Get in touch</h2>
-                        <p class="des">Yogyakarta offers unforgettable travel experiences. Contact us for further details.</p>
+                        <p class="des">Ready to explore Yogyakarta? Contact us for private car rental and tour guide inquiries.</p>
                     </div>
                     <div class="map relative">
                         <div id="map" style="width:100%;height:400px;background:#ddd;border-radius:12px;"></div>
@@ -123,8 +123,8 @@
                     <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
                 </div>
                 <div class="content">
-                    <h2 class="title-call">Ready to adventure and enjoy natural</h2>
-                    <p class="des">Yogyakarta offers unforgettable travel experiences</p>
+                    <h2 class="title-call">Ready to explore Yogyakarta?</h2>
+                    <p class="des">Book your private car rental and tour guide today</p>
                 </div>
             </div>
             <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">

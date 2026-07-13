@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - Yogyakarta Driver Tour')
+@section('title', 'About Us - Private Car Rental & Tour Guide in Yogyakarta')
 
 @section('content')
 <section class="breadcumb-section">
@@ -40,9 +40,9 @@
             </div>
             <div class="col-md-6 inner-content-about">
                 <div class="mb-30">
-                    <span class="sub-title-heading text-main font-yes fs-28-46">Explore the world</span>
-                    <h2 class="title-heading mb-18">Great opportunity for <span class="text-gray font-yes">adventure</span> & travels </h2>
-                    <p class="des">Yogyakarta Driver Tour is a trusted tour & travel platform providing various attractive tour packages in Yogyakarta and its surroundings. We are committed to delivering the best travel experiences at affordable rates.</p>
+                    <span class="sub-title-heading text-main font-yes fs-28-46">About Us</span>
+                    <h2 class="title-heading mb-18">Your trusted partner for <span class="text-gray font-yes">private car rental</span> & tour guide</h2>
+                    <p class="des">Yogyakarta Driver Tour is your trusted partner for private car rental and professional tour guide services in Yogyakarta and its surroundings. We are committed to delivering safe, comfortable, and memorable travel experiences at competitive rates.</p>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -94,7 +94,7 @@
             <div class="col-md-8">
                 <span class="sub-title-heading text-main font-yes fs-28-46">Part of</span>
                 <h2 class="title-heading mb-18">Bandung Driver Tour</h2>
-                <p class="des mb-20" style="font-size:15px;line-height:1.8;">Yogyakarta Driver Tour is proudly part of <strong>Bandung Driver Tour</strong>, a trusted travel and tour platform established in Bandung, West Java. With years of experience in the travel industry, Bandung Driver Tour has expanded its services to Yogyakarta through Yogyakarta Driver Tour, bringing the same commitment to quality, safety, and unforgettable travel experiences. Together, we aim to showcase the beauty of Indonesia â€” from the cultural richness of Yogyakarta to the scenic landscapes of Bandung.</p>
+                <p class="des mb-20" style="font-size:15px;line-height:1.8;">Yogyakarta Driver Tour is proudly part of <strong>Bandung Driver Tour</strong>, a trusted private car rental and tour guide platform established in Bandung, West Java. With years of experience in the travel industry, Bandung Driver Tour has expanded its services to Yogyakarta through Yogyakarta Driver Tour, bringing the same commitment to quality, safety, and professional service. Together, we aim to provide seamless travel experiences across Indonesia — from the cultural richness of Yogyakarta to the scenic landscapes of Bandung.</p>
                 <a href="https://bandungdrivertour.com" target="_blank" rel="noopener noreferrer" class="btn-main" style="display:inline-flex;align-items:center;gap:8px;">
                     <p class="btn-main-text">Visit Bandung Driver Tour</p>
                     <p class="iconer"><i class="icon-arrow-right"></i></p>
@@ -201,8 +201,8 @@
                     <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
                 </div>
                 <div class="content">
-                    <h2 class="title-call">Ready to adventure and enjoy natural</h2>
-                    <p class="des">Yogyakarta offers unforgettable travel experiences</p>
+                    <h2 class="title-call">Ready to explore Yogyakarta?</h2>
+                    <p class="des">Book your private car rental and tour guide today</p>
                 </div>
             </div>
             <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">
