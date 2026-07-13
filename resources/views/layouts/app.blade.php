@@ -135,6 +135,18 @@
             border-radius: 100% !important;
             display: block !important;
         }
+        img:not([width]):not([height]):not([style*="width"]):not([style*="height"]) {
+            max-width: 100%;
+            height: auto;
+        }
+        .tour-listing-image img,
+        .tf-widget-destination img,
+        .blog-image img,
+        .blog-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 

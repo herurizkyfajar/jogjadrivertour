@@ -289,9 +289,9 @@
                                                         <span class="feature">Featured</span>
                                                     </div>
                                                     @if(str_starts_with($dest->image, 'destinations/'))
-                                                        <img src="{{ asset('storage/'.$dest->image) }}" alt="{{ $dest->name }}">
+                                                        <img src="{{ asset('storage/'.$dest->image) }}" alt="{{ $dest->name }}" width="400" height="300">
                                                     @else
-                                                        <img src="{{ asset($dest->image) }}" alt="{{ $dest->name }}">
+                                                        <img src="{{ asset($dest->image) }}" alt="{{ $dest->name }}" width="400" height="300">
                                                     @endif
                                                 </a>
                                                 <div class="tour-listing-content">
@@ -465,7 +465,7 @@
                 <div class="col-md-4 wow fadeInUp animated" data-wow-delay="0.{{ $loop->index + 1 }}s">
                     <div class="tf-widget-blog blog-style">
                         <a href="{{ route('blog.show', $blog->slug) }}" class="blog-image">
-                            <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" loading="lazy">
+                            <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" loading="lazy" width="400" height="250">
                             <div class="category-blog">
                                 <i class="icon-Group-8"></i>
                                 <span>{{ $blog->category }}</span>
