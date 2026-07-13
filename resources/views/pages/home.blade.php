@@ -171,7 +171,7 @@
                          loading="lazy"
                          style="width:100%;height:420px;object-fit:cover;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1);">
                     <div class="video-wrap">
-                        <a href="https://www.youtube.com/watch?v=bka65YgaD0A" class="widget-icon-video widget-videos flex-five z-index3">
+                        <a href="https://www.youtube.com/watch?v=bka65YgaD0A" class="widget-icon-video widget-videos flex-five z-index3" aria-label="Watch video on YouTube" target="_blank" rel="noopener noreferrer">
                             <i class="icon-Polygon-4"></i>
                         </a>
                     </div>
@@ -403,7 +403,7 @@
                                         <span class="text-white" style="font-size:14px;font-weight:600;">Include Driver</span>
                                     </div>
                                     <div class="flex-three btn-wrap-activitis">
-                                        <a href="{{ route('contact') }}" class="icon-activitis flex-five">
+                                        <a href="{{ route('contact') }}" class="icon-activitis flex-five" aria-label="Contact us">
                                             <i class="icon-Vector-21"></i>
                                         </a>
                                         <a href="{{ route('contact') }}" class="text-white get-start">Book Your Trip Now</a>
@@ -430,7 +430,7 @@
                 </div>
                 <div class="flex-three">
                     <div class="video-wrap wow fadeInUp animated">
-                        <a href="https://www.youtube.com/watch?v=bka65YgaD0A" class="widget-icon-video flex-five widget-videos">
+                        <a href="https://www.youtube.com/watch?v=bka65YgaD0A" class="widget-icon-video flex-five widget-videos" aria-label="Watch video on YouTube" target="_blank" rel="noopener noreferrer">
                             <i class="icon-Polygon-4"></i>
                         </a>
                     </div>

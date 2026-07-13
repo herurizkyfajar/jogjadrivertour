@@ -88,9 +88,9 @@
                             <div class="header-account flex align-center">
                                 <div class="search-mobie relative">
                                     <div class="dropdown">
-                                        <a class="show-search" data-bs-toggle="dropdown" aria-label="Search">
+                                        <button type="button" class="show-search" data-bs-toggle="dropdown" aria-label="Search" style="background:none;border:none;cursor:pointer;padding:0;">
                                             <i class="icon-Vector5"></i>
-                                        </a>
+                                        </button>
                                         <ul class="dropdown-menu top-search">
                                             <form action="/" id="search-bar-widget">
                                                 <input type="text" placeholder="Search here...">
@@ -136,7 +136,7 @@
     </div>
 
     <!-- End Header Lower -->
-    <a href="#" class="header-sidebar flex-three" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <a href="javascript:void(0)" class="header-sidebar flex-three" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
         <i class="icon-Bars"></i>
     </a>
 

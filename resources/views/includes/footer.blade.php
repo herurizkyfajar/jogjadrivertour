@@ -3,8 +3,8 @@
         <div class="footer-main">
             <div class="footer-logo">
                 <div class="logo-footer">
-                    <a href="{{ route('home') }}">
-                        <img src="{{ asset('template/assets/images/logo.webp') }}" alt="">
+                    <a href="{{ route('home') }}" aria-label="Yogyakarta Driver Tour - Home">
+                        <img src="{{ asset('template/assets/images/logo.webp') }}" alt="Yogyakarta Driver Tour Logo">
                     </a>
                 </div>
                 <p class="des-footer">Your trusted partner for private car rental and professional tour guide services in Yogyakarta and its surroundings.</p>
@@ -40,7 +40,7 @@
                     <div class="gallery-img" style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;">
                         @foreach($galleryTours as $tour)
                             <a href="{{ asset('storage/' . $tour->image) }}" data-fancybox="gallery" style="display:block;aspect-ratio:1;overflow:hidden;border-radius:4px;">
-                                <img src="{{ asset('storage/' . $tour->image) }}" alt="{{ $tour->negara_asal }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                                <img src="{{ asset('storage/' . $tour->image) }}" alt="Gallery: {{ $tour->negara_asal }} - {{ $loop->iteration }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
                             </a>
                         @endforeach
                     </div>
