@@ -235,7 +235,6 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="inner-container flex justify-space align-center">
-                                            <!-- Logo Box -->
                                             <div class="header-search flex-three">
                                                 <div class="icon-bars">
                                                     <i class="icon-Vector3"></i>
@@ -246,106 +245,22 @@
                                                 </form>
                                             </div>
                                             <div class="nav-outer flex align-center">
-                                                <!-- Main Menu -->
-                                                <nav class="main-menu show navbar-expand-md">
-                                                    <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                                                        <ul class="navigation clearfix">
-                                                            <li class="dropdown2">
-                                                                <a href="{{ route('home') }}">Home</a>
-                                                                <ul>
-                                                                    <li><a href="{{ route('home') }}">Home Page</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="dropdown2 {{ request()->routeIs('tours.*') ? 'current' : '' }}">
-                                                                <a href="{{ route('tours.index') }}">Tour</a>
-                                                                <ul>
-                                                                    <li><a href="{{ route('tours.index') }}">Archive Tour</a></li>
-                                                                    <li><a href="{{ route('tours.packages') }}">Tour Package</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="dropdown2">
-                                                                <a href="{{ route('destinations.index') }}">Destination</a>
-                                                                <ul>
-                                                                    <li><a href="{{ route('destinations.index') }}">Destination</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="dropdown2">
-                                                                <a href="{{ route('about') }}">About Us</a>
-                                                                <ul>
-                                                                    <li><a href="{{ route('about') }}">About Us</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="dropdown2">
-                                                                <a href="{{ route('blog.index') }}">Blog</a>
-                                                                <ul>
-                                                                    <li><a href="{{ route('blog.index') }}">Blog</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="dropdown2 current">
-                                                                <a href="#">Dashboard</a>
-                                                                <ul>
-                                                                    <li class="current"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                                                                    <li><a href="{{ route('admin.my-tours.index') }}">My Tours</a></li>
-                                                                    <li><a href="{{ route('admin.packages.index') }}">Tour Packages</a></li>
-                                                                    <li><a href="{{ route('destinations.index') }}">Destinations</a></li>
-                                                                    <li><a href="{{ route('blog.index') }}">Blog</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li><a href="{{ route('contact') }}">Contact</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </nav>
-                                                <!-- Main Menu End-->
+                                                <ul class="navigation clearfix" style="list-style:none;margin:0;padding:0;display:flex;gap:24px;">
+                                                    <li><a href="{{ route('home') }}" style="text-decoration:none;color:#333;font-size:14px;">Home</a></li>
+                                                    <li><a href="{{ route('tours.index') }}" style="text-decoration:none;color:#333;font-size:14px;">Tours</a></li>
+                                                    <li><a href="{{ route('destinations.index') }}" style="text-decoration:none;color:#333;font-size:14px;">Destinations</a></li>
+                                                    <li><a href="{{ route('blog.index') }}" style="text-decoration:none;color:#333;font-size:14px;">Blog</a></li>
+                                                    <li><a href="{{ route('contact') }}" style="text-decoration:none;color:#333;font-size:14px;">Contact</a></li>
+                                                </ul>
                                             </div>
                                             <div class="header-account flex align-center">
-                                                <div class="dropdown notification">
-                                                    <a class="icon-notification" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <i class="icon-notification-1"></i>
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <div class="message-item flex-three">
-                                                                <div class="image">
-                                                                    <i class="icon-26"></i>
-                                                                </div>
-                                                                <div>
-                                                                    <div class="body-title">Discount available</div>
-                                                                    <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus at, ullamcorper nec diam</div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="message-item flex-three">
-                                                                <div class="image">
-                                                                    <i class="icon-26"></i>
-                                                                </div>
-                                                                <div>
-                                                                    <div class="body-title">Discount available</div>
-                                                                    <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus at, ullamcorper nec diam</div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="message-item flex-three">
-                                                                <div class="image">
-                                                                    <i class="icon-26"></i>
-                                                                </div>
-                                                                <div>
-                                                                    <div class="body-title">Discount available</div>
-                                                                    <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus at, ullamcorper nec diam</div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                                 <div class="dropdown account">
                                                     <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <img src="{{ asset('template/assets/images/page/avata.jpg') }}" alt="image" width="80" height="80">
+                                                        <img src="{{ asset('template/assets/images/page/avata.jpg') }}" alt="image" width="40" height="40" style="border-radius:50%;">
                                                     </a>
                                                     <ul class="dropdown-menu">
-                                                        <li><a href="{{ route('dashboard') }}">Account</a></li>
-                                                        <li><a href="#">Setting</a></li>
-                                                        <li><a href="#">Support</a></li>
+                                                        <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                                                        <li><a href="{{ route('admin.settings.index') }}">Settings</a></li>
                                                         <li>
                                                             <form action="{{ route('logout') }}" method="POST">
                                                                 @csrf
@@ -375,13 +290,11 @@
                     <div class="tf-container full">
                         <div class="row">
                             <div class="col-xl-6">
-                                <p class="text-white">Made with &#10084;&#65039; by Themesflat. - Powered by Theme</p>
+                                <p class="text-white">&copy; {{ date('Y') }} Yogyakarta Driver Tour</p>
                             </div>
                             <div class="col-xl-6">
                                 <ul class="menu-footer flex-six">
                                     <li><a href="#">Privacy & Policy</a></li>
-                                    <li><a href="#">Licensing</a></li>
-                                    <li><a href="#">Instruction</a></li>
                                 </ul>
                             </div>
                         </div>
