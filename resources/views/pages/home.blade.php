@@ -370,8 +370,8 @@
                     @foreach($fleet as $index => $car)
                         <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}" id="fleet-{{ Str::slug($car->name) }}-pane" role="tabpanel">
                             <div class="tabs-activities-content flex">
-                                <div class="activities-image" style="border-radius:16px;overflow:hidden;background:#f5f5f5;">
-                                    <img src="{{ $car->image_url }}" alt="{{ $car->name }}" style="width:100%;height:100%;object-fit:cover;">
+                                <div class="activities-image" style="border-radius:16px;overflow:hidden;background:#f5f5f5;display:flex;align-items:center;justify-content:center;">
+                                    <img src="{{ $car->image_url }}" alt="{{ $car->name }}" style="width:100%;height:100%;object-fit:contain;">
                                 </div>
                                 <div class="activities-content relative">
                                     <div class="flex-three mb-20" style="gap:12px;align-items:center;">
@@ -587,6 +587,76 @@
     .tour-package .tab-content .tour-listing-content .title-tour-list { font-size: 15px; line-height: 1.3; margin: 6px 0; }
     .tour-package .tab-content .tour-listing-content .review { font-size: 12px; margin-top: auto; }
     .tour-package .tab-content .tour-listing-content .review i { font-size: 12px; }
+
+    /* Fleet Section Overrides */
+    .tf-widget-activities .tabs-activities-content {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    .tf-widget-activities .tabs-activities-content .activities-image {
+        flex: 0 0 45%;
+        max-width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f5f5;
+        border-radius: 16px 0 0 16px;
+        overflow: hidden;
+    }
+    .tf-widget-activities .tabs-activities-content .activities-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        margin-left: 0;
+        border-radius: 0;
+    }
+    .tf-widget-activities .tabs-activities-content .activities-content {
+        flex: 1;
+        padding: 40px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .tf-widget-activities .tabs-activities-content .activities-content .title-activitis {
+        font-size: 28px;
+        font-weight: 800;
+    }
+
+    @media (max-width: 991px) {
+        .tf-widget-activities .tabs-activities-content {
+            flex-direction: column;
+        }
+        .tf-widget-activities .tabs-activities-content .activities-image {
+            flex: none;
+            max-width: 100%;
+            height: 250px;
+            border-radius: 16px 16px 0 0;
+        }
+        .tf-widget-activities .tabs-activities-content .activities-content {
+            padding: 30px;
+        }
+    }
+    @media (max-width: 575px) {
+        .tf-widget-activities .tabs-activities-content .activities-image {
+            height: 200px;
+        }
+        .tf-widget-activities .tabs-activities-content .activities-content {
+            padding: 20px;
+        }
+        .tf-widget-activities .tabs-activities-content .activities-content .title-activitis {
+            font-size: 22px;
+        }
+        .nav-tabs-activities .nav-item .nav-link {
+            padding: 12px 14px !important;
+        }
+        .nav-tabs-activities .nav-item .nav-link span:last-child {
+            font-size: 11px !important;
+        }
+    }
+
     @media (max-width: 991px) {
         .tour-package .tab-content .col-sm-6.col-lg-3 { flex: 0 0 50%; max-width: 50%; }
         .about-us .travel-video { margin-bottom: 40px; }
