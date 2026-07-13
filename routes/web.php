@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\MyTourController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ChatSessionController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\InstagramController;
 use App\Models\Tour;
 
@@ -101,6 +102,15 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin/settings')->name('admin.settings.')->group(function () {
         Route::get('/', [SettingController::class, 'index'])->name('index');
         Route::post('/', [SettingController::class, 'update'])->name('update');
+    });
+    Route::prefix('admin/cars')->name('admin.cars.')->group(function () {
+        Route::get('/', [CarController::class, 'index'])->name('index');
+        Route::get('/create', [CarController::class, 'create'])->name('create');
+        Route::post('/', [CarController::class, 'store'])->name('store');
+        Route::get('/{car}/edit', [CarController::class, 'edit'])->name('edit');
+        Route::put('/{car}', [CarController::class, 'update'])->name('update');
+        Route::delete('/{car}', [CarController::class, 'destroy'])->name('destroy');
+        Route::delete('/bulk-destroy', [CarController::class, 'bulkDestroy'])->name('bulkDestroy');
     });
     Route::prefix('admin/blog')->name('admin.blog.')->group(function () {
         Route::get('/', [AdminBlogController::class, 'index'])->name('index');

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             BlogCommentSeeder::class,
             TestimonialSeeder::class,
             MyTourSeeder::class,
+            CarSeeder::class,
         ]);
     }
 }
