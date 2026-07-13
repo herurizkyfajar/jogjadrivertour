@@ -274,83 +274,6 @@
     </div>
 </section>
 
-<!-- Widget Featured Destinations -->
-<section class="tour-package pd-main">
-    <div class="tf-container w-1456">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="center m0-auto w-text-heading">
-                    <span class="sub-title-heading text-main mb-15 wow fadeInUp animated">Explore the world</span>
-                    <h2 class="title-heading mb-40 wow fadeInUp animated">Amazing Featured <span class="text-gray font-yes">Destination</span> the world</h2>
-                </div>
-                <div class="tab-tour-list">
-                    <ul class="nav justify-content-center tab-list mb-37" id="myTab" role="tablist">
-                        @foreach($cities as $index => $city)
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link {{ $index === 0 ? 'active' : '' }}" id="{{ Str::slug($city) }}-tab" data-bs-toggle="tab" data-bs-target="#{{ Str::slug($city) }}-tab-pane" type="button" role="tab">
-                                    {{ $city }}
-                                </button>
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        @foreach($cities as $index => $city)
-                            <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}" id="{{ Str::slug($city) }}-tab-pane" role="tabpanel">
-                                <div class="row">
-                                    @php
-                                        $cityDestinations = $featuredDestinationsAll->where('city', $city)->take(4);
-                                    @endphp
-                                    @forelse($cityDestinations as $dest)
-                                        <div class="col-sm-6 col-lg-3">
-                                            <div class="tour-listing wow fadeInUp animated" data-wow-delay="0.{{ $loop->index + 1 }}s">
-                                                <a href="{{ route('destinations.show', $dest->slug) }}" class="tour-listing-image">
-                                                    <div class="badge-top flex-two">
-                                                        <span class="feature">Featured</span>
-                                                    </div>
-                                                    @if(str_starts_with($dest->image, 'destinations/'))
-                                                        <img src="{{ asset('storage/'.$dest->image) }}" alt="{{ $dest->name }}" width="400" height="300">
-                                                    @else
-                                                        <img src="{{ asset($dest->image) }}" alt="{{ $dest->name }}" width="400" height="300">
-                                                    @endif
-                                                </a>
-                                                <div class="tour-listing-content">
-                                                    <span class="map"><i class="icon-Vector4"></i>{{ $dest->location }}</span>
-                                                    <h3 class="title-tour-list">
-                                                        <a href="{{ route('destinations.show', $dest->slug) }}">{{ $dest->name }}</a>
-                                                    </h3>
-                                                    <div class="review">
-                                                        @for($i = 0; $i < 5; $i++)
-                                                            <i class="icon-Star"></i>
-                                                        @endfor
-                                                        <span>({{ number_format($dest->rating * 20) }}%)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @empty
-                                        <div class="col-12 text-center">
-                                            <p>No destinations available in this city.</p>
-                                        </div>
-                                    @endforelse
-                                </div>
-                                <div class="row wow fadeInUp">
-                                    <div class="col-lg-12 center mt-44">
-                                        <a href="{{ route('destinations.index') }}" class="btn-main">
-                                            <p class="btn-main-text">View All Destination</p>
-                                            <p class="iconer"><i class="icon-13"></i></p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <!-- Widget Rent Car -->
 <section class="relative tf-widget-activities pd-main overflow-hidden">
     <img src="{{ asset('template/assets/images/page/mask-activiti.png') }}" alt="image" class="mask-top" loading="lazy">
@@ -437,6 +360,83 @@
         </div>
     </div>
 </section>
+
+<!-- Widget Featured Destinations -->
+<section class="tour-package pd-main">
+    <div class="tf-container w-1456">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="center m0-auto w-text-heading">
+                    <span class="sub-title-heading text-main mb-15 wow fadeInUp animated">Explore the world</span>
+                    <h2 class="title-heading mb-40 wow fadeInUp animated">Amazing Featured <span class="text-gray font-yes">Destination</span> the world</h2>
+                </div>
+                <div class="tab-tour-list">
+                    <ul class="nav justify-content-center tab-list mb-37" id="myTab" role="tablist">
+                        @foreach($cities as $index => $city)
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link {{ $index === 0 ? 'active' : '' }}" id="{{ Str::slug($city) }}-tab" data-bs-toggle="tab" data-bs-target="#{{ Str::slug($city) }}-tab-pane" type="button" role="tab">
+                                    {{ $city }}
+                                </button>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        @foreach($cities as $index => $city)
+                            <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}" id="{{ Str::slug($city) }}-tab-pane" role="tabpanel">
+                                <div class="row">
+                                    @php
+                                        $cityDestinations = $featuredDestinationsAll->where('city', $city)->take(4);
+                                    @endphp
+                                    @forelse($cityDestinations as $dest)
+                                        <div class="col-sm-6 col-lg-3">
+                                            <div class="tour-listing wow fadeInUp animated" data-wow-delay="0.{{ $loop->index + 1 }}s">
+                                                <a href="{{ route('destinations.show', $dest->slug) }}" class="tour-listing-image">
+                                                    <div class="badge-top flex-two">
+                                                        <span class="feature">Featured</span>
+                                                    </div>
+                                                    @if(str_starts_with($dest->image, 'destinations/'))
+                                                        <img src="{{ asset('storage/'.$dest->image) }}" alt="{{ $dest->name }}" width="400" height="300">
+                                                    @else
+                                                        <img src="{{ asset($dest->image) }}" alt="{{ $dest->name }}" width="400" height="300">
+                                                    @endif
+                                                </a>
+                                                <div class="tour-listing-content">
+                                                    <span class="map"><i class="icon-Vector4"></i>{{ $dest->location }}</span>
+                                                    <h3 class="title-tour-list">
+                                                        <a href="{{ route('destinations.show', $dest->slug) }}">{{ $dest->name }}</a>
+                                                    </h3>
+                                                    <div class="review">
+                                                        @for($i = 0; $i < 5; $i++)
+                                                            <i class="icon-Star"></i>
+                                                        @endfor
+                                                        <span>({{ number_format($dest->rating * 20) }}%)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="col-12 text-center">
+                                            <p>No destinations available in this city.</p>
+                                        </div>
+                                    @endforelse
+                                </div>
+                                <div class="row wow fadeInUp">
+                                    <div class="col-lg-12 center mt-44">
+                                        <a href="{{ route('destinations.index') }}" class="btn-main">
+                                            <p class="btn-main-text">View All Destination</p>
+                                            <p class="iconer"><i class="icon-13"></i></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- Widget Banner Contact -->
 <section class="widget-banner-contact relative" style="overflow:hidden;">
