@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/nice-select.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/bootstrap-select.min.css') }}">
 
-    <link rel="shortcut icon" href="{{ asset('template/assets/images/favico.png') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('template/assets/images/favico.png') }}">
+    <link rel="shortcut icon" href="{{ asset('template/assets/images/favico.webp') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('template/assets/images/favico.webp') }}">
 
     <link rel="stylesheet" href="{{ asset('vendor/quill/quill.snow.css') }}">
     @stack('styles')

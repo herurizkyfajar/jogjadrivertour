@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/jquery.fancybox.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/textanimation.css') }}">
 
-    <link rel="shortcut icon" href="{{ asset('template/assets/images/favico.png') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('template/assets/images/favico.png') }}">
+    <link rel="shortcut icon" href="{{ asset('template/assets/images/favico.webp') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('template/assets/images/favico.webp') }}">
 
     @stack('styles')
     <style>
