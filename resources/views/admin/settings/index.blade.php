@@ -2,6 +2,19 @@
 
 @section('title', 'Settings - Dashboard')
 
+@push('styles')
+<style>
+.cc-box{position:relative;display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:6px;cursor:pointer;font-size:13px;transition:background .15s;border:1px solid transparent;user-select:none;}
+.cc-box:hover{background:#f5f5f5;}
+.cc-box input{position:absolute;opacity:0;width:0;height:0;}
+.cc-check{width:18px;height:18px;border:2px solid #ccc;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
+.cc-box input:checked~.cc-check{background:#4DA528;border-color:#4DA528;}
+.cc-check::after{content:'';width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px);opacity:0;transition:opacity .15s;}
+.cc-box input:checked~.cc-check::after{opacity:1;}
+.cc-box input:checked~.cc-text{color:#081E2A;font-weight:600;}
+</style>
+@endpush
+
 @section('content')
 <section class="profile-dashboard">
     <div class="inner-header mb-40">
@@ -85,9 +98,10 @@
         ];
         @endphp
         @foreach($allCountries as $country)
-        <label class="country-checkbox-item" style="display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;cursor:pointer;font-size:13px;transition:background .15s;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='transparent'">
-            <input type="checkbox" name="visited_countries[]" value="{{ $country }}" {{ in_array($country, $visitedCountries) ? 'checked' : '' }} style="width:16px;height:16px;accent-color:#4DA528;cursor:pointer;">
-            {{ $country }}
+        <label class="cc-box">
+            <input type="checkbox" name="visited_countries[]" value="{{ $country }}" {{ in_array($country, $visitedCountries) ? 'checked' : '' }}>
+            <span class="cc-check"></span>
+            <span class="cc-text">{{ $country }}</span>
         </label>
         @endforeach
     </div>
@@ -102,7 +116,7 @@
 <script>
 function filterCountries() {
     var search = document.getElementById('country-search').value.toLowerCase();
-    var items = document.querySelectorAll('.country-checkbox-item');
+    var items = document.querySelectorAll('.cc-box');
     items.forEach(function(item) {
         var text = item.textContent.toLowerCase();
         item.style.display = text.indexOf(search) !== -1 ? '' : 'none';
@@ -110,9 +124,9 @@ function filterCountries() {
 }
 
 function toggleAllCountries(state) {
-    var items = document.querySelectorAll('.country-checkbox-item input[type="checkbox"]');
+    var items = document.querySelectorAll('.cc-box input[type="checkbox"]');
     items.forEach(function(cb) {
-        var item = cb.closest('.country-checkbox-item');
+        var item = cb.closest('.cc-box');
         if (item.style.display !== 'none') {
             cb.checked = state;
         }
@@ -121,15 +135,16 @@ function toggleAllCountries(state) {
 }
 
 function updateCountryCount() {
-    var checked = document.querySelectorAll('.country-checkbox-item input[type="checkbox"]:checked').length;
+    var checked = document.querySelectorAll('.cc-box input[type="checkbox"]:checked').length;
     document.getElementById('country-count').textContent = checked + ' countries selected for map highlighting';
 }
 
-document.querySelectorAll('.country-checkbox-item input[type="checkbox"]').forEach(function(cb) {
-    cb.addEventListener('change', updateCountryCount);
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.cc-box input[type="checkbox"]').forEach(function(cb) {
+        cb.addEventListener('change', updateCountryCount);
+    });
+    updateCountryCount();
 });
-
-document.addEventListener('DOMContentLoaded', updateCountryCount);
 
 function previewIgImages(input) {
     var preview = document.getElementById('ig-preview');

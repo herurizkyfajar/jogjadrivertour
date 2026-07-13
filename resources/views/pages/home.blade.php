@@ -703,100 +703,105 @@
 @endpush
 
 @push('scripts')
-<script src="{{ asset('vendor/jvectormap/js/jquery-jvectormap.min.js') }}"></script>
-<script src="{{ asset('vendor/jvectormap/maps/world-mill.js') }}"></script>
 <script>
-function initWorldMap() {
-    if (typeof $ === 'undefined' || typeof $.fn.vectorMap === 'undefined') {
-        setTimeout(initWorldMap, 150);
-        return;
-    }
+(function(){
     var visited = @json($visitedCountries);
+    var scriptsLoaded = false;
 
-    var countryToCode = {
-        'Afghanistan':'AF','Albania':'AL','Algeria':'DZ','Andorra':'AD','Angola':'AO',
-        'Argentina':'AR','Armenia':'AM','Australia':'AU','Austria':'AT','Azerbaijan':'AZ',
-        'Bahamas':'BS','Bahrain':'BH','Bangladesh':'BD','Barbados':'BB','Belarus':'BY',
-        'Belgium':'BE','Belize':'BZ','Benin':'BJ','Bhutan':'BT','Bolivia':'BO',
-        'Bosnia and Herzegovina':'BA','Botswana':'BW','Brazil':'BR','Brunei':'BN','Bulgaria':'BG',
-        'Burkina Faso':'BF','Burundi':'BI','Cambodia':'KH','Cameroon':'CM','Canada':'CA',
-        'Central African Republic':'CF','Chad':'TD','Chile':'CL','China':'CN','Colombia':'CO',
-        'Comoros':'KM','Congo':'CG','Costa Rica':'CR','Croatia':'HR','Cuba':'CU',
-        'Cyprus':'CY','Czech Republic':'CZ','Denmark':'DK','Djibouti':'DJ','Dominican Republic':'DO',
-        'Ecuador':'EC','Egypt':'EG','El Salvador':'SV','Estonia':'EE','Ethiopia':'ET',
-        'Fiji':'FJ','Finland':'FI','France':'FR','Gabon':'GA','Gambia':'GM',
-        'Georgia':'GE','Germany':'DE','Ghana':'GH','Greece':'GR','Guatemala':'GT',
-        'Guinea':'GN','Guinea-Bissau':'GW','Guyana':'GY','Haiti':'HT','Honduras':'HN',
-        'Hungary':'HU','Iceland':'IS','India':'IN','Indonesia':'ID','Iran':'IR',
-        'Iraq':'IQ','Ireland':'IE','Israel':'IL','Italy':'IT','Jamaica':'JM',
-        'Japan':'JP','Jordan':'JO','Kazakhstan':'KZ','Kenya':'KE','Kuwait':'KW',
-        'Kyrgyzstan':'KG','Laos':'LA','Latvia':'LV','Lebanon':'LB','Lesotho':'LS',
-        'Liberia':'LR','Libya':'LY','Lithuania':'LT','Luxembourg':'LU','Madagascar':'MG',
-        'Malawi':'MW','Malaysia':'MY','Maldives':'MV','Mali':'ML','Malta':'MT',
-        'Mauritania':'MR','Mauritius':'MU','Mexico':'MX','Moldova':'MD','Monaco':'MC',
-        'Mongolia':'MN','Montenegro':'ME','Morocco':'MA','Mozambique':'MZ','Myanmar':'MM',
-        'Namibia':'NA','Nepal':'NP','Netherlands':'NL','New Zealand':'NZ','Nicaragua':'NI',
-        'Niger':'NE','Nigeria':'NG','North Korea':'KP','North Macedonia':'MK','Norway':'NO',
-        'Oman':'OM','Pakistan':'PK','Panama':'PA','Papua New Guinea':'PG','Paraguay':'PY',
-        'Peru':'PE','Philippines':'PH','Poland':'PL','Portugal':'PT','Qatar':'QA',
-        'Romania':'RO','Russia':'RU','Rwanda':'RW','Saudi Arabia':'SA','Senegal':'SN',
-        'Serbia':'RS','Sierra Leone':'SL','Singapore':'SG','Slovakia':'SK','Slovenia':'SI',
-        'Somalia':'SO','South Africa':'ZA','South Korea':'KR','Spain':'ES','Sri Lanka':'LK',
-        'Sudan':'SD','Suriname':'SR','Sweden':'SE','Switzerland':'CH','Syria':'SY',
-        'Taiwan':'TW','Tajikistan':'TJ','Tanzania':'TZ','Thailand':'TH','Togo':'TG',
-        'Trinidad and Tobago':'TT','Tunisia':'TN','Turkey':'TR','Turkmenistan':'TM','Uganda':'UG',
-        'Ukraine':'UA','United Arab Emirates':'AE','United Kingdom':'GB','United States':'US','Uruguay':'UY',
-        'Uzbekistan':'UZ','Venezuela':'VE','Vietnam':'VN','Yemen':'YE','Zambia':'ZM','Zimbabwe':'ZW'
-    };
-
-    var codes = [];
-    visited.forEach(function(country) {
-        if (countryToCode[country]) {
-            codes.push(countryToCode[country]);
-        }
-    });
-
-    if (codes.length === 0) {
-        codes.push('ID');
+    function loadScript(src, cb) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.onload = cb;
+        document.head.appendChild(s);
     }
 
-    var visitedStyle = '#4DA528';
-    var defaultStyle = '#d4d4d4';
-    var hoverStyle = '#3a8a1c';
+    function waitForjQuery(cb) {
+        if (typeof jQuery !== 'undefined') { cb(jQuery); return; }
+        setTimeout(function(){ waitForjQuery(cb); }, 100);
+    }
 
-    var values = {};
-    codes.forEach(function(code) { values[code] = 1; });
+    function initMap($) {
+        if (typeof $.fn.vectorMap !== 'undefined') { renderMap($); return; }
+        if (scriptsLoaded) { setTimeout(function(){ initMap($); }, 100); return; }
+        scriptsLoaded = true;
+        loadScript('{{ asset("vendor/jvectormap/js/jquery-jvectormap.min.js") }}', function(){
+            loadScript('{{ asset("vendor/jvectormap/maps/world-mill.js") }}', function(){
+                renderMap($);
+            });
+        });
+    }
 
-    var mapValues = {};
-    codes.forEach(function(code) { mapValues[code] = 1; });
+    function renderMap($) {
+        var countryToCode = {
+            'Afghanistan':'AF','Albania':'AL','Algeria':'DZ','Andorra':'AD','Angola':'AO',
+            'Argentina':'AR','Armenia':'AM','Australia':'AU','Austria':'AT','Azerbaijan':'AZ',
+            'Bahamas':'BS','Bahrain':'BH','Bangladesh':'BD','Barbados':'BB','Belarus':'BY',
+            'Belgium':'BE','Belize':'BZ','Benin':'BJ','Bhutan':'BT','Bolivia':'BO',
+            'Bosnia and Herzegovina':'BA','Botswana':'BW','Brazil':'BR','Brunei':'BN','Bulgaria':'BG',
+            'Burkina Faso':'BF','Burundi':'BI','Cambodia':'KH','Cameroon':'CM','Canada':'CA',
+            'Central African Republic':'CF','Chad':'TD','Chile':'CL','China':'CN','Colombia':'CO',
+            'Comoros':'KM','Congo':'CG','Costa Rica':'CR','Croatia':'HR','Cuba':'CU',
+            'Cyprus':'CY','Czech Republic':'CZ','Denmark':'DK','Djibouti':'DJ','Dominican Republic':'DO',
+            'Ecuador':'EC','Egypt':'EG','El Salvador':'SV','Estonia':'EE','Ethiopia':'ET',
+            'Fiji':'FJ','Finland':'FI','France':'FR','Gabon':'GA','Gambia':'GM',
+            'Georgia':'GE','Germany':'DE','Ghana':'GH','Greece':'GR','Guatemala':'GT',
+            'Guinea':'GN','Guinea-Bissau':'GW','Guyana':'GY','Haiti':'HT','Honduras':'HN',
+            'Hungary':'HU','Iceland':'IS','India':'IN','Indonesia':'ID','Iran':'IR',
+            'Iraq':'IQ','Ireland':'IE','Israel':'IL','Italy':'IT','Jamaica':'JM',
+            'Japan':'JP','Jordan':'JO','Kazakhstan':'KZ','Kenya':'KE','Kuwait':'KW',
+            'Kyrgyzstan':'KG','Laos':'LA','Latvia':'LV','Lebanon':'LB','Lesotho':'LS',
+            'Liberia':'LR','Libya':'LY','Lithuania':'LT','Luxembourg':'LU','Madagascar':'MG',
+            'Malawi':'MW','Malaysia':'MY','Maldives':'MV','Mali':'ML','Malta':'MT',
+            'Mauritania':'MR','Mauritius':'MU','Mexico':'MX','Moldova':'MD','Monaco':'MC',
+            'Mongolia':'MN','Montenegro':'ME','Morocco':'MA','Mozambique':'MZ','Myanmar':'MM',
+            'Namibia':'NA','Nepal':'NP','Netherlands':'NL','New Zealand':'NZ','Nicaragua':'NI',
+            'Niger':'NE','Nigeria':'NG','North Korea':'KP','North Macedonia':'MK','Norway':'NO',
+            'Oman':'OM','Pakistan':'PK','Panama':'PA','Papua New Guinea':'PG','Paraguay':'PY',
+            'Peru':'PE','Philippines':'PH','Poland':'PL','Portugal':'PT','Qatar':'QA',
+            'Romania':'RO','Russia':'RU','Rwanda':'RW','Saudi Arabia':'SA','Senegal':'SN',
+            'Serbia':'RS','Sierra Leone':'SL','Singapore':'SG','Slovakia':'SK','Slovenia':'SI',
+            'Somalia':'SO','South Africa':'ZA','South Korea':'KR','Spain':'ES','Sri Lanka':'LK',
+            'Sudan':'SD','Suriname':'SR','Sweden':'SE','Switzerland':'CH','Syria':'SY',
+            'Taiwan':'TW','Tajikistan':'TJ','Tanzania':'TZ','Thailand':'TH','Togo':'TG',
+            'Trinidad and Tobago':'TT','Tunisia':'TN','Turkey':'TR','Turkmenistan':'TM','Uganda':'UG',
+            'Ukraine':'UA','United Arab Emirates':'AE','United Kingdom':'GB','United States':'US','Uruguay':'UY',
+            'Uzbekistan':'UZ','Venezuela':'VE','Vietnam':'VN','Yemen':'YE','Zambia':'ZM','Zimbabwe':'ZW'
+        };
 
-    $('#world-map').vectorMap({
-        map: 'world_mill',
-        backgroundColor: 'transparent',
-        zoomOnScroll: false,
-        zoomButtons: false,
-        panOnDrag: false,
-        series: {
-            regions: [{
-                values: mapValues,
-                scale: [defaultStyle, visitedStyle],
-                normalizeFunction: 'polynomial',
-                attribute: 'fill'
-            }]
-        },
-        regionStyle: {
-            initial: { fill: defaultStyle, 'fill-opacity': 0.7, stroke: '#fff', 'stroke-width': 0.8 },
-            hover: { 'fill-opacity': 0.9 }
-        },
-        onRegionTipShow: function(e, el, code) {
-            var found = false;
-            codes.forEach(function(c) { if (c === code) found = true; });
-            if (found) {
-                el.html(el.html() + ' <span style="color:#7fff7f">✓ Served</span>');
+        var codes = [];
+        visited.forEach(function(c) { if (countryToCode[c]) codes.push(countryToCode[c]); });
+        if (codes.length === 0) codes.push('ID');
+
+        var mapValues = {};
+        codes.forEach(function(code) { mapValues[code] = 1; });
+
+        $('#world-map').vectorMap({
+            map: 'world_mill',
+            backgroundColor: 'transparent',
+            zoomOnScroll: false,
+            zoomButtons: false,
+            panOnDrag: false,
+            series: {
+                regions: [{
+                    values: mapValues,
+                    scale: ['#d4d4d4', '#4DA528'],
+                    normalizeFunction: 'polynomial',
+                    attribute: 'fill'
+                }]
+            },
+            regionStyle: {
+                initial: { fill: '#d4d4d4', 'fill-opacity': 0.7, stroke: '#fff', 'stroke-width': 0.8 },
+                hover: { 'fill-opacity': 0.9 }
+            },
+            onRegionTipShow: function(e, el, code) {
+                if (codes.indexOf(code) !== -1) {
+                    el.html(el.html() + ' <span style="color:#7fff7f">&#10003; Served</span>');
+                }
             }
-        }
-    });
-}
-document.addEventListener('DOMContentLoaded', initWorldMap);
+        });
+    }
+
+    waitForjQuery(initMap);
+})();
 </script>
 @endpush
