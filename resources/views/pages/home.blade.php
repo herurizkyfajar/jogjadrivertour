@@ -81,7 +81,7 @@
             </div>
             <div class="slider-home1 relative overflow-hidden swiper-slide">
                 <div class="silider-image">
-                    <img src="{{ asset('template/assets/images/slide/slide3.jpg') }}" alt="Taman Sari Water Castle" class="image-slide">
+                    <img src="{{ asset('template/assets/images/slide/slide3.webp') }}" alt="Taman Sari Water Castle" class="image-slide">
                     <img src="{{ asset('template/assets/images/slide/mask-slide.png') }}" alt="" class="mask-slide">
                     <img src="{{ asset('template/assets/images/slide/mask-fly.png') }}" alt="" class="mask-flane">
                     <div class="booking-title tf-anime-rorate">
