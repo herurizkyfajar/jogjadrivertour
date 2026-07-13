@@ -703,10 +703,11 @@
 @push('styles')
 <style>
 #world-map-svg{width:100%;height:auto;display:block;}
-#world-map-svg path{fill:#dce3ea;stroke:#fff;stroke-width:0.5;transition:fill .3s;}
+#world-map-svg rect{fill:#e8ecf0;}
+#world-map-svg path{fill:#c0c8d0;stroke:#fff;stroke-width:0.5;transition:fill .3s;cursor:default;}
 #world-map-svg path.visited{fill:#4DA528;}
-#world-map-svg path.visited:hover{fill:#3a8a1c;filter:drop-shadow(0 0 4px rgba(77,165,40,.4));}
-#world-map-svg path:hover{fill:#c5cdd6;}
+#world-map-svg path.visited:hover{fill:#3a8a1c;cursor:pointer;}
+#world-map-svg path:not(.visited):hover{fill:#aab4be;}
 </style>
 @endpush
 
