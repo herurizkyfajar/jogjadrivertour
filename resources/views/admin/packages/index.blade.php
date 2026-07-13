@@ -48,10 +48,9 @@
                             @endif
                         </td>
                         <td style="padding:12px 10px;font-weight:600;color:#081E2A;">{{ $tour->name }}</td>
-                        <td style="padding:12px 10px;color:#666;">{{ $tour->location }}, {{ $tour->city }}</td>
-                        <td style="padding:12px 10px;color:#666;">{{ $tour->asal_negara ?? '-' }}</td>
-                        <td style="padding:12px 10px;color:#4DA528;font-weight:600;">${{ number_format($tour->price, 0) }}</td>
-                        <td style="padding:12px 10px;color:#666;">{{ $tour->duration_days }}D/{{ $tour->duration_nights }}N</td>
+                        <td style="padding:12px 10px;color:#666;">{{ $tour->category }}</td>
+                        <td style="padding:12px 10px;color:#4DA528;font-weight:600;">Rp {{ number_format($tour->price, 0) }}</td>
+                        <td style="padding:12px 10px;color:#666;">{{ $tour->duration_info }}</td>
                         <td style="padding:12px 10px;">
                             @if($tour->is_active)
                                 <span style="background:#e6f7e6;color:#4DA528;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">Active</span>

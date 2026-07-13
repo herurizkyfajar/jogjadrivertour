@@ -156,11 +156,7 @@
                                         <div class="icon-box flex-three">
                                             <div class="icons flex-three">
                                                 <i class="icon-time-left"></i>
-                                                <span>{{ $tour->duration_days }} days</span>
-                                            </div>
-                                            <div class="icons flex-three">
-                                                <i class="icon-Group2"></i>
-                                                <span>{{ $tour->max_participants }} Person</span>
+                                                <span>{{ $tour->duration_info }}</span>
                                             </div>
                                         </div>
                                         <div class="flex-two">

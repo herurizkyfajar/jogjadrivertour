@@ -29,9 +29,6 @@
                         <button class="nav-link" id="pills-tour-planing-tab" data-bs-toggle="pill" data-bs-target="#pills-tour-planing" type="button" role="tab" aria-controls="pills-tour-planing" aria-selected="false"><i class="icon-destination-2-1"></i> Tour Planing</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-location-share-tab" data-bs-toggle="pill" data-bs-target="#pills-location-share" type="button" role="tab" aria-controls="pills-location-share" aria-selected="false"><i class="icon-map-1"></i> Location share</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
                         <button class="nav-link" id="pills-reviews-tab" data-bs-toggle="pill" data-bs-target="#pills-reviews" type="button" role="tab" aria-controls="pills-reviews" aria-selected="false"><i class="icon-favourite-1"></i> Reviews</button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -56,22 +53,12 @@
                                         <ul class="flex-three list-wrap-heading">
                                             <li class="flex-three">
                                                 <i class="icon-time-left"></i>
-                                                <span>{{ $tour->duration_days }} Days {{ $tour->duration_nights }} Nights</span>
-                                            </li>
-                                            <li class="flex-three">
-                                                <i class="icon-user"></i>
-                                                <span>Max Guests: {{ $tour->max_participants }}</span>
+                                                <span>{{ $tour->duration_info }}</span>
                                             </li>
                                             <li class="flex-three">
                                                 <i class="icon-18"></i>
-                                                <span>{{ $tour->location }}, {{ $tour->city }}</span>
+                                                <span>{{ $tour->category }}</span>
                                             </li>
-                                            @if($tour->asal_negara)
-                                                <li class="flex-three">
-                                                    <i class="icon-Group-9"></i>
-                                                    <span>{{ $tour->asal_negara }}</span>
-                                                </li>
-                                            @endif
                                         </ul>
                                     </div>
                                     <div class="inner-price">
@@ -135,7 +122,7 @@
                                         <h4 class="title mb-18">What to Expect</h4>
                                         <div class="expect flex-three">
                                             <span>Departure/Return Location</span>
-                                            <p>{{ $tour->location }}, {{ $tour->city }}</p>
+                                            <p>Yogyakarta City Center</p>
                                         </div>
                                         <div class="expect flex-three">
                                             <span>Departure Time</span>
@@ -316,7 +303,7 @@
                                             <h5 class="title">Day 2: Explore Main Attractions</h5>
                                             <p class="des mb-10">Full day exploration of the main attractions. Visit historical sites and enjoy local cuisine at recommended restaurants.</p>
                                             <ul class="listing-des">
-                                                <li><p>Visit {{ $tour->location }}</p></li>
+                                                <li><p>Visit the main destination</p></li>
                                                 <li><p>Explore local culture and traditions</p></li>
                                                 <li><p>Enjoy authentic Javanese cuisine</p></li>
                                                 <li><p>Photo sessions at scenic spots</p></li>
@@ -370,46 +357,6 @@
                                             </div>
                                             <button type="submit" style="width:100%;padding:14px;background:#4DA528;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;">Proceed Booking</button>
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Location Share Tab -->
-                    <div class="tab-pane fade" id="pills-location-share" role="tabpanel" aria-labelledby="pills-location-share-tab" tabindex="0">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="location-content-tour">
-                                    <h3 class="title mb-30">Location</h3>
-                                    <div style="background:#f5f5f5;border-radius:12px;height:450px;display:flex;align-items:center;justify-content:center;">
-                                        <div style="text-align:center;">
-                                            <i class="icon-map-1" style="font-size:48px;color:#4DA528;"></i>
-                                            <p style="margin-top:15px;font-size:16px;color:#666;">{{ $tour->location }}, {{ $tour->city }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="side-bar-right">
-                                    <div class="sidebar-widget">
-                                        <h6 class="block-heading">Tour Location</h6>
-                                        <ul class="category-confidence mb-30">
-                                            <li class="flex-three"><i class="icon-map-1"></i><span>{{ $tour->location }}</span></li>
-                                            <li class="flex-three"><i class="icon-18"></i><span>{{ $tour->city }}</span></li>
-                                        </ul>
-                                        <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($tour->location . ', ' . $tour->city) }}" target="_blank" style="display:block;width:100%;padding:14px;background:#4DA528;color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;margin-bottom:20px;">
-                                            <i class="icon-map-1" style="margin-right:8px;"></i> Get Directions
-                                        </a>
-                                    </div>
-                                    <div class="sidebar-widget">
-                                        <h6 class="block-heading">Share Location</h6>
-                                        <div class="flex-two mb-15">
-                                            <input type="text" id="tour-location-link" value="{{ url('/tours/' . $tour->slug) }}" readonly style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;background:#f9f9f9;">
-                                        </div>
-                                        <button type="button" onclick="copyTourLocationLink()" style="width:100%;padding:12px;background:#333;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">
-                                            <i class="icon-18" style="margin-right:8px;"></i> Copy Link
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -532,24 +479,5 @@
         </div>
     </div>
 </section>
-@push('scripts')
-<script>
-function copyTourLocationLink() {
-    var linkInput = document.getElementById('tour-location-link');
-    linkInput.select();
-    linkInput.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(linkInput.value).then(function() {
-        var btn = event.target.closest('button');
-        var originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="icon-Vector-7" style="margin-right:8px;"></i> Copied!';
-        btn.style.background = '#4DA528';
-        setTimeout(function() {
-            btn.innerHTML = originalText;
-            btn.style.background = '#333';
-        }, 2000);
-    });
-}
-</script>
-@endpush
 
 @endsection

@@ -250,7 +250,7 @@ class ChatbotController extends Controller
         $tours = Tour::where('is_active', true)->get();
         $tourMatches = [];
         foreach ($tours as $tour) {
-            $searchable = strtolower($tour->name . ' ' . $tour->location . ' ' . ($tour->description ?? '') . ' ' . ($tour->itinerary ?? ''));
+            $searchable = strtolower($tour->name . ' ' . $tour->category . ' ' . ($tour->description ?? '') . ' ' . ($tour->duration_info ?? ''));
             $score = 0;
             foreach ($words as $word) {
                 if (str_contains($searchable, $word)) $score++;
@@ -262,11 +262,10 @@ class ChatbotController extends Controller
         if (!empty($tourMatches)) {
             usort($tourMatches, fn($a, $b) => $b['score'] <=> $a['score']);
             $best = $tourMatches[0]['tour'];
-            $replies = ['ðŸŽ¯ I found a tour that might match your question:'];
-            $replies[] = 'ðŸ“ ' . $best->name;
-            $replies[] = 'â€¢ Location: ' . $best->location;
-            $replies[] = 'â€¢ Price: Rp ' . number_format($best->price, 0, ',', '.');
-            if ($best->duration_days) $replies[] = 'â€¢ Duration: ' . $best->duration_days . 'D' . ($best->duration_nights ? $best->duration_nights . 'N' : '');
+            $replies = ['🎯 I found a tour that might match your question:'];
+            $replies[] = '📍 ' . $best->name;
+            $replies[] = '• Price: Rp ' . number_format($best->price, 0, ',', '.');
+            if ($best->duration_info) $replies[] = '• Duration: ' . $best->duration_info;
             if ($best->description) {
                 $desc = strip_tags($best->description);
                 $replies[] = 'â€¢ ' . substr($desc, 0, 150) . (strlen($desc) > 150 ? '...' : '');
@@ -327,11 +326,11 @@ class ChatbotController extends Controller
         }
 
         if (str_contains($message, 'tour') || str_contains($message, 'paket') || str_contains($message, 'trip')) {
-            $tours = Tour::where('is_active', true)->take(3)->get(['name', 'price', 'location', 'slug']);
+            $tours = Tour::where('is_active', true)->take(3)->get(['name', 'price', 'duration_info', 'slug']);
             if ($tours->count()) {
                 $replies = ['We have some amazing tours! Here are some of our popular ones:'];
                 foreach ($tours as $tour) {
-                    $replies[] = 'â€¢ ' . $tour->name . ' - Rp ' . number_format($tour->price, 0, ',', '.') . ' (' . $tour->location . ')';
+                    $replies[] = '• ' . $tour->name . ' - Rp ' . number_format($tour->price, 0, ',', '.') . ' (' . $tour->duration_info . ')';
                 }
                 $replies[] = 'View all tours: ' . route('tours.index');
                 return $replies;

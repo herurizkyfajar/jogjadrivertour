@@ -26,20 +26,16 @@ class TourController extends Controller
     {
         $query = Tour::where('is_active', true);
 
-        if ($request->filled('city')) {
-            $query->where('location', 'like', '%' . $request->city . '%');
-        }
-
         if ($request->filled('category')) {
             $query->where('category', $request->category);
         }
 
         if ($request->filled('duration')) {
-            $duration = (int) $request->duration;
-            if ($duration === 3) {
-                $query->where('duration_days', '>=', 3);
+            $duration = $request->duration;
+            if ($duration === '3') {
+                $query->where('duration_info', 'LIKE', '%Day%');
             } else {
-                $query->where('duration_days', $duration);
+                $query->where('duration_info', 'LIKE', '%' . $duration . '%');
             }
         }
 

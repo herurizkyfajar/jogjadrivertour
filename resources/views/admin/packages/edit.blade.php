@@ -47,28 +47,8 @@
                     <input type="number" name="discount_price" value="{{ old('discount_price', $tour->discount_price) }}" min="0" style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
                 </div>
                 <div>
-                    <label style="display:block;font-weight:600;font-size:14px;color:#081E2A;margin-bottom:8px;">Duration Days *</label>
-                    <input type="number" name="duration_days" value="{{ old('duration_days', $tour->duration_days) }}" min="1" required style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
-                </div>
-                <div>
-                    <label style="display:block;font-weight:600;font-size:14px;color:#081E2A;margin-bottom:8px;">Duration Nights *</label>
-                    <input type="number" name="duration_nights" value="{{ old('duration_nights', $tour->duration_nights) }}" min="0" required style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
-                </div>
-                <div>
-                    <label style="display:block;font-weight:600;font-size:14px;color:#081E2A;margin-bottom:8px;">Max Participants *</label>
-                    <input type="number" name="max_participants" value="{{ old('max_participants', $tour->max_participants) }}" min="1" required style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
-                </div>
-                <div>
-                    <label style="display:block;font-weight:600;font-size:14px;color:#081E2A;margin-bottom:8px;">Location *</label>
-                    <input type="text" name="location" value="{{ old('location', $tour->location) }}" required style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
-                </div>
-                <div>
-                    <label style="display:block;font-weight:600;font-size:14px;color:#081E2A;margin-bottom:8px;">City *</label>
-                    <input type="text" name="city" value="{{ old('city', $tour->city) }}" required style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
-                </div>
-                <div>
-                    <label style="display:block;font-weight:600;font-size:14px;color:#081E2A;margin-bottom:8px;">Asal Negara</label>
-                    <input type="text" name="asal_negara" value="{{ old('asal_negara', $tour->asal_negara) }}" placeholder="e.g. Indonesia, Japan, Singapore" style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
+                    <label style="display:block;font-weight:600;font-size:14px;color:#081E2A;margin-bottom:8px;">Duration Info *</label>
+                    <input type="text" name="duration_info" value="{{ old('duration_info', $tour->duration_info) }}" placeholder="e.g. 3 Days 2 Nights, Full Day, etc." required style="width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
                 </div>
                 <div>
                     <label style="display:block;font-weight:600;font-size:14px;color:#081E2A;margin-bottom:8px;">Category *</label>
