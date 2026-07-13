@@ -127,7 +127,7 @@
 
             <div class="sidebar-dashboard">
                 <div class="db-logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" width="35" height="17"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" width="120" height="58"></a>
                 </div>
                 <div class="db-menu">
                     <ul>
