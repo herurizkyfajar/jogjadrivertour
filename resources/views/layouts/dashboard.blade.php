@@ -7,7 +7,10 @@
     <meta name="author" content="Yogyakarta Driver Tour">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <link rel="stylesheet" href="{{ asset('template/app/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/app/css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/assets/fonts/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/nice-select.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template/app/css/bootstrap-select.min.css') }}">
 
@@ -124,7 +127,7 @@
 
             <div class="sidebar-dashboard">
                 <div class="db-logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" style="width:150px;height:auto;" width="200" height="97"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" width="35" height="17"></a>
                 </div>
                 <div class="db-menu">
                     <ul>
@@ -228,7 +231,6 @@
             <div class="has-dashboard">
                 <!-- Main Header -->
                 <header class="main-header flex">
-                    <!-- Header Lower -->
                     <div id="header">
                         <div class="header-dashboard">
                             <div class="tf-container full">
@@ -245,18 +247,22 @@
                                                 </form>
                                             </div>
                                             <div class="nav-outer flex align-center">
-                                                <ul class="navigation clearfix" style="list-style:none;margin:0;padding:0;display:flex;gap:24px;">
-                                                    <li><a href="{{ route('home') }}" style="text-decoration:none;color:#333;font-size:14px;">Home</a></li>
-                                                    <li><a href="{{ route('tours.index') }}" style="text-decoration:none;color:#333;font-size:14px;">Tours</a></li>
-                                                    <li><a href="{{ route('destinations.index') }}" style="text-decoration:none;color:#333;font-size:14px;">Destinations</a></li>
-                                                    <li><a href="{{ route('blog.index') }}" style="text-decoration:none;color:#333;font-size:14px;">Blog</a></li>
-                                                    <li><a href="{{ route('contact') }}" style="text-decoration:none;color:#333;font-size:14px;">Contact</a></li>
-                                                </ul>
+                                                <nav class="main-menu show navbar-expand-md">
+                                                    <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                                        <ul class="navigation clearfix">
+                                                            <li><a href="{{ route('home') }}">Home</a></li>
+                                                            <li><a href="{{ route('tours.index') }}">Tours</a></li>
+                                                            <li><a href="{{ route('destinations.index') }}">Destinations</a></li>
+                                                            <li><a href="{{ route('blog.index') }}">Blog</a></li>
+                                                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </nav>
                                             </div>
                                             <div class="header-account flex align-center">
                                                 <div class="dropdown account">
                                                     <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <img src="{{ asset('template/assets/images/page/avata.jpg') }}" alt="image" width="40" height="40" style="border-radius:50%;">
+                                                        <img src="{{ asset('template/assets/images/page/avata.jpg') }}" alt="Avatar">
                                                     </a>
                                                     <ul class="dropdown-menu">
                                                         <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
@@ -278,7 +284,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End Header Lower -->
                 </header>
                 <!-- End Main Header -->
 
