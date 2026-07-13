@@ -25,52 +25,26 @@
         <div class="row">
             @forelse($tours as $tour)
                 <div class="col-sm-6 col-xl-3 mb-32">
-                    <div class="tour-listing box-sd">
-                        <a href="{{ route('tours.show', $tour->slug) }}" class="tour-listing-image">
-                            <div class="badge-top flex-two">
-                                <span class="feature">Featured</span>
-                                <div class="badge-media flex-five">
-                                    <span class="media"><i class="icon-time-left"></i>{{ $tour->duration_info }}</span>
-                                </div>
-                            </div>
+                    <a href="{{ route('tours.show', $tour->slug) }}" class="tour-listing box-sd d-flex flex-column" style="height:100%;text-decoration:none;color:inherit;">
+                        <div style="overflow:hidden;border-radius:16px 16px 0 0;">
                             @if(str_starts_with($tour->image, 'tours/'))
-                                <img src="{{ asset('storage/'.$tour->image) }}" alt="{{ $tour->name }}">
+                                <img src="{{ asset('storage/'.$tour->image) }}" alt="{{ $tour->name }}" style="width:100%;height:220px;object-fit:cover;display:block;">
                             @else
-                                <img src="{{ asset($tour->image) }}" alt="{{ $tour->name }}">
+                                <img src="{{ asset($tour->image) }}" alt="{{ $tour->name }}" style="width:100%;height:220px;object-fit:cover;display:block;">
                             @endif
-                        </a>
-                        <div class="tour-listing-content">
-                            <span class="map"><i class="icon-Vector4"></i>{{ $tour->category }}</span>
-                            <h3 class="title-tour-list">
-                                <a href="{{ route('tours.show', $tour->slug) }}">{{ $tour->name }}</a>
+                        </div>
+                        <div class="tour-listing-content flex-grow-1 d-flex flex-column">
+                            <h3 class="title-tour-list" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+                                {{ $tour->name }}
                             </h3>
-                            <div class="review">
-                                @for($i = 0; $i < 5; $i++)
-                                    <i class="icon-Star"></i>
-                                @endfor
-                                <span>({{ $tour->review_count }} Reviews)</span>
-                            </div>
-                            <div class="icon-box flex-three">
+                            <div class="icon-box flex-three mt-auto">
                                 <div class="icons flex-three">
                                     <i class="icon-time-left"></i>
                                     <span>{{ $tour->duration_info }}</span>
                                 </div>
                             </div>
-                            <div class="flex-two">
-                                <div class="price-box flex-three">
-                                    @if($tour->discount_price && $tour->discount_price < $tour->price)
-                                        <p>From <span class="price-sale">Rp {{ number_format($tour->discount_price, 0, ',', '.') }}</span></p>
-                                        <span class="price">Rp {{ number_format($tour->price, 0, ',', '.') }}</span>
-                                    @else
-                                        <p>From <span class="price-sale">Rp {{ number_format($tour->price, 0, ',', '.') }}</span></p>
-                                    @endif
-                                </div>
-                                <div class="icon-bookmark">
-                                    <i class="icon-Vector-151"></i>
-                                </div>
-                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @empty
                 <div class="col-12 text-center">
@@ -88,3 +62,11 @@
 </section>
 
 @endsection
+
+@push('styles')
+<style>
+.tour-listing { display: flex; flex-direction: column; height: 100%; }
+.tour-listing .tour-listing-content { flex: 1; display: flex; flex-direction: column; }
+.tour-listing .tour-listing-content .icon-box { margin-top: auto; }
+</style>
+@endpush
