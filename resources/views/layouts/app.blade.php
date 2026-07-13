@@ -18,8 +18,8 @@
 
     <link rel="stylesheet" href="{{ asset('template/app/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/app/css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/assets/fonts/style.css') }}" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="{{ asset('template/app/css/swiper-bundle.min.css') }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ asset('template/app/css/animate.css') }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ asset('template/app/css/nice-select.css') }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ asset('template/app/css/magnific-popup.css') }}" media="print" onload="this.media='all'">
@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="{{ asset('template/app/css/textanimation.css') }}" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="{{ asset('template/assets/fonts/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('template/app/css/swiper-bundle.min.css') }}">
         <link rel="stylesheet" href="{{ asset('template/app/css/animate.css') }}">
         <link rel="stylesheet" href="{{ asset('template/app/css/nice-select.css') }}">
         <link rel="stylesheet" href="{{ asset('template/app/css/magnific-popup.css') }}">
