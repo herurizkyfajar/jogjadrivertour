@@ -20,8 +20,9 @@
     <link rel="stylesheet" href="{{ asset('vendor/quill/quill.snow.css') }}">
     @stack('styles')
     <style>
-        .sidebar-dashboard.actives .db-logo img {
-            width: 40px;
+        .sidebar-dashboard .db-logo a img {
+            width: 120px !important;
+            height: auto !important;
         }
         .sidebar-dashboard.actives .db-logo {
             padding: 38px 10px;
@@ -127,7 +128,7 @@
 
             <div class="sidebar-dashboard">
                 <div class="db-logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" width="120" height="58"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" style="width:120px !important;height:auto !important;"></a>
                 </div>
                 <div class="db-menu">
                     <ul>
