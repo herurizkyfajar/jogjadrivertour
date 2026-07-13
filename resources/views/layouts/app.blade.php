@@ -17,8 +17,8 @@
     <link rel="alternate" type="text/plain" href="{{ url('llms.txt') }}" title="LLMs">
 
     <link rel="stylesheet" href="{{ asset('template/app/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('template/app/css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('template/assets/fonts/style.css') }}">
     <link rel="stylesheet" href="{{ asset('template/app/css/animate.css') }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ asset('template/app/css/nice-select.css') }}" media="print" onload="this.media='all'">

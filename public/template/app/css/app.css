@@ -5523,9 +5523,11 @@
 }
 .btn-nex-prev .swiper-button-next::after {
   content: "\e970";
+  font-family: "icomoon";
 }
 .btn-nex-prev .swiper-button-prev::after {
   content: "\e971";
+  font-family: "icomoon";
 }
 .btn-nex-prev .next-home1,
 .btn-nex-prev .prev-home1 {
