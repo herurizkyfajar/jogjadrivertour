@@ -136,9 +136,9 @@
     </div>
 
     <!-- End Header Lower -->
-    <a href="javascript:void(0)" class="header-sidebar flex-three" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu">
+    <button type="button" class="header-sidebar flex-three" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Open menu" style="background:none;border:none;cursor:pointer;padding:0;">
         <i class="icon-Bars"></i>
-    </a>
+    </button>
 
     <!-- Mobile Menu -->
     <div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>

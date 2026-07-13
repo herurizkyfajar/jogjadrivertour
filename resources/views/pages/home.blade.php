@@ -36,7 +36,7 @@
                                         <p class="btn-main-text">Book Now</p>
                                         <p class="iconer"><i class="icon-arrow-right"></i></p>
                                     </a>
-                                    <a href="{{ route('about') }}" class="btn-w-wa fadeInDown wow">Learn more <i class="icon-Group-13"></i></a>
+                                    <a href="{{ route('about') }}" class="btn-w-wa fadeInDown wow">About Yogyakarta Driver Tour <i class="icon-Group-13"></i></a>
                                 </div>
                             </div>
                         </div>
