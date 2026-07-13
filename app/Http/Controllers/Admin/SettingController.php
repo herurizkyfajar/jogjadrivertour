@@ -14,6 +14,7 @@ class SettingController extends Controller
         $settings = [
             'instagram_url' => Setting::get('instagram_url', ''),
             'instagram_images' => Setting::get('instagram_images', '[]'),
+            'visited_countries' => Setting::get('visited_countries', '[]'),
         ];
         return view('admin.settings.index', compact('settings'));
     }
@@ -21,6 +22,9 @@ class SettingController extends Controller
     public function update(Request $request)
     {
         Setting::set('instagram_url', $request->instagram_url);
+
+        $visitedCountries = $request->visited_countries ?? [];
+        Setting::set('visited_countries', json_encode($visitedCountries));
 
         $images = json_decode(Setting::get('instagram_images', '[]'), true) ?: [];
 

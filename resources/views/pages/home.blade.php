@@ -699,12 +699,12 @@
 @endpush
 
 @push('styles')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/jquery-jvectormap.min.css" />
+<link rel="stylesheet" href="{{ asset('vendor/jvectormap/css/jquery-jvectormap.min.css') }}" />
 @endpush
 
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/jquery-jvectormap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.5/maps/world-merc.js"></script>
+<script src="{{ asset('vendor/jvectormap/js/jquery-jvectormap.min.js') }}"></script>
+<script src="{{ asset('vendor/jvectormap/maps/world-mill.js') }}"></script>
 <script>
 function initWorldMap() {
     if (typeof $ === 'undefined' || typeof $.fn.vectorMap === 'undefined') {
@@ -771,7 +771,7 @@ function initWorldMap() {
     codes.forEach(function(code) { mapValues[code] = 1; });
 
     $('#world-map').vectorMap({
-        map: 'world_merc',
+        map: 'world_mill',
         backgroundColor: 'transparent',
         zoomOnScroll: false,
         zoomButtons: false,
