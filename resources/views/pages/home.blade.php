@@ -9,9 +9,9 @@
         <div class="swiper-wrapper">
             <div class="slider-home1 relative overflow-hidden swiper-slide">
                 <div class="silider-image">
-                    <img src="{{ asset('template/assets/images/slide/slide1.webp') }}" alt="Borobudur Sunrise" class="image-slide">
-                    <img src="{{ asset('template/assets/images/slide/mask-slide.png') }}" alt="" class="mask-slide">
-                    <img src="{{ asset('template/assets/images/slide/mask-fly.png') }}" alt="" class="mask-flane">
+                    <img src="{{ asset('template/assets/images/slide/slide1.webp') }}" alt="Borobudur Sunrise" class="image-slide" width="1920" height="800">
+                    <img src="{{ asset('template/assets/images/slide/mask-slide.png') }}" alt="" class="mask-slide" width="1920" height="800">
+                    <img src="{{ asset('template/assets/images/slide/mask-fly.png') }}" alt="" class="mask-flane" width="1920" height="800">
                     <div class="booking-title tf-anime-rorate">
                         <p class="booking">Booking</p>
                         <span></span>
@@ -45,9 +45,9 @@
             </div>
             <div class="slider-home1 relative overflow-hidden swiper-slide">
                 <div class="silider-image">
-                    <img src="{{ asset('template/assets/images/slide/slide2.webp') }}" alt="Lava Tour Merapi" class="image-slide">
-                    <img src="{{ asset('template/assets/images/slide/mask-slide.png') }}" alt="" class="mask-slide">
-                    <img src="{{ asset('template/assets/images/slide/mask-fly.png') }}" alt="" class="mask-flane">
+                    <img src="{{ asset('template/assets/images/slide/slide2.webp') }}" alt="Lava Tour Merapi" class="image-slide" width="1920" height="800">
+                    <img src="{{ asset('template/assets/images/slide/mask-slide.png') }}" alt="" class="mask-slide" width="1920" height="800">
+                    <img src="{{ asset('template/assets/images/slide/mask-fly.png') }}" alt="" class="mask-flane" width="1920" height="800">
                     <div class="booking-title tf-anime-rorate">
                         <p class="booking">Booking</p>
                         <span></span>
@@ -81,9 +81,9 @@
             </div>
             <div class="slider-home1 relative overflow-hidden swiper-slide">
                 <div class="silider-image">
-                    <img src="{{ asset('template/assets/images/slide/slide3.webp') }}" alt="Taman Sari Water Castle" class="image-slide">
-                    <img src="{{ asset('template/assets/images/slide/mask-slide.png') }}" alt="" class="mask-slide">
-                    <img src="{{ asset('template/assets/images/slide/mask-fly.png') }}" alt="" class="mask-flane">
+                    <img src="{{ asset('template/assets/images/slide/slide3.webp') }}" alt="Taman Sari Water Castle" class="image-slide" width="1920" height="800">
+                    <img src="{{ asset('template/assets/images/slide/mask-slide.png') }}" alt="" class="mask-slide" width="1920" height="800">
+                    <img src="{{ asset('template/assets/images/slide/mask-fly.png') }}" alt="" class="mask-flane" width="1920" height="800">
                     <div class="booking-title tf-anime-rorate">
                         <p class="booking">Booking</p>
                         <span></span>
@@ -442,7 +442,7 @@
             </div>
             <div class="col-lg-5" style="margin:-60px -30px -60px 0;padding:0;">
                 <div class="image-banner-contact" style="height:100%;">
-                    <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="Yogyakarta" loading="lazy" style="object-fit:cover;width:100%;height:100%;border-radius:0;">
+                    <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="Yogyakarta" loading="lazy" width="800" height="600" style="object-fit:cover;width:100%;height:100%;border-radius:0;">
                 </div>
             </div>
         </div>

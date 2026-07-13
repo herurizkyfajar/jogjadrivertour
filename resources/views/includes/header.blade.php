@@ -49,7 +49,7 @@
                             <div class="logo-box">
                                 <div class="logo">
                                     <a href="{{ route('home') }}">
-                                        <img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo">
+                                        <img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" width="200" height="97">
                                     </a>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                             <div class="header-account flex align-center">
                                 <div class="search-mobie relative">
                                     <div class="dropdown">
-                                        <a class="show-search" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Search">
+                                        <a class="show-search" data-bs-toggle="dropdown" aria-label="Search">
                                             <i class="icon-Vector5"></i>
                                         </a>
                                         <ul class="dropdown-menu top-search">
@@ -113,13 +113,13 @@
                                     <ul class="flex align-center">
                                         @auth
                                             <li>
-                                                <a href="{{ route('dashboard') }}" class="flex-three">
+                                                <a href="{{ route('dashboard') }}" class="flex-three" aria-label="Dashboard">
                                                     <i class="icon-profile-user-1"></i>
                                                 </a>
                                             </li>
                                         @else
                                             <li>
-                                                <a href="{{ route('login') }}" class="flex-three">
+                                                <a href="{{ route('login') }}" class="flex-three" aria-label="Login">
                                                     <i class="icon-user-1-1"></i>
                                                 </a>
                                             </li>

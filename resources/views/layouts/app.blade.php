@@ -140,7 +140,7 @@
 <body class="body header-fixed counter-scroll @yield('body-class')">
     <div id="google_translate_element" style="display:none;"></div>
 
-    <div class="preload preload-container" id="preloader">
+    <div class="preload preload-container" id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:#fff;display:flex;align-items:center;justify-content:center;">
         <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
             <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20"
                 stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
