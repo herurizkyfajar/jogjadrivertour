@@ -230,15 +230,6 @@
                             <p class="btn-main-text">More about us</p>
                             <p class="iconer"><i class="icon-arrow-right"></i></p>
                         </a>
-                        <div class="profile flex-three">
-                            <div class="image">
-                                <img src="{{ asset('template/assets/images/avata/10.jpg') }}" alt="">
-                            </div>
-                            <div class="content">
-                                <img src="{{ asset('template/assets/images/page/name.png') }}" alt="">
-                                <span class="text-main">Founder & CEO</span>
-                            </div>
-                        </div>
                     </div>
                     <div class="map-check flex-three fadeInUp wow">
                         <div class="icon">
