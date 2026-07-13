@@ -42,6 +42,8 @@ class HomeController extends Controller
 
         $visitedCountries = json_decode(Setting::get('visited_countries', '[]'), true) ?: [];
 
+        $worldMapSvg = file_get_contents(public_path('vendor/jvectormap/world-map.svg'));
+
         $featuredDestinationsAll = Destination::where('is_featured', true)
             ->where('is_active', true)
             ->get();
@@ -54,7 +56,8 @@ class HomeController extends Controller
             'tourCategories',
             'cities',
             'featuredDestinationsAll',
-            'visitedCountries'
+            'visitedCountries',
+            'worldMapSvg'
         ));
     }
 }
