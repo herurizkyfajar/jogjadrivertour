@@ -257,6 +257,23 @@
     </div>
 </section>
 
+<!-- World Map Section -->
+<section style="padding:80px 0 60px;">
+    <div class="tf-container">
+        <div class="text-center" style="margin-bottom:40px;">
+            <h2 style="font-size:36px;font-weight:800;color:#081E2A;margin:0 0 12px;">Trusted by International Travelers Worldwide</h2>
+            <p style="font-size:15px;color:#666;max-width:600px;margin:0 auto;">Delivering exceptional Yogyakarta private driver services trusted by customers from diverse countries.</p>
+        </div>
+        <div style="width:100%;max-width:900px;margin:0 auto;">
+            {!! $worldMapSvg !!}
+        </div>
+        <div class="map-legend" style="margin-top:24px;">
+            <div class="map-legend-item"><div class="map-legend-dot visited"></div> Countries We Have Served</div>
+            <div class="map-legend-item"><div class="map-legend-dot unvisited"></div> Other Countries</div>
+        </div>
+    </div>
+</section>
+
 <!-- Widget Featured Destinations -->
 <section class="tour-package pd-main">
     <div class="tf-container w-1456">
@@ -495,23 +512,6 @@
                     <p>No blog posts available.</p>
                 </div>
             @endforelse
-        </div>
-    </div>
-</section>
-
-<!-- World Map Section -->
-<section style="padding:80px 0 60px;background:linear-gradient(180deg,#f8faf8 0%,#fff 100%);">
-    <div class="tf-container">
-        <div class="text-center" style="margin-bottom:40px;">
-            <h2 style="font-size:36px;font-weight:800;color:#081E2A;margin:0 0 12px;">Trusted by International Travelers Worldwide</h2>
-            <p style="font-size:15px;color:#666;max-width:600px;margin:0 auto;">Delivering exceptional Yogyakarta private driver services trusted by customers from diverse countries.</p>
-        </div>
-        <div style="width:100%;max-width:900px;margin:0 auto;">
-            {!! $worldMapSvg !!}
-        </div>
-        <div class="map-legend" style="margin-top:24px;">
-            <div class="map-legend-item"><div class="map-legend-dot visited"></div> Countries We Have Served</div>
-            <div class="map-legend-item"><div class="map-legend-dot unvisited"></div> Other Countries</div>
         </div>
     </div>
 </section>
