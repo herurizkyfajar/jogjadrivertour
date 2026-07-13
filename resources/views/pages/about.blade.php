@@ -12,7 +12,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><span>About Us</span></li>
                 </ul>
-                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="">
+                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="" width="193" height="158">
             </div>
         </div>
     </div>
@@ -24,13 +24,13 @@
             <div class="col-md-6">
                 <div class="image-about-h4-wrap relative">
                     <div class="image-about-item relative about-wrap-left">
-                        <img src="{{ asset('template/assets/images/about-us/about-h41.jpg') }}" alt="image" loading="lazy">
-                        <img src="{{ asset('template/assets/images/page/shape5.1.png') }}" alt="image" class="shape-about-h4" loading="lazy">
+                        <img src="{{ asset('template/assets/images/about-us/about-h41.jpg') }}" alt="image" loading="lazy" width="558" height="674">
+                        <img src="{{ asset('template/assets/images/page/shape5.1.png') }}" alt="image" class="shape-about-h4" loading="lazy" width="521" height="75">
                         <span class="quote">25,000 + Customer Worldwide</span>
                     </div>
                     <div class="image-about-item relative about-wrap-right">
-                        <img src="{{ asset('template/assets/images/about-us/about-h4.jpg') }}" alt="image" loading="lazy">
-                        <img src="{{ asset('template/assets/images/page/shape5.1.png') }}" alt="image" class="shape-about-h4" loading="lazy">
+                        <img src="{{ asset('template/assets/images/about-us/about-h4.jpg') }}" alt="image" loading="lazy" width="524" height="689">
+                        <img src="{{ asset('template/assets/images/page/shape5.1.png') }}" alt="image" class="shape-about-h4" loading="lazy" width="521" height="75">
                     </div>
                     <div class="box-year center">
                         <span class="number">25</span>
@@ -93,7 +93,7 @@
             </div>
             <div class="col-md-4 text-center" style="padding:20px 0;">
                 <a href="https://bandungdrivertour.com" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ asset('template/assets/images/bandung-driver-tour.webp') }}" alt="Bandung Driver Tour" style="max-width:220px;width:100%;height:auto;">
+                    <img src="{{ asset('template/assets/images/bandung-driver-tour.webp') }}" alt="Bandung Driver Tour" style="max-width:220px;width:100%;height:auto;" width="220" height="115">
                 </a>
             </div>
         </div>
@@ -185,14 +185,14 @@
         <div class="callt-to-action flex-two z-index3 relative">
             <div class="callt-to-action-content flex-three">
                 <div class="image">
-                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
+                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image" width="83" height="83">
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to explore Yogyakarta?</h2>
                     <p class="des">Book your private car rental and tour guide today</p>
                 </div>
             </div>
-            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">
+            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab" width="169" height="138">
             <div class="callt-to-action-button">
                 <a href="{{ route('tours.packages') }}" class="get-call">Let's get started</a>
             </div>

@@ -12,7 +12,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><span>Contact Us</span></li>
                 </ul>
-                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="">
+                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="" width="193" height="158">
             </div>
         </div>
     </div>
@@ -102,12 +102,12 @@
             <div class="col-lg-12">
                 <div class="swiper brand-logo overflow-hidden">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt=""></div>
-                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt=""></div>
-                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt=""></div>
-                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt=""></div>
-                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt=""></div>
-                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt=""></div>
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="" width="200" height="97"></div>
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="" width="200" height="97"></div>
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="" width="200" height="97"></div>
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="" width="200" height="97"></div>
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="" width="200" height="97"></div>
+                        <div class="swiper-slide"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="" width="200" height="97"></div>
                     </div>
                 </div>
             </div>
@@ -120,14 +120,14 @@
         <div class="callt-to-action flex-two z-index3 relative">
             <div class="callt-to-action-content flex-three">
                 <div class="image">
-                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
+                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image" width="83" height="83">
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to explore Yogyakarta?</h2>
                     <p class="des">Book your private car rental and tour guide today</p>
                 </div>
             </div>
-            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">
+            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab" width="169" height="138">
             <div class="callt-to-action-button">
                 <a href="{{ route('tours.packages') }}" class="get-call">Let's get started</a>
             </div>

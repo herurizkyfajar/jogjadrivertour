@@ -12,7 +12,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><span>Blog Page</span></li>
                 </ul>
-                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="">
+                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="" width="193" height="158">
             </div>
         </div>
     </div>
@@ -79,7 +79,7 @@
                 <div class="side-bar-right">
                     <div class="sidebar-widget">
                         <div class="profile-widget center">
-                            <img src="{{ asset('template/assets/images/avata/avt-blog.jpg') }}" alt="Author" class="avata">
+                            <img src="{{ asset('template/assets/images/avata/avt-blog.jpg') }}" alt="Author" class="avata" width="153" height="150">
                             <div class="name">Rosalina D. William</div>
                             <span class="job">Blogger/Photographer</span>
                             <p class="des">The whimsically named Egg Canvas is the design director and photographer in New York.</p>

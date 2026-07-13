@@ -91,10 +91,10 @@
                                 @endif
                             </div>
                             <div class="col-6 col-sm-3">
-                                <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="image" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
+                                <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="image" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:12px;" width="800" height="494">
                             </div>
                             <div class="col-6 col-sm-3">
-                                <img src="{{ asset('template/assets/images/destination/2.jpg') }}" alt="image" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:12px;">
+                                <img src="{{ asset('template/assets/images/destination/2.jpg') }}" alt="image" loading="lazy" style="width:100%;height:300px;object-fit:cover;border-radius:12px;" width="800" height="533">
                             </div>
                         </div>
                         <div class="row">
@@ -371,7 +371,7 @@
                                     <h3 class="title mb-30">Reviews ({{ $tour->review_count }})</h3>
                                     <div class="comment-blog flex mb-40">
                                         <div class="avata">
-                                            <img src="{{ asset('template/assets/images/avata/avt-coment.jpg') }}" alt="">
+                                            <img src="{{ asset('template/assets/images/avata/avt-coment.jpg') }}" alt="" width="106" height="105">
                                         </div>
                                         <div class="content">
                                             <div class="flex-one">
@@ -390,7 +390,7 @@
                                     </div>
                                     <div class="comment-blog flex mb-40">
                                         <div class="avata">
-                                            <img src="{{ asset('template/assets/images/avata/avt-comment-2.jpg') }}" alt="">
+                                            <img src="{{ asset('template/assets/images/avata/avt-comment-2.jpg') }}" alt="" width="106" height="105">
                                         </div>
                                         <div class="content">
                                             <div class="flex-one">
@@ -442,13 +442,13 @@
                                         @endif
                                     </div>
                                     <div class="col-6 col-md-3 mb-20">
-                                        <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                        <img src="{{ asset('template/assets/images/destination/1.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;" width="800" height="494">
                                     </div>
                                     <div class="col-6 col-md-3 mb-20">
-                                        <img src="{{ asset('template/assets/images/destination/2.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                        <img src="{{ asset('template/assets/images/destination/2.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;" width="800" height="533">
                                     </div>
                                     <div class="col-6 col-md-3 mb-20">
-                                        <img src="{{ asset('template/assets/images/destination/3.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;">
+                                        <img src="{{ asset('template/assets/images/destination/3.jpg') }}" alt="gallery" loading="lazy" style="width:100%;height:200px;object-fit:cover;border-radius:12px;" width="800" height="600">
                                     </div>
                                 </div>
                             </div>
@@ -465,14 +465,14 @@
         <div class="callt-to-action flex-two z-index3 relative">
             <div class="callt-to-action-content flex-three">
                 <div class="image">
-                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
+                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image" width="83" height="83">
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to adventure and enjoy natural</h2>
                     <p class="des">Book your tour now and explore Yogyakarta</p>
                 </div>
             </div>
-            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">
+            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab" width="169" height="138">
             <div class="callt-to-action-button">
                 <a href="{{ route('tours.packages') }}" class="get-call">Let's get started</a>
             </div>

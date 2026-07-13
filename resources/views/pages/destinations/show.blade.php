@@ -297,14 +297,14 @@
         <div class="callt-to-action flex-two z-index3 relative">
             <div class="callt-to-action-content flex-three">
                 <div class="image">
-                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
+                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image" width="83" height="83">
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to adventure and enjoy natural</h2>
                     <p class="des">Book your tour to {{ $destination->name }} now</p>
                 </div>
             </div>
-            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">
+            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab" width="169" height="138">
             <div class="callt-to-action-button">
                 <a href="{{ route('tours.packages') }}" class="get-call">Let's get started</a>
             </div>

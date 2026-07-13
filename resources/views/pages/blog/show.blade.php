@@ -13,7 +13,7 @@
                     <li><a href="{{ route('blog.index') }}">Blog</a></li>
                     <li><span>{{ Str::limit($blog->title, 30) }}</span></li>
                 </ul>
-                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="">
+                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="" width="193" height="158">
             </div>
         </div>
     </div>
@@ -146,7 +146,7 @@
                                     <img src="{{ asset($blog->author_avatar) }}" alt="{{ $blog->author_name }}" class="avata">
                                 @endif
                             @else
-                                <img src="{{ asset('template/assets/images/avata/avt-blog.jpg') }}" alt="{{ $blog->author_name }}" class="avata">
+                                <img src="{{ asset('template/assets/images/avata/avt-blog.jpg') }}" alt="{{ $blog->author_name }}" class="avata" width="153" height="150">
                             @endif
                             <div class="name">{{ $blog->author_name ?? 'Admin' }}</div>
                             <span class="job">Blogger/Photographer</span>
@@ -238,14 +238,14 @@
         <div class="callt-to-action flex-two z-index3 relative">
             <div class="callt-to-action-content flex-three">
                 <div class="image">
-                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
+                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image" width="83" height="83">
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to adventure and enjoy natural</h2>
                     <p class="des">Book your private car rental and tour guide with Yogyakarta Driver Tour</p>
                 </div>
             </div>
-            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">
+            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab" width="169" height="138">
             <div class="callt-to-action-button">
                 <a href="{{ route('tours.packages') }}" class="get-call">Let's get started</a>
             </div>

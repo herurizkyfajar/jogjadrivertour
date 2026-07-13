@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="language">
                                     <div class="nice-select" tabindex="0">
-                                        <img src="{{ asset('template/assets/images/page/language.svg') }}" alt="">
+                                        <img src="{{ asset('template/assets/images/page/language.svg') }}" alt="" width="20" height="20">
                                         <span class="current" id="lang-current">English</span>
                                         <ul class="list">
                                             <li data-value="" class="option selected">English</li>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </div>
-            <img src="{{ asset('template/assets/images/page/fl1.png') }}" alt="" class="fly-ab">
+            <img src="{{ asset('template/assets/images/page/fl1.png') }}" alt="" class="fly-ab" width="174" height="92">
         </div>
     </div>
 
@@ -147,7 +147,7 @@
         <nav class="menu-box">
             <div class="nav-logo">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('template/assets/images/logo.webp') }}" alt="">
+                    <img src="{{ asset('template/assets/images/logo.webp') }}" alt="" width="200" height="97">
                 </a>
             </div>
             <div class="bottom-canvas">

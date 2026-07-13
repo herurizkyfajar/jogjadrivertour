@@ -12,7 +12,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><span>Tour Package</span></li>
                 </ul>
-                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="">
+                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="" width="193" height="158">
             </div>
         </div>
     </div>

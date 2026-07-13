@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{{ asset('template/app/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('template/app/css/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('template/app/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/app/css/app.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/assets/fonts/style.css') }}">
     <link rel="stylesheet" href="{{ asset('template/app/css/animate.css') }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ asset('template/app/css/nice-select.css') }}" media="print" onload="this.media='all'">
@@ -188,18 +188,18 @@
         </div>
     </div>
 
-    <script src="{{ asset('template/app/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('template/app/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('template/app/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('template/app/js/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('template/app/js/swiper.js') }}"></script>
-    <script src="{{ asset('template/app/js/plugin.js') }}"></script>
-    <script src="{{ asset('template/app/js/jquery.fancybox.js') }}"></script>
-    <script src="{{ asset('template/app/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('template/app/js/textanimation.js') }}"></script>
-    <script src="{{ asset('template/app/js/wow.min.js') }}"></script>
-    <script src="{{ asset('template/app/js/shortcodes.js') }}"></script>
-    <script src="{{ asset('template/app/js/main.js') }}"></script>
+    <script src="{{ asset('template/app/js/jquery.min.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/jquery.nice-select.min.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/swiper-bundle.min.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/swiper.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/plugin.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/jquery.fancybox.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/jquery.magnific-popup.min.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/textanimation.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/wow.min.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/shortcodes.js') }}" defer></script>
+    <script src="{{ asset('template/app/js/main.js') }}" defer></script>
     <script>
         function doGoogleTranslate(lang) {
             var ct = document.getElementById('google_translate_element');
@@ -258,8 +258,8 @@
                 autoDisplay: false
             }, 'google_translate_element');
         }
-        new WOW().init();
-        $(document).ready(function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            new WOW().init();
             $('select').niceSelect();
             var currentLang = getCurrentLang();
             if (currentLang === 'id') {

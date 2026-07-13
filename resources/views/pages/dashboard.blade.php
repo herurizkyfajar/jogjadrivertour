@@ -120,7 +120,7 @@
                 <ul>
                     <li class="comment-by-user flex-three">
                         <div class="group-author">
-                            <img src="{{ asset('template/assets/images/avata/avt-review.jpg') }}" alt="image">
+                            <img src="{{ asset('template/assets/images/avata/avt-review.jpg') }}" alt="image" width="120" height="120">
                         </div>
                         <div class="content">
                             <div class="group-name flex-one">
@@ -138,7 +138,7 @@
                     </li>
                     <li class="comment-by-user flex-three">
                         <div class="group-author">
-                            <img src="{{ asset('template/assets/images/avata/avt-review2.jpg') }}" alt="image">
+                            <img src="{{ asset('template/assets/images/avata/avt-review2.jpg') }}" alt="image" width="85" height="85">
                         </div>
                         <div class="content">
                             <div class="group-name flex-one">
@@ -156,7 +156,7 @@
                     </li>
                     <li class="comment-by-user flex-three">
                         <div class="group-author">
-                            <img src="{{ asset('template/assets/images/avata/avt-review.jpg') }}" alt="image">
+                            <img src="{{ asset('template/assets/images/avata/avt-review.jpg') }}" alt="image" width="120" height="120">
                         </div>
                         <div class="content">
                             <div class="group-name flex-one">
@@ -174,7 +174,7 @@
                     </li>
                     <li class="comment-by-user flex-three">
                         <div class="group-author">
-                            <img src="{{ asset('template/assets/images/avata/avt-review3.jpg') }}" alt="image">
+                            <img src="{{ asset('template/assets/images/avata/avt-review3.jpg') }}" alt="image" width="85" height="85">
                         </div>
                         <div class="content">
                             <div class="group-name flex-one">

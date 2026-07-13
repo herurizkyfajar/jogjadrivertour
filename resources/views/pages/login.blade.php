@@ -12,7 +12,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><span>Login</span></li>
                 </ul>
-                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="">
+                <img class="bcrumb-ab" src="{{ asset('template/assets/images/page/mask-bcrumb.png') }}" alt="" width="193" height="158">
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
             <div class="col-lg-12">
                 <div class="login-wrap flex">
                     <div class="image">
-                        <img src="{{ asset('template/assets/images/page/sign-up.jpg') }}" alt="image">
+                        <img src="{{ asset('template/assets/images/page/sign-up.jpg') }}" alt="image" width="333" height="561">
                     </div>
                     <div class="content">
                         <div class="inner-header-login">

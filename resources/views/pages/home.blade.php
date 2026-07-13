@@ -169,6 +169,7 @@
                          alt="Borobudur Temple" 
                          class="image-video" 
                          loading="lazy"
+                         width="800" height="494"
                          style="width:100%;height:420px;object-fit:cover;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.1);">
                     <div class="video-wrap">
                         <a href="https://www.youtube.com/watch?v=bka65YgaD0A" class="widget-icon-video widget-videos flex-five z-index3" aria-label="Watch video on YouTube" target="_blank" rel="noopener noreferrer">
@@ -179,8 +180,9 @@
                          alt="Prambanan Temple"
                          class="mask-video tf-anime-rorate" 
                          loading="lazy"
+                         width="800" height="533"
                          style="width:180px;height:240px;object-fit:cover;border-radius:12px;border:6px solid #fff;box-shadow:0 10px 25px rgba(0,0,0,0.15);position:absolute;bottom:-40px;right:-20px;">
-                    <img src="{{ asset('template/assets/images/page/enjoy.png') }}" alt="Image" class="mask-enjoy">
+                    <img src="{{ asset('template/assets/images/page/enjoy.png') }}" alt="Image" class="mask-enjoy" width="288" height="98">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -438,7 +440,7 @@
                         Contact us at <a href="mailto:info@jogadrivertour.com">info@jogadrivertour.com</a><br>
                     </address>
                 </div>
-                <img src="{{ asset('template/assets/images/page/vector2.png') }}" alt="image" class="mask-icon-banner" loading="lazy">
+                <img src="{{ asset('template/assets/images/page/vector2.png') }}" alt="image" class="mask-icon-banner" loading="lazy" width="96" height="97">
             </div>
             <div class="col-lg-5" style="margin:-60px -30px -60px 0;padding:0;">
                 <div class="image-banner-contact" style="height:100%;">
@@ -503,14 +505,14 @@
         <div class="callt-to-action flex-two">
             <div class="callt-to-action-content flex-three">
                 <div class="image">
-                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image">
+                    <img src="{{ asset('template/assets/images/page/ready.png') }}" alt="Image" width="83" height="83">
                 </div>
                 <div class="content">
                     <h2 class="title-call">Ready to explore Yogyakarta?</h2>
                      <p class="des">Yogyakarta Driver Tour is ready to make your Yogyakarta adventure unforgettable</p>
                 </div>
             </div>
-            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab">
+            <img src="{{ asset('template/assets/images/page/vector4.png') }}" alt="" class="shape-ab" width="169" height="138">
             <div class="callt-to-action-button">
                 <a href="{{ route('contact') }}" class="get-call">Book Your Trip Now</a>
             </div>

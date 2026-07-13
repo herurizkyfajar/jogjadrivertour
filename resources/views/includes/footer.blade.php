@@ -4,7 +4,7 @@
             <div class="footer-logo">
                 <div class="logo-footer">
                     <a href="{{ route('home') }}" aria-label="Yogyakarta Driver Tour - Home">
-                        <img src="{{ asset('template/assets/images/logo.webp') }}" alt="Yogyakarta Driver Tour Logo">
+                        <img src="{{ asset('template/assets/images/logo.webp') }}" alt="Yogyakarta Driver Tour Logo" width="200" height="97">
                     </a>
                 </div>
                 <p class="des-footer">Your trusted partner for private car rental and professional tour guide services in Yogyakarta and its surroundings.</p>
@@ -46,19 +46,19 @@
                     </div>
                 @else
                     <div class="gallery-img">
-                        <a href="{{ asset('template/assets/images/gallery/gl1.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl1.jpg') }}" alt="image gallery"></a>
-                        <a href="{{ asset('template/assets/images/gallery/gl2.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl2.jpg') }}" alt="image gallery"></a>
-                        <a href="{{ asset('template/assets/images/gallery/gl3.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl3.jpg') }}" alt="image gallery"></a>
-                        <a href="{{ asset('template/assets/images/gallery/gl4.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl4.jpg') }}" alt="image gallery"></a>
-                        <a href="{{ asset('template/assets/images/gallery/gl5.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl5.jpg') }}" alt="image gallery"></a>
-                        <a href="{{ asset('template/assets/images/gallery/gl6.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl6.jpg') }}" alt="image gallery"></a>
+                        <a href="{{ asset('template/assets/images/gallery/gl1.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl1.jpg') }}" alt="image gallery" width="168" height="154"></a>
+                        <a href="{{ asset('template/assets/images/gallery/gl2.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl2.jpg') }}" alt="image gallery" width="168" height="154"></a>
+                        <a href="{{ asset('template/assets/images/gallery/gl3.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl3.jpg') }}" alt="image gallery" width="168" height="154"></a>
+                        <a href="{{ asset('template/assets/images/gallery/gl4.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl4.jpg') }}" alt="image gallery" width="168" height="154"></a>
+                        <a href="{{ asset('template/assets/images/gallery/gl5.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl5.jpg') }}" alt="image gallery" width="168" height="154"></a>
+                        <a href="{{ asset('template/assets/images/gallery/gl6.jpg') }}" data-fancybox="gallery"><img src="{{ asset('template/assets/images/gallery/gl6.jpg') }}" alt="image gallery" width="168" height="154"></a>
                     </div>
                 @endif
             </div>
             <div class="footer-partof">
                 <h5 class="title">Part of</h5>
                 <a href="https://bandungdrivertour.com" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ asset('template/assets/images/bandung-driver-tour.webp') }}" alt="Bandung Driver Tour" style="max-height: 80px;">
+                    <img src="{{ asset('template/assets/images/bandung-driver-tour.webp') }}" alt="Bandung Driver Tour" style="max-height: 80px;" width="220" height="115">
                 </a>
             </div>
         </div>
@@ -86,7 +86,7 @@
     </div>
     <div class="offcanvas-body">
         <div class="logo-canvas">
-            <img src="{{ asset('template/assets/images/logo.webp') }}" alt="image">
+            <img src="{{ asset('template/assets/images/logo.webp') }}" alt="image" width="200" height="97">
         </div>
         <p class="des">Your trusted partner for private car rental and professional tour guide in Yogyakarta.</p>
         <ul class="canvas-info">

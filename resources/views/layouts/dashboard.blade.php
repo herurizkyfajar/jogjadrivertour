@@ -124,7 +124,7 @@
 
             <div class="sidebar-dashboard">
                 <div class="db-logo">
-                    <a href="{{ route('home') }}"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" style="width:150px;height:auto;"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset('template/assets/images/logo.webp') }}" alt="Logo" style="width:150px;height:auto;" width="200" height="97"></a>
                 </div>
                 <div class="db-menu">
                     <ul>
@@ -340,7 +340,7 @@
                                                 </div>
                                                 <div class="dropdown account">
                                                     <a type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <img src="{{ asset('template/assets/images/page/avata.jpg') }}" alt="image">
+                                                        <img src="{{ asset('template/assets/images/page/avata.jpg') }}" alt="image" width="80" height="80">
                                                     </a>
                                                     <ul class="dropdown-menu">
                                                         <li><a href="{{ route('dashboard') }}">Account</a></li>
