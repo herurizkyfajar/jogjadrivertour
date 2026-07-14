@@ -276,88 +276,55 @@
 </section>
 
 <!-- Widget Rent Car -->
-<section class="relative tf-widget-activities pd-main overflow-hidden">
-    <img src="{{ asset('template/assets/images/page/mask-activiti.png') }}" alt="image" class="mask-top" loading="lazy">
-    <img src="{{ asset('template/assets/images/page/mask-print-2.png') }}" alt="image" class="mask-bottom" loading="lazy">
+<section class="pd-main" style="background:#F7F8FA;">
     <div class="tf-container">
-        <div class="row z-index3 relative">
-            <div class="col-lg-12">
-                <div class="center m0-auto w-text-heading" style="margin-bottom:40px;">
-                    <span class="sub-title-heading text-main mb-15 wow fadeInUp animated">Comfortable Travel</span>
-                    <h2 class="title-heading mb-0 wow fadeInUp animated">Choose Your Perfect <span class="text-gray font-yes">Ride</span> For The Trip</h2>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <ul class="nav nav-tabs-activities justify-content-center" id="fleetTab" role="tablist">
-                    @php
-                        $fleet = App\Models\Car::where('is_active', true)->orderBy('sort_order')->get();
-                    @endphp
-                    @foreach($fleet as $index => $car)
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link {{ $index === 0 ? 'active' : '' }}" id="fleet-{{ Str::slug($car->name) }}-tab" data-bs-toggle="tab" data-bs-target="#fleet-{{ Str::slug($car->name) }}-pane" type="button" role="tab">
-                                <span class="icon flex-five">
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                                <span>{{ $car->name }}</span>
-                            </button>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="tab-content mt-44" id="fleetTabContent">
-                    @foreach($fleet as $index => $car)
-                        <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}" id="fleet-{{ Str::slug($car->name) }}-pane" role="tabpanel">
-                            <div class="tabs-activities-content flex">
-                                <div class="activities-image" style="border-radius:16px;overflow:hidden;background:#f5f5f5;display:flex;align-items:center;justify-content:center;">
-                                    <img src="{{ $car->image_url }}" alt="{{ $car->name }}" loading="lazy" style="width:100%;height:100%;object-fit:contain;">
+        <div class="center m0-auto w-text-heading" style="margin-bottom:48px;">
+            <span class="sub-title-heading text-main mb-15 wow fadeInUp animated">Our Fleet</span>
+            <h2 class="title-heading mb-0 wow fadeInUp animated">Choose Your Perfect <span class="text-gray font-yes">Ride</span> For The Trip</h2>
+        </div>
+        @php
+            $fleet = App\Models\Car::where('is_active', true)->orderBy('sort_order')->get();
+        @endphp
+        <div class="row" style="gap:24px 0;">
+            @foreach($fleet as $car)
+                <div class="col-sm-6 col-lg-4">
+                    <div class="car-card wow fadeInUp animated" data-wow-delay="0.{{ $loop->index + 1 }}s" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);transition:all .3s ease;display:flex;flex-direction:column;height:100%;">
+                        <div style="position:relative;background:#EDF2F7;padding:24px;display:flex;align-items:center;justify-content:center;height:200px;overflow:hidden;">
+                            <img src="{{ $car->image_url }}" alt="{{ $car->name }}" loading="lazy" style="max-width:85%;max-height:160px;object-fit:contain;transition:transform .4s ease;">
+                            <span style="position:absolute;top:16px;right:16px;background:{{ $car->type === 'Premium Car' ? '#081E2A' : '#4DA528' }};color:#fff;padding:5px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">
+                                @if($car->type === 'Premium Car')
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="margin-right:3px;vertical-align:-1px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                @endif
+                                {{ $car->type }}
+                            </span>
+                        </div>
+                        <div style="padding:24px;display:flex;flex-direction:column;flex:1;">
+                            <h3 style="font-size:22px;font-weight:700;color:#081E2A;margin-bottom:16px;">{{ $car->name }}</h3>
+                            <div style="display:flex;gap:20px;margin-bottom:16px;flex-wrap:wrap;">
+                                <div style="display:flex;align-items:center;gap:8px;color:#4F545A;font-size:14px;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4DA528" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    {{ $car->passengers }} Passengers
                                 </div>
-                                <div class="activities-content relative">
-                                    <div class="flex-three mb-20" style="gap:12px;align-items:center;">
-                                        <span class="sub-title text-white">Comfortable Travel</span>
-                                        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:0.5px;">
-                                            @if($car->type === 'Premium Car')
-                                                &#9733; {{ $car->type }}
-                                            @else
-                                                {{ $car->type }}
-                                            @endif
-                                        </span>
-                                    </div>
-                                    <h3 class="title-activitis text-white mb-40">{{ $car->name }}</h3>
-                                    <div class="flex-three mb-20" style="flex-wrap:wrap;gap:20px;">
-                                        <div class="flex-three text-white icon-list-wrap">
-                                            <div class="icon">
-                                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                            </div>
-                                            <span class="icon-lists">{{ $car->passengers }} Passengers</span>
-                                        </div>
-                                        <div class="flex-three text-white icon-list-wrap">
-                                            <div class="icon">
-                                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg>
-                                            </div>
-                                            <span class="icon-lists">{{ $car->luggage }} Luggage</span>
-                                        </div>
-                                    </div>
-                                    @if($car->description)
-                                        <p class="text-white mb-20" style="font-size:15px;line-height:1.8;">{{ $car->description }}</p>
-                                    @endif
-                                    <div class="flex-three mb-30" style="gap:8px;align-items:center;">
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:#fff;"><path d="M20 6L9 17l-5-5"/></svg>
-                                        <span class="text-white" style="font-size:14px;font-weight:600;">Include Driver</span>
-                                    </div>
-                                    <div class="flex-three btn-wrap-activitis">
-                                        <a href="{{ route('contact') }}" class="icon-activitis flex-five" aria-label="Contact us">
-                                            <i class="icon-Vector-21"></i>
-                                        </a>
-                                        <a href="{{ route('contact') }}" class="text-white get-start">Book Your Trip Now</a>
-                                    </div>
-                                    <img src="{{ asset('template/assets/images/page/mask-tap.png') }}" alt="image" class="mask-tab">
+                                <div style="display:flex;align-items:center;gap:8px;color:#4F545A;font-size:14px;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4DA528" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                                    {{ $car->luggage }} Luggage
                                 </div>
                             </div>
+                            @if($car->description)
+                                <p style="font-size:13px;line-height:1.7;color:#6B7280;margin-bottom:16px;flex:1;">{{ Str::limit($car->description, 100) }}</p>
+                            @endif
+                            <div style="display:flex;align-items:center;gap:6px;margin-bottom:20px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4DA528" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span style="font-size:13px;color:#4DA528;font-weight:600;">Include Driver</span>
+                            </div>
+                            <a href="{{ route('contact') }}" style="display:inline-flex;align-items:center;gap:8px;background:#4DA528;color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:all .3s ease;justify-content:center;" onmouseover="this.style.background='#3D8A1E'" onmouseout="this.style.background='#4DA528'">
+                                Book Now
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -446,7 +413,7 @@
             <div class="col-lg-7 content-banner-contact">
                 <div class="mb-32">
                     <span class="sub-title-heading text-main mb-15 font-yes fs-28-46 wow fadeInUp animated">Explore Yogyakarta</span>
-                    <h2 class="title-heading text-white wow fadeInUp animated">Your trusted partner for private car rental and tour guide in Yogyakarta — discover ancient temples, volcanic landscapes, and rich Javanese culture</h2>
+                    <h2 class="title-heading text-white wow fadeInUp animated" style="font-size:36px !important;line-height:44px !important;">Your trusted partner for private car rental and tour guide in Yogyakarta — discover ancient temples, volcanic landscapes, and rich Javanese culture</h2>
                 </div>
                 <div class="flex-three">
                     <div class="video-wrap wow fadeInUp animated">
@@ -614,73 +581,17 @@
     .map-legend-dot.visited { background: #4DA528; }
     .map-legend-dot.unvisited { background: #d4d4d4; }
 
-    /* Fleet Section Overrides */
-    .tf-widget-activities .tabs-activities-content {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        border-radius: 16px;
-        overflow: hidden;
+    /* Car Cards */
+    .car-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.1) !important;
     }
-    .tf-widget-activities .tabs-activities-content .activities-image {
-        flex: 0 0 45%;
-        max-width: 45%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f5f5f5;
-        border-radius: 16px 0 0 16px;
-        overflow: hidden;
+    .car-card:hover img {
+        transform: scale(1.05);
     }
-    .tf-widget-activities .tabs-activities-content .activities-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        margin-left: 0;
-        border-radius: 0;
-    }
-    .tf-widget-activities .tabs-activities-content .activities-content {
-        flex: 1;
-        padding: 40px 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .tf-widget-activities .tabs-activities-content .activities-content .title-activitis {
-        font-size: 28px;
-        font-weight: 800;
-    }
-
-    @media (max-width: 991px) {
-        .tf-widget-activities .tabs-activities-content {
-            flex-direction: column;
-        }
-        .tf-widget-activities .tabs-activities-content .activities-image {
-            flex: none;
-            max-width: 100%;
-            height: 250px;
-            border-radius: 16px 16px 0 0;
-        }
-        .tf-widget-activities .tabs-activities-content .activities-content {
-            padding: 30px;
-        }
-    }
+    .car-card .row { gap: 24px 0; }
     @media (max-width: 575px) {
-        .tf-widget-activities .tabs-activities-content .activities-image {
-            height: 200px;
-        }
-        .tf-widget-activities .tabs-activities-content .activities-content {
-            padding: 20px;
-        }
-        .tf-widget-activities .tabs-activities-content .activities-content .title-activitis {
-            font-size: 22px;
-        }
-        .nav-tabs-activities .nav-item .nav-link {
-            padding: 12px 14px !important;
-        }
-        .nav-tabs-activities .nav-item .nav-link span:last-child {
-            font-size: 11px !important;
-        }
+        .car-card { margin-bottom: 16px; }
     }
 
     @media (max-width: 991px) {
