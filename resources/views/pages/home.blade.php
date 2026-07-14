@@ -21,8 +21,9 @@
                     <div class="tf-container">
                         <div class="row">
                             <div class="col-lg-8">
+                                <style>.title-slide{font-size:36px !important;line-height:44px !important;}</style>
                                 <span class="sub-title text-main font-yes fs-28-46 fadeInDown wow">Explore Yogyakarta</span>
-                                <h1 class="title-slide text-white mb-32 fadeInDown wow">Discover<br>
+                                <h1 class="title-slide text-white mb-32 fadeInDown wow" style="font-size:36px !important;line-height:44px !important;">Discover<br>
                                     <span class="animationtext clip text-main">
                                         <span class="cd-words-wrapper">
                                             <span class="item-text is-visible">Yogyakarta & Beyond</span>
@@ -702,9 +703,6 @@
 
 @push('styles')
 <style>
-.slider-home1 .slider-content .title-slide{font-size:36px !important;line-height:44px !important;font-weight:700;}
-.slider-home1 .slider-content .sub-title{font-size:16px !important;}
-.slider-home1 .slider-content .des{font-size:14px !important;line-height:1.6 !important;}
 #world-map-svg{width:100%;height:auto;display:block;}
 #world-map-svg path{fill:#c0c8d0;stroke:#fff;stroke-width:0.5;transition:fill .3s;cursor:default;}
 #world-map-svg path.visited{fill:#4DA528;}
