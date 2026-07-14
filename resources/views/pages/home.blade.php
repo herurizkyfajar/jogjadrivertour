@@ -57,22 +57,22 @@
                     <div class="tf-container">
                         <div class="row">
                             <div class="col-lg-8">
-                                <span class="sub-title text-main font-yes fs-28-46 fadeInDown wow">Adventure Awaits</span>
-                                <h1 class="title-slide text-white mb-32 fadeInDown wow">Lava Tour<br>
+                                <span class="sub-title text-main font-yes fs-28-46 fadeInDown wow">Trusted Worldwide</span>
+                                <h1 class="title-slide text-white mb-32 fadeInDown wow">Serving Travelers<br>
                                     <span class="animationtext clip text-main">
                                         <span class="cd-words-wrapper">
-                                            <span class="item-text is-visible">Merapi Jeep</span>
-                                            <span class="item-text is-hidden">Merapi Jeep</span>
+                                            <span class="item-text is-visible">From Many Countries</span>
+                                            <span class="item-text is-hidden">From Many Countries</span>
                                         </span>
                                     </span>
                                 </h1>
-                                <p class="des text-white mb-45 fadeInDown wow">Explore the slopes of Mount Merapi with an exciting jeep adventure! See the aftermath of eruptions and the spectacular volcanic landscape.</p>
+                                <p class="des text-white mb-45 fadeInDown wow">We have proudly served travelers from around the globe. Our trusted private car rental and driver services have explored Yogyakarta with guests from many different countries.</p>
                                 <div class="btn-group">
-                                    <a href="{{ route('tours.packages') }}" class="btn-main fadeInDown wow">
-                                        <p class="btn-main-text">Explore tours</p>
+                                    <a href="{{ route('contact') }}" class="btn-main fadeInDown wow">
+                                        <p class="btn-main-text">Book Your Trip</p>
                                         <p class="iconer"><i class="icon-arrow-right"></i></p>
                                     </a>
-                                    <a href="{{ route('destinations.index') }}" class="btn-w-wa fadeInDown wow">Destinations <i class="icon-Group-13"></i></a>
+                                    <a href="{{ route('about') }}" class="btn-w-wa fadeInDown wow">About Us <i class="icon-Group-13"></i></a>
                                 </div>
                             </div>
                         </div>
