@@ -702,6 +702,8 @@
 
 @push('styles')
 <style>
+.slider-home1 .slider-content .title-slide{font-size:42px;line-height:52px;}
+.slider-home1 .slider-content .des{font-size:15px;line-height:1.7;}
 #world-map-svg{width:100%;height:auto;display:block;}
 #world-map-svg path{fill:#c0c8d0;stroke:#fff;stroke-width:0.5;transition:fill .3s;cursor:default;}
 #world-map-svg path.visited{fill:#4DA528;}
