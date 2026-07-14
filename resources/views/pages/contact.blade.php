@@ -3,6 +3,13 @@
 @section('title', 'Contact Us - Private Car Rental & Tour Guide in Yogyakarta')
 
 @section('content')
+@php
+    $contactPhone1 = \App\Models\Setting::get('contact_phone1', '+62 812 3456 7890');
+    $contactPhone2 = \App\Models\Setting::get('contact_phone2', '+62 856 1234 5678');
+    $contactEmail1 = \App\Models\Setting::get('contact_email1', 'info@jogadrivertour.com');
+    $contactEmail2 = \App\Models\Setting::get('contact_email2', 'booking@jogadrivertour.com');
+    $contactAddress = \App\Models\Setting::get('contact_address', 'Jl. Malioboro No. 123, Yogyakarta, Indonesia');
+@endphp
 <section class="breadcumb-section">
     <div class="tf-container">
         <div class="row">
@@ -31,7 +38,7 @@
                         </svg>
                     </div>
                     <span>address line</span>
-                    <p class="des">Jl. Malioboro No. 123<br>Yogyakarta, Indonesia</p>
+                    <p class="des">{!! nl2br(e($contactAddress)) !!}</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -42,7 +49,7 @@
                         </svg>
                     </div>
                     <span>Phone Number</span>
-                    <p class="des">+62 812 3456 7890<br>+62 856 1234 5678</p>
+                    <p class="des">{{ $contactPhone1 }}@if($contactPhone2)<br>{{ $contactPhone2 }}@endif</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -53,7 +60,7 @@
                         </svg>
                     </div>
                     <span>Mail Address</span>
-                    <p class="des">info@jogadrivertour.com<br>booking@jogadrivertour.com</p>
+                    <p class="des">{{ $contactEmail1 }}@if($contactEmail2)<br>{{ $contactEmail2 }}@endif</p>
                 </div>
             </div>
         </div>

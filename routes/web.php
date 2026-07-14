@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\MyTourController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ChatSessionController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\InstagramController;
 use App\Models\Tour;
@@ -102,6 +103,10 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin/settings')->name('admin.settings.')->group(function () {
         Route::get('/', [SettingController::class, 'index'])->name('index');
         Route::post('/', [SettingController::class, 'update'])->name('update');
+    });
+    Route::prefix('admin/contact')->name('admin.contact.')->group(function () {
+        Route::get('/', [ContactController::class, 'index'])->name('index');
+        Route::put('/', [ContactController::class, 'update'])->name('update');
     });
     Route::prefix('admin/cars')->name('admin.cars.')->group(function () {
         Route::get('/', [CarController::class, 'index'])->name('index');

@@ -1,5 +1,11 @@
 <footer class="footer footer-style1">
     <div class="tf-container">
+        @php
+            $contactPhone1 = \App\Models\Setting::get('contact_phone1', '+62 812 3456 7890');
+            $contactPhone2 = \App\Models\Setting::get('contact_phone2', '');
+            $contactEmail1 = \App\Models\Setting::get('contact_email1', 'info@jogadrivertour.com');
+            $contactAddress = \App\Models\Setting::get('contact_address', 'Jl. Malioboro No. 123, Yogyakarta');
+        @endphp
         <div class="footer-main">
             <div class="footer-logo">
                 <div class="logo-footer">
@@ -11,15 +17,15 @@
                 <ul class="footer-info">
                     <li class="flex-three">
                         <i class="icon-noun-mail-5780740-1"></i>
-                        <p>info@jogadrivertour.com</p>
+                        <p>{{ $contactEmail1 }}</p>
                     </li>
                     <li class="flex-three">
                         <i class="icon-Group-9"></i>
-                        <p>+62 812 3456 7890</p>
+                        <p>{{ $contactPhone1 }}@if($contactPhone2)<br>{{ $contactPhone2 }}@endif</p>
                     </li>
                     <li class="flex-three">
                         <i class="icon-Layer-19"></i>
-                        <p>Jl. Malioboro No. 123, Yogyakarta</p>
+                        <p>{{ $contactAddress }}</p>
                     </li>
                 </ul>
             </div>
@@ -92,15 +98,15 @@
         <ul class="canvas-info">
             <li class="flex-three">
                 <i class="icon-noun-mail-5780740-1"></i>
-                <p>info@jogadrivertour.com</p>
+                <p>{{ $contactEmail1 }}</p>
             </li>
             <li class="flex-three">
                 <i class="icon-Group-9"></i>
-                <p>+62 812 3456 7890</p>
+                <p>{{ $contactPhone1 }}</p>
             </li>
             <li class="flex-three">
                 <i class="icon-Layer-19"></i>
-                <p>Jl. Malioboro No. 123, Yogyakarta</p>
+                <p>{{ $contactAddress }}</p>
             </li>
         </ul>
         <ul class="social flex-three">

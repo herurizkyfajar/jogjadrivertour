@@ -204,6 +204,12 @@
                                 <span>Chat Sessions</span>
                             </a>
                         </li>
+                        <li class="{{ request()->routeIs('admin.contact.*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.contact.index') }}">
+                                <i class="icon-noun-mail-5780740-1"></i>
+                                <span>Contact Info</span>
+                            </a>
+                        </li>
                         <li class="{{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
                             <a href="{{ route('admin.settings.index') }}">
                                 <i class="icon-Vector-9"></i>
