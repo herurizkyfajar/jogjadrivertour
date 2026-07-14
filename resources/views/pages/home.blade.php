@@ -702,7 +702,7 @@
 
 @push('styles')
 <style>
-.slider-home1 .slider-content .title-slide{font-size:28px !important;line-height:36px !important;font-weight:700;}
+.slider-home1 .slider-content .title-slide{font-size:36px !important;line-height:44px !important;font-weight:700;}
 .slider-home1 .slider-content .sub-title{font-size:16px !important;}
 .slider-home1 .slider-content .des{font-size:14px !important;line-height:1.6 !important;}
 #world-map-svg{width:100%;height:auto;display:block;}
