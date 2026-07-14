@@ -702,8 +702,9 @@
 
 @push('styles')
 <style>
-.slider-home1 .slider-content .title-slide{font-size:42px;line-height:52px;}
-.slider-home1 .slider-content .des{font-size:15px;line-height:1.7;}
+.slider-home1 .slider-content .title-slide{font-size:28px !important;line-height:36px !important;font-weight:700;}
+.slider-home1 .slider-content .sub-title{font-size:16px !important;}
+.slider-home1 .slider-content .des{font-size:14px !important;line-height:1.6 !important;}
 #world-map-svg{width:100%;height:auto;display:block;}
 #world-map-svg path{fill:#c0c8d0;stroke:#fff;stroke-width:0.5;transition:fill .3s;cursor:default;}
 #world-map-svg path.visited{fill:#4DA528;}
