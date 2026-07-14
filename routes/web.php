@@ -150,3 +150,67 @@ Route::prefix('blog')->name('blog.')->group(function () {
 Route::post('/chatbot', [\App\Http\Controllers\ChatbotController::class, 'chat'])->name('chatbot.chat');
 
 Route::get('/instagram/feed', [InstagramController::class, 'feed'])->name('instagram.feed');
+
+Route::get('/sitemap.xml', function () {
+    $baseUrl = config('app.url', 'https://jogja.bandungdrivertour.com');
+    $lastModified = now()->toAtomString();
+
+    $tours = \App\Models\Tour::where('is_active', true)->get(['id','slug','updated_at']);
+    $destinations = \App\Models\Destination::where('is_active', true)->get(['id','slug','updated_at']);
+    $blogs = \App\Models\Blog::where('is_active', true)->get(['id','slug','updated_at']);
+
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+    $staticPages = [
+        ['loc' => '/', 'priority' => '1.0', 'changefreq' => 'daily'],
+        ['loc' => '/about', 'priority' => '0.8', 'changefreq' => 'monthly'],
+        ['loc' => '/contact', 'priority' => '0.7', 'changefreq' => 'monthly'],
+        ['loc' => '/tours', 'priority' => '0.9', 'changefreq' => 'weekly'],
+        ['loc' => '/tours/packages', 'priority' => '0.9', 'changefreq' => 'weekly'],
+        ['loc' => '/destinations', 'priority' => '0.9', 'changefreq' => 'weekly'],
+        ['loc' => '/blog', 'priority' => '0.8', 'changefreq' => 'daily'],
+    ];
+
+    foreach ($staticPages as $page) {
+        $xml .= '  <url>' . "\n";
+        $xml .= '    <loc>' . $baseUrl . $page['loc'] . '</loc>' . "\n";
+        $xml .= '    <lastmod>' . $lastModified . '</lastmod>' . "\n";
+        $xml .= '    <changefreq>' . $page['changefreq'] . '</changefreq>' . "\n";
+        $xml .= '    <priority>' . $page['priority'] . '</priority>' . "\n";
+        $xml .= '  </url>' . "\n";
+    }
+
+    foreach ($tours as $tour) {
+        $xml .= '  <url>' . "\n";
+        $xml .= '    <loc>' . $baseUrl . '/tours/' . $tour->slug . '</loc>' . "\n";
+        $xml .= '    <lastmod>' . $tour->updated_at->toAtomString() . '</lastmod>' . "\n";
+        $xml .= '    <changefreq>weekly</changefreq>' . "\n";
+        $xml .= '    <priority>0.7</priority>' . "\n";
+        $xml .= '  </url>' . "\n";
+    }
+
+    foreach ($destinations as $dest) {
+        $xml .= '  <url>' . "\n";
+        $xml .= '    <loc>' . $baseUrl . '/destinations/' . $dest->slug . '</loc>' . "\n";
+        $xml .= '    <lastmod>' . $dest->updated_at->toAtomString() . '</lastmod>' . "\n";
+        $xml .= '    <changefreq>weekly</changefreq>' . "\n";
+        $xml .= '    <priority>0.7</priority>' . "\n";
+        $xml .= '  </url>' . "\n";
+    }
+
+    foreach ($blogs as $blog) {
+        $xml .= '  <url>' . "\n";
+        $xml .= '    <loc>' . $baseUrl . '/blog/' . $blog->slug . '</loc>' . "\n";
+        $xml .= '    <lastmod>' . $blog->updated_at->toAtomString() . '</lastmod>' . "\n";
+        $xml .= '    <changefreq>monthly</changefreq>' . "\n";
+        $xml .= '    <priority>0.6</priority>' . "\n";
+        $xml .= '  </url>' . "\n";
+    }
+
+    $xml .= '</urlset>';
+
+    return response($xml, 200)
+        ->header('Content-Type', 'application/xml')
+        ->header('Cache-Control', 'public, max-age=3600');
+});
