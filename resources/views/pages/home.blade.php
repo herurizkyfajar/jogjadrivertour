@@ -93,22 +93,22 @@
                     <div class="tf-container">
                         <div class="row">
                             <div class="col-lg-8">
-                                <span class="sub-title text-main font-yes fs-28-46 fadeInDown wow">Royal Heritage</span>
-                                <h1 class="title-slide text-white mb-32 fadeInDown wow">Taman Sari<br>
+                                <span class="sub-title text-main font-yes fs-28-46 fadeInDown wow">Our Services</span>
+                                <h1 class="title-slide text-white mb-32 fadeInDown wow">What We<br>
                                     <span class="animationtext clip text-main">
                                         <span class="cd-words-wrapper">
-                                            <span class="item-text is-visible">Water Castle</span>
-                                            <span class="item-text is-hidden">Water Castle</span>
+                                            <span class="item-text is-visible">Offer For You</span>
+                                            <span class="item-text is-hidden">Offer For You</span>
                                         </span>
                                     </span>
                                 </h1>
-                                <p class="des text-white mb-45 fadeInDown wow">Visit Taman Sari, the former royal garden of the Yogyakarta Sultanate featuring unique architecture and fascinating history.</p>
+                                <p class="des text-white mb-45 fadeInDown wow">Private car rental with professional driver, airport transfer, city tour, temple visits, adventure trips, and custom itineraries across Yogyakarta and beyond.</p>
                                 <div class="btn-group">
-                                    <a href="{{ route('tours.index') }}" class="btn-main fadeInDown wow">
-                                        <p class="btn-main-text">View deals</p>
+                                    <a href="{{ route('contact') }}" class="btn-main fadeInDown wow">
+                                        <p class="btn-main-text">Contact Us</p>
                                         <p class="iconer"><i class="icon-arrow-right"></i></p>
                                     </a>
-                                    <a href="{{ route('contact') }}" class="btn-w-wa fadeInDown wow">Contact us <i class="icon-Group-13"></i></a>
+                                    <a href="{{ route('tours.packages') }}" class="btn-w-wa fadeInDown wow">Tour Packages <i class="icon-Group-13"></i></a>
                                 </div>
                             </div>
                         </div>
