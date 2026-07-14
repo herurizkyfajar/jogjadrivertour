@@ -21,22 +21,22 @@
                     <div class="tf-container">
                         <div class="row">
                             <div class="col-lg-8">
-                                <span class="sub-title text-main font-yes fs-28-46 fadeInDown wow">Yogyakarta Heritage</span>
-                                <h1 class="title-slide text-white mb-32 fadeInDown wow">Borobudur<br>
+                                <span class="sub-title text-main font-yes fs-28-46 fadeInDown wow">Explore Yogyakarta</span>
+                                <h1 class="title-slide text-white mb-32 fadeInDown wow">Discover<br>
                                     <span class="animationtext clip text-main">
                                         <span class="cd-words-wrapper">
-                                            <span class="item-text is-visible">Sunrise Temple</span>
-                                            <span class="item-text is-hidden">Sunrise Temple</span>
+                                            <span class="item-text is-visible">Yogyakarta & Beyond</span>
+                                            <span class="item-text is-hidden">Yogyakarta & Beyond</span>
                                         </span>
                                     </span>
                                 </h1>
-                                <p class="des text-white mb-45 fadeInDown wow">Witness the magical sunrise at Borobudur Temple, a breathtaking UNESCO World Heritage site with stunning views of Mount Merapi in the distance.</p>
+                                <p class="des text-white mb-45 fadeInDown wow">Explore the beauty of Yogyakarta and its surrounding areas with our trusted private car rental and professional driver services. Your comfort, your schedule, your adventure.</p>
                                 <div class="btn-group">
-                                    <a href="{{ route('tours.index') }}" class="btn-main fadeInDown wow">
-                                        <p class="btn-main-text">Book Now</p>
+                                    <a href="{{ route('contact') }}" class="btn-main fadeInDown wow">
+                                        <p class="btn-main-text">Rent a Car Now</p>
                                         <p class="iconer"><i class="icon-arrow-right"></i></p>
                                     </a>
-                                    <a href="{{ route('about') }}" class="btn-w-wa fadeInDown wow">About Yogyakarta Driver Tour <i class="icon-Group-13"></i></a>
+                                    <a href="{{ route('tours.packages') }}" class="btn-w-wa fadeInDown wow">View Tour Packages <i class="icon-Group-13"></i></a>
                                 </div>
                             </div>
                         </div>
